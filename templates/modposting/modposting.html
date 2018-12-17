@@ -1,0 +1,14 @@
+{% extends "wrapper.html" %}
+{% block content %}
+		{% for instance in object_list %}
+			<h3>{{instance.title}}</h3>
+			<p>dfgsdgh</p>
+			<!-- <div class="section-top"> -->
+				<!-- <div class="container">
+					<div class="row"> -->
+	                {{ instance.content | safe }}
+	                <!-- </div>
+				</div> -->
+			<!-- </div> -->
+		{% endfor %}
+{% endblock %}

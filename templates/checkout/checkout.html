@@ -1,0 +1,88 @@
+{% extends "wrapper.html" %}
+{% block content %}
+{% load static %}
+<div class="container">
+	<div class="row">
+		{% if products_in_basket %}
+			<div class="col-12">
+			   	<h3 class="text-center p-1">Товары в корзине</h3>
+				<div class="table-responsive">
+				    <table class="table">
+						   	<thead>
+							   <tr>
+								   <th class="image col-sm-hidden">Фото</th>
+								   <th class="name">Наименование товара</th>
+								   <th class="quantity"><span title="Количество">Кол-во</span></th>
+								   <th class="price">Цена</th>
+								   <th class="total">Итого</th>
+								   <th class="remove"></th>
+							   </tr>
+						   	</thead>
+						   	<tbody>
+							   	{% for product_in_basket in products_in_basket %}
+							   	<tr>
+										{% for image_item in product_in_basket.pb_product.productimage_set.all %}
+											{% if image_item.is_main == True %}
+											<td class="p-0 col-sm-hidden">
+											   	<div class="product-image-checkout">
+													<a href="{% url 'product_n' image_item.product.id %}">
+														<img src="{{ image_item.image.url }}" class="img-fluid rounded">
+													</a>
+											   	</div>
+											</td>
+											<td>
+												<a href="{% url 'product_n' image_item.product.id %}">
+													<div class="mw-100">
+														{{ product_in_basket.pb_product.name }}
+													</div>
+												</a>
+											</td>
+											{% endif %}
+										{% endfor %}
+							   		<td class="for-input-spinner">
+										<form class="formBuyProduct" action="{% url 'basket_adding' %}">{% csrf_token %}
+				                            <input type="number" class="product-in-basket-nmb inBuyProduct form-control" placeholder="{{ product_in_basket.pb_qty }} Шт." min="0" max="99" value="{{ product_in_basket.pb_qty }}" name="product_in_basket_{{ product_in_basket.id }}" required>
+				                        </form>
+							   		</td>
+							   		<td>
+							   			<span class="product-price">
+							   				{{ product_in_basket.pb_price_per_item}}
+							   			</span>
+							   		</td>
+							   		<td>
+							   			<span class="total-product-in-basket-amount">
+							   				{{ product_in_basket.pb_total_price }}
+							   			</span>
+							   		</td>
+							   	</tr>
+							   	{% endfor %}
+
+								<tr>
+								 <td class="col-sm-hidden" colspan="1></td>
+								 <td class="col-sm-hidden" colspan="1"></td>
+								 <td class="text-right" colspan="2"><b>Общая стоимость заказа:</b></td>
+								 <td class="text-center" colspan="2"><b>{{ total_price }} руб.</b></td>
+
+							   </tr>
+
+
+						   	</tbody>
+				   	</table>
+			   	</div>
+
+
+
+
+		       	<div class="basket-cart-total float-right" id="total_total">
+		           	<span class="basket-cart-total-remove"></span>
+		       	</div>
+			   	<input type="hidden" name="remove" value="" id="simplecheckout_remove">
+
+
+			</div>
+		{% else %}
+			<h3 class="text-center">В Вашей корзине нет товаров.</h3>
+		{% endif %}
+	</div>
+</div>
+{% endblock content %}

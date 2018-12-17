@@ -1,0 +1,11 @@
+Package                         Version
+------------------------------- -------
+Django                          2.1.2  
+django-filebrowser-no-grappelli 3.7.5  
+django-tinymce4-lite            1.7.3  
+jsmin                           2.2.2  
+Pillow                          5.3.0  
+pip                             18.1   
+pytz                            2018.6 
+setuptools                      40.5.0 
+wheel                           0.32.2 

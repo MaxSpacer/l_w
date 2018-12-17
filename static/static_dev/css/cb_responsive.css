@@ -1,0 +1,45 @@
+@media (min-width: 430px) {
+
+    .for-input-spinner{
+        min-width: 130px;
+        max-width: 131px;
+    }
+
+    .formBuyProduct{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+
+
+}
+
+@media (min-width: 576px) { ... }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+
+
+@media (max-width: 430px) {
+
+.col-sm-hidden{
+    display: none;
+}
+.for-input-spinner .input-group {
+    max-width: 40px;
+
+}
+.form-control {
+    padding: .175rem .35rem;
+
+
+}

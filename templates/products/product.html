@@ -1,0 +1,131 @@
+{% extends "wrapper.html" %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+   <div class="row">
+        <div class="col-lg-6">
+            {% for image_item in product.productimage_set.all %}
+           <div class="product-image-item">
+               <img src="{{ image_item.image.url }}" class="img-fluid">
+           </div>
+            {% endfor %}
+        </div>
+        <div class="col-lg-6">
+            <div class="card-deck">
+                <div class="card text-center">
+                	<div class="card-header">
+                		<h5 class="card-title">{{ product.name }}</h5>
+                        <ul class="nav nav-tabs nav-fill card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" id="description-tab" active" href="#description">Описание</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" id="detail-tab" href="#details">Детали</a>
+                            </li>
+                        </ul>
+                	</div>
+                	<div class="card-body float-right">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                <p class="card-text">
+                                    {{ product.description }}
+                                </p>
+                            </div>
+                            <div class="tab-pane" id="details" role="tabpanel" aria-labelledby="detail-tab">
+                                <p class="card-text">
+                                {{ product.name }}
+                                </p>
+                            </div>
+                        </div>
+                	</div>
+                	<ul class="list-group list-group-flush">
+                		<li class="list-group-item">
+                			{{ product.price }} Рублей.
+                		</li>
+                	</ul>
+                	<div class="card-footer p-1">
+                        <form class="formBuyProduct" action="{% url 'basket_adding' %}">{% csrf_token %}
+                            <div class="col-sm-4 my-1">
+                                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                                <input type="number" class="inBuyProduct form-control" placeholder="Шт." min="0" max="99" value="1" required>
+                            </div>
+                            <div class="col-sm-8 my-1">
+                                <button type="submit" class="inBuyBtn btn btn-success btn-block" data-product_id="{{ product.id }}" data-product_name="{{ product.name }}"
+                                data-product_price="{{ product.price }}">
+                                Добавить в корзину.
+                                </button>
+                            </div>
+                        </form>
+
+
+
+
+
+
+
+
+
+                        <!-- <form class="form" novalidate>
+                          <div class="form-group ">
+                            <div class="col-3">
+                              <label for="form-bying-product" hidden></label>
+                              <input type="number" class="form-control" id="form-bying-product" placeholder="Шт." min="0" max="99" value="1" required>
+                              <div class="invalid-tooltip">
+                                Введите необходимое количество.
+                              </div>
+                            </div>
+                            <div class="col-9">
+                                <button class="btn btn-primary btn-block" type="submit">В корзину</button>
+                            </div>
+                          </div>
+                        </form> -->
+
+
+                	</div>
+                </div>
+            </div>
+        <div>
+    </div>
+</div>
+
+
+<!--
+<h1 class="text-center">
+    {{ product.name }}
+</h1>
+<div class="">
+    <p>
+        Price: {{ product.price }}
+    </p>
+</div>
+<div class="">
+    {{ product.description }}
+</div>
+
+
+ -->
+
+
+<!--
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
+  </div>
+</div>
+<div class="cards-container">
+    <h1><span style="color: #8fc73e">{{ product.name }}</span></h1>
+    <p>
+        <img class="alignnone size-full wp-image-2457" src="http://sweetgrass.grto.ru/wp-content/uploads/sites/17/2016/09/line.png" alt="line" width="53" height="3">
+    </p>
+    <h4 class="text-center mt-3"></h4>
+    <div class="card-deck">
+    </div>
+</div> -->
+{% endblock content %}

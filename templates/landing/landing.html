@@ -1,0 +1,30 @@
+{% extends "wrapper.html" %}
+{% block content %}
+{% load static %}
+
+<!-- carousel -->
+{% include "includes/carousel.html" %}
+
+<!-- cards -->
+{% include "includes/cards.html" %}
+
+<div class="cards-container">
+    <h1>Наша <span style="color: #8fc73e">продукция.</span></h1>
+    <p>
+        <img class="alignnone size-full wp-image-2457" src="http://sweetgrass.grto.ru/wp-content/uploads/sites/17/2016/09/line.png" alt="line" width="53" height="3">
+    </p>
+    <h4 class="text-center mt-3">Замороженная продукция</h4>
+    <div class="card-deck">
+        {% for product_image in product_images_freezy %}
+        {% include 'landing/products_cards.html' %}
+        {% endfor %}
+    </div>
+    <h4 class="text-center mt-3">Свежая продукция</h4>
+    <div class="card-deck">
+        {% for product_image in product_images_fresh %}
+        {% include 'landing/products_cards.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
