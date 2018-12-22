@@ -1,71 +1,79 @@
 {% block header %}
 {% load static %}
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+
+<div class="header">
+    <!-- burger -->
+    <!-- <div class="menu "> <span></span> </div>
+    <nav id="nav">
+        <ul class="main">
+            <li><a target="_blank" href="https://www.facebook.com/ravi7284007">Hi There! Ravi</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/ravi7284007">About ME</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a target="_blank" href="https://www.instagram.com/ravi_singh_7/">Portfolio</a></li>
+            <li><a target="_blank" href="https://500px.com/ravi7284007">Contact</a></li>
+        </ul>
+    </nav>ml-md-auto
+    <div class="overlay"></div> -->
+
+
+    <!-- logo -->
     <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar10">
-            <ul class="navbar-nav nav-fill w-100">
-                <li class="nav-item">
-	    	        <a class="nav-link" href="#">Наши товары</a>
-        	    </li>
-        	    <li class="nav-item">
-        	        <a class="nav-link" href="#">Где попробовать?</a>
-        	    </li>
-        		<li class="nav-item">
-        			<a class="navbar-brand active" href="/"><img src="{% static 'img/logo.png' %}" alt="" class="img-fluid"></a>
-        	 	</li>
-        	    <li class="nav-item">
-        	        <a class="nav-link" href="#">Отзывы клиентов</a>
-        	    </li>
-        	    <li class="nav-item">
-        	 		<a class="nav-link" href="#">Контакты</a>
-        	    </li>
-        	    <li class="nav-item">
-                    <form id="form_cs" class="form-inline" action="{% url 'basket_adding' %}">{% csrf_token %}
-                      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-                      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                    </form>
-        	    </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Корзина <span class="basketTotalNmb">
-                        {% if products_total_nmb %}
-                            ({{ products_total_nmb }})
-                        {% else %}
-                            (0)
-                        {% endif %}
-                    </span>
+        <div class="row-fluid">
+            <div class="pt-1 pt-sm-4 mx-auto">
+            <!-- <div class="col-lg-5 col-sm-12 pt-lg-5 mx-auto"> -->
+                    <div class="text-center">
+                        <a class="" href="/"><img src="{% static 'img/logo_medium.png' %}" alt="" class="img-fluid"></a>
+                        <p id="nowDate">
+                            {{ nowDate|date:'d.m.Y H:i' }} MSK
+                        </p>
                     <span></span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div class="dropdown-item">
-                            <table class="tableBasket" class="table table-hover">
-                                <tbody>
-                                        {% for product_in_basket in products_in_basket %}
-                                        <tr>
-                                            <td>
-                                                {{ product_in_basket.pb_product.name }}
-                                            </td>
-                                            <td>
-                                             {{ product_in_basket.pb_qty }} шт.
-                                            </td>
-                                            <td>
-                                                по  {{ product_in_basket.pb_price_per_item }} руб.
-                                            </td>
-                                            <td>
-                                                <a class="delete-item" href="" data-product_id="{{ product_in_basket.id }}">X</a>
-                                            </td>
-                                        </tr>
-                                        {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                  </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto">
+                <nav id="main-nav">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- <nav id="main-nav" class="show mx-auto">
+                    <ul class="main">
+                    <li><a target="_blank" href="https://www.facebook.com/ravi7284007">Hi There! Ravi</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/ravi7284007">About ME</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/ravi_singh_7/">Portfolio</a></li>
+                    <li><a target="_blank" href="https://500px.com/ravi7284007">Contact</a></li>
+                    </ul>
+                </nav> -->
+            </div>
+        </div
+    </div>
+
+
+</div>
+
+
+
+
 {% endblock header %}

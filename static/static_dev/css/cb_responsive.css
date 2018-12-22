@@ -1,5 +1,7 @@
 @media (min-width: 430px) {
-
+    .header .menu{
+        visibility: hidden;
+    }
     .for-input-spinner{
         min-width: 130px;
         max-width: 131px;
