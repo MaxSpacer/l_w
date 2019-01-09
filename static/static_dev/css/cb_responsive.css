@@ -6,10 +6,6 @@
 // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
-    /* .main-logo {
-        margin-top: 10%;
-    } */
-
     .for-input-spinner {
         min-width: 130px;
         max-width: 131px;
@@ -22,12 +18,6 @@
         margin-right: -5px;
         margin-left: -5px;
     }
-
-    /* .lim-navbar-height {
-        max-height: 80px;
-
-    } */
-
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -90,8 +80,6 @@
     #main-nav ul li {
     font-size: 1.7rem;
     }
-
-
     #navbarCollapse {
         position: fixed;
         top: 70px;
@@ -113,8 +101,6 @@
     .navbar {
         background-color: #111;
     }
-
-
     #nowDate-main {
         display: inline-block;
         /* padding-left: 10%; */
@@ -123,18 +109,15 @@
 
 /* // Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-
     .footer .social {
     font-size: 1.8rem;
     }
-
     .for-input-spinner .input-group {
         max-width: 40px;
     }
     .form-control {
         padding: .175rem .35rem;
     }
-
  }
 
 /* // Large devices (desktops, less than 1200px) */
