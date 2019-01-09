@@ -19,17 +19,25 @@ from filebrowser.sites import site
 from django.conf import settings
 from django.contrib.staticfiles import views
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
+# from django.views.generic import ListView
+# from events.models import Event
 
 urlpatterns = [
     path('admin/filebrowser/', site.urls),
     path('admin/', admin.site.urls),
-    path('', include('landing.urls')),
+    path('', TemplateView.as_view(template_name="landing/landing.html")),
     path('posts/', include('modposting.urls')),
     path('product/', include('products.urls')),
+    path('events/', include('events.urls')),
     path('basket_adding/', include('orders.urls')),
     path('checkout/', include('checkout.urls')),
+    path('about/', TemplateView.as_view(template_name="about/about.html")),
+    path('education/', TemplateView.as_view(template_name="education/education.html")),
+    path('hall/', TemplateView.as_view(template_name="hall/hall.html")),
+    path('contacts/', TemplateView.as_view(template_name="contacts/contacts.html")),
     re_path(r'^tinymce/', include('tinymce.urls')),
-]
+    ]
 if settings.DEBUG:
     urlpatterns += static(
         settings.STATIC_URL, document_root=settings.STATIC_ROOT)

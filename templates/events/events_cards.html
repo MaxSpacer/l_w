@@ -1,0 +1,21 @@
+{% block events_cards %}
+<a href="{% url 'event_n' event_item.id %}" id="custom-card" class="card mb-3">
+    <!-- <div id="custom-card" class="card mb-3"> -->
+        <div class="card-header p-2">
+            <h5 class="card-title mb-1">{{ event_item.name }}</h5>
+        </div>
+        <div class="card-body">
+                <img class="img-fluid card-img-medium float-left mr-2 mb-1" src="{{ event_item.image.url }}" alt="Card image cap">
+            <p class="card-text">
+                {{ event_item.description|truncatechars_html:500 }}
+            </p>
+        </div>
+        <div class="card-footer p-1 text-right">
+            <small class="text-muted">
+                {{ event_item.publicated }}
+            </small>
+        </div>
+    <!-- </div> -->
+</a>
+
+{% endblock events_cards %}

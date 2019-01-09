@@ -2,6 +2,64 @@
 {% load static %}
 
 <div class="header">
+{% comment %}
+{% endcomment %}
+
+{% if request.path != '/' %}
+<div class="container fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="text-center">
+            <a class="navbar-brand" href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid">
+
+                <p id="nowDate-main" class="text-monocase m-0">
+                    <span class="p-1">
+                        {{ nowDate|date:'d.m.Y H:i' }} MSK
+                    </span>
+                </p>
+                <span></span>
+
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <nav id="main-nav" class="">
+                <ul class="nav flex-column flex-md-row align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase active" href="/about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="/education">Обучение</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="/events">Мероприятия</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="/hall">Закрытый клуб</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="/contacts">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+    {% else %}
+    <nav class="navbar bg-transparent">
+        <div class="main-logo mx-auto py-2 text-center">
+            <a href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid"></a>
+            <p id="nowDate" class="text-monocase m-0">
+                <span class="p-1">
+                    {{ nowDate|date:'d.m.Y H:i' }} MSK
+                </span>
+            </p>
+            <span></span>
+        </div>
+    </nav>
+    {% endif %}
+
+</div>
     <!-- burger -->
     <!-- <div class="menu "> <span></span> </div>
     <nav id="nav">
@@ -13,67 +71,28 @@
             <li><a target="_blank" href="https://www.instagram.com/ravi_singh_7/">Portfolio</a></li>
             <li><a target="_blank" href="https://500px.com/ravi7284007">Contact</a></li>
         </ul>
-    </nav>ml-md-auto
+    </nav>
     <div class="overlay"></div> -->
 
 
     <!-- logo -->
-    <div class="container">
+
+    <!-- <div class="container">
         <div class="row-fluid">
-            <div class="pt-1 pt-sm-4 mx-auto">
-            <!-- <div class="col-lg-5 col-sm-12 pt-lg-5 mx-auto"> -->
+            <div class="py-2 my-1 mx-auto">
                     <div class="text-center">
                         <a class="" href="/"><img src="{% static 'img/logo_medium.png' %}" alt="" class="img-fluid"></a>
-                        <p id="nowDate">
+                        <p id="nowDate" class="text-monocase m-0">
+                        <span class="p-1">
                             {{ nowDate|date:'d.m.Y H:i' }} MSK
+                        </span>
                         </p>
                     <span></span>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-            <div class="mx-auto">
-                <nav id="main-nav">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- <nav id="main-nav" class="show mx-auto">
-                    <ul class="main">
-                    <li><a target="_blank" href="https://www.facebook.com/ravi7284007">Hi There! Ravi</a></li>
-                    <li><a target="_blank" href="https://www.facebook.com/ravi7284007">About ME</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/ravi_singh_7/">Portfolio</a></li>
-                    <li><a target="_blank" href="https://500px.com/ravi7284007">Contact</a></li>
-                    </ul>
-                </nav> -->
-            </div>
-        </div
-    </div>
-
+    </div> -->
 
 </div>
-
-
-
 
 {% endblock header %}

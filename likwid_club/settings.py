@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'orders',
     'products',
     'checkout',
+    'events',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'likwid_club.context_processors.getting_now_date',
                 'orders.context_processors.getting_basket_info',
             ],
         },
@@ -113,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
