@@ -46,12 +46,12 @@
           font-size: 14px;
           padding-bottom: 10px !important;
           padding-top: 10px !important;
-          transition: all 1.5s ease;
+          transition: all 0.5s ease;
         }
         nav.navbar.shrink .navbar-toggler {
           margin: 8px 15px 8px 0;
           padding: 4px 5px;
-          transition: all 1.5s ease;
+          transition: all 0.5s ease;
         }
         .collapse{
 
@@ -63,10 +63,7 @@
  }
 
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-
- }
+@media (min-width: 992px) { ... }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -83,7 +80,7 @@
     #navbarCollapse {
         position: fixed;
         top: 70px;
-        right: 0;
+        right: 15px;
         left: auto;
         z-index: 1030;
         background-color: #111;
@@ -98,7 +95,7 @@
     .navbar-brand img {
         max-height: 40px;
     }
-    .navbar {
+    .header .container {
         background-color: #111;
     }
     #nowDate-main {
@@ -138,10 +135,12 @@
     .nav-link{
         padding: 10px;
     }
+
+    .main {
+        padding-top: 140px;
+    }
+
  }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) { ... }
-
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }

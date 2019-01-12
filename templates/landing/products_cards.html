@@ -17,7 +17,6 @@
 		</li>
 	</ul>
 	<div class="card-footer">
-
 		<form class="formBuyProduct form-row form-inline justify-content-center" action="{% url 'basket_adding' %}">{% csrf_token %}
 			<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
 			<input type="hidden" class="inBuyProduct form-control" name = "val" value="1" required>
@@ -26,8 +25,6 @@
 			Добавить в корзину.
 			</button>
 		</form>
-
-		<!-- <a href="#" class="btn btn-success">Go somewhere</a> -->
 	</div>
 </div>
 {% endblock products_cards %}

@@ -2,64 +2,30 @@
 {% block content %}
 {% load static %}
 
+
 <div class="container">
    <div class="row">
-        <div class="col-lg-6">
-           <div class="product-image-item">
-               <img src="{{ event.image.url }}" class="img-fluid">
-           </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card-deck">
-                <div class="card text-center">
-                	<div class="card-header">
-                		<h5 class="card-title">{{ event.name }}</h5>
-                        <ul class="nav nav-tabs nav-fill card-header-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" id="description-tab" active" href="#description">Описание</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" id="detail-tab" href="#details">Детали</a>
-                            </li>
-                        </ul>
-                	</div>
-                	<div class="card-body float-right">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                                <p class="card-text">
-                                    {{ event.content }}
-                                </p>
-                            </div>
-                            <div class="tab-pane" id="details" role="tabpanel" aria-labelledby="detail-tab">
-                                <p class="card-text">
-                                {{ event.name }}
-                                </p>
-                            </div>
-                        </div>
-                	</div>
-                	<ul class="list-group list-group-flush">
-                		<li class="list-group-item">
-                			{{ event.publicated }}.
-                		</li>
-                	</ul>
-                	<div class="card-footer p-1">
-                        <form class="formBuyProduct" action="{% url 'basket_adding' %}">{% csrf_token %}
-                            <div class="col-sm-4 my-1">
-                                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                                <input type="number" class="inBuyProduct form-control" placeholder="Шт." min="0" max="99" value="1" required>
-                            </div>
-                            <div class="col-sm-8 my-1">
-                                <button type="submit" class="inBuyBtn btn btn-success btn-block" data-product_id="{{ event.id }}" data-product_name="{{ event.name }}"
-                                data-product_price="{{ event.publicated }}">
-                                Добавить в корзину.
-                                </button>
-                            </div>
-                        </form>
-
-                	</div>
-                </div>
-            </div>
-        <div>
+       <div id="custom-card" class="card mb-3">
+               <div class="card-header p-2">
+                   <h5 class="card-title mb-1">{{ event.name }}</h5>
+               </div>
+               <div class="card-body">
+                   <img class="img-fluid card-img-medium float-left mr-2 mb-1" src="{{ event.image.url }}" alt="Card image cap">
+                   <p class="card-text">
+                       {{ event.description|truncatechars_html:500 }}
+                   </p>
+                   <div class="content">
+                       {{ event.content | safe }}
+                   </div>
+               </div>
+               <div class="card-footer p-1 text-right">
+                   <small class="text-muted">
+                       {{ event.publicated }}
+                   </small>
+               </div>
+       </div>
     </div>
 </div>
+
+
 {% endblock content %}

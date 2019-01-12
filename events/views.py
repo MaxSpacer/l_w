@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from events.models import Event
 from django.utils import timezone
-#
+
+
 def events_list(request):
 
     session_key = request.session.session_key
@@ -14,7 +15,6 @@ def events_list(request):
     # events = ListView.as_view(queryset=Event.objects.filter(is_active=True, publicated__lte=date.datetime.now() ).order_by("publicated"),template_name="events/events_cards.html")),
     print(events)
     return render(request, 'events/events.html', locals())
-
 
 
 def event(request, event_id):

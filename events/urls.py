@@ -16,11 +16,8 @@ Including another URLconf
 from django.urls import re_path, path
 from django.views.generic import ListView
 from events import views
-# from events.models import Event
-# from datetime import date
 
 urlpatterns = [
-    # path('', ListView.as_view(queryset=Event.objects.filter(is_active=True, publicated__lte=date.datetime.now() ).order_by("publicated"),template_name="events/events_cards.html")),
     path('', views.events_list, name='eventslist_n'),
     path('<int:event_id>/', views.event, name='event_n'),
 ]
