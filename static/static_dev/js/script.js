@@ -1,10 +1,11 @@
 $(window).scroll(function() {
     if ($(document).scrollTop() > 50) {
-        $('nav').addClass('shrink');        
+        $('nav').addClass('shrink');
     } else {
         $('nav').removeClass('shrink');
     }
 });
+
 
 
 
@@ -92,4 +93,10 @@ $(document).ready(function() {
         basketUpdating(product_id, numb, is_delete=true)
         reshowBasket();
     });
+
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+
+
 });

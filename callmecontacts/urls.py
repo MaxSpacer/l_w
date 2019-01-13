@@ -1,4 +1,4 @@
-"""coolbed_proj URL Configuration
+""" URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -13,13 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import re_path, path
-# from products import views
-from orders import views
-
-
+from django.urls import path
+from . import views
 urlpatterns = [
-    path('', views.basket_adding, name='basket_adding'),
-    # path('', views.checkout, name='checkout'),
-    # re_path(r'(?P<product_id>[0-9])/$', views.product, name='product_n'),
+    path('', views.callme, name='callme'),
 ]

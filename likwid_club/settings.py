@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'products',
     'checkout',
     'events',
+    'phonenumber_field',
+    # 'callmecontacts',
 ]
 
 MIDDLEWARE = [

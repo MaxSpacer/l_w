@@ -22,15 +22,18 @@
         {% else %}
         <body class="d-flex flex-column justify-content-center h-100">
         {% endif %}
-      <div class="wrapper">
+        <div class="wrapper">
             <form id="form_cs" class="form-inline">{% csrf_token %}
                 <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <div class="wrapper-content">
                 <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-              </form>
+            </form>
+        </div>
 
-            </div>
-      </div>
+
+<!-- calme -->
+{% include "includes/callme.html" %}
+
+
 <!-- header -->
     {% include "includes/header.html" %}
     {% if request.path != '/' %}
@@ -38,9 +41,11 @@
     {% else %}
         <main role="main" class="">
     {% endif %}
+
+
     {% block content %}
     {% endblock content %}
-    </main>
+        </main>
 
 
 

@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="landing/landing.html")),
     path('posts/', include('modposting.urls')),
+    # path('callme/', include('callmecontacts.urls')),
     path('product/', include('products.urls')),
     path('events/', include('events.urls')),
     path('basket_adding/', include('orders.urls')),
