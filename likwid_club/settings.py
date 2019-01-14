@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # External apps
+    'bootstrap_modal_forms',
+    'widget_tweaks',
+    # Project apps
+    'accounts',
     'landing',
     'modposting',
     'orders',

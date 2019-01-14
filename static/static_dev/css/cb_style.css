@@ -42,9 +42,15 @@ a:hover {
 /* [19:41, 22.12.2018] Елена: #081B3C */
 /* .card { background-color: rgba(8, 27, 60, 0.5); } */
 
-/* [19:44, 22.12.2018] Елена: #393939 */
+/* [19:44, 22.12.2018] Елена: #393939  .modal-content*/
 .card ,#nowDate span{ background-color: rgba(57, 57, 57, 0.7); }
+.modal-content{ background-color: rgba(57, 57, 57, 1); }
 
+.btn-dark {
+    /* color    : #fff; */
+    background-color: #151515;
+    /* border-color: #343a40; */
+}
 
 /* [19:46, 22.12.2018] Елена: #002222 */
 /* .card { background-color: rgba(0, 34, 34, 0.7); } */
@@ -144,8 +150,18 @@ a:hover {
 
 /*  NAV
 ========================================== */
+    .message{
+        /* position: fixed;
+        width: 100%;
+        opacity: 0.5;
+        top: 0px;
+        margin: 0px;
+        min-height: 200px;
+        height: 100%;
+        background-color: #000;
+        z-index: 1000; */
 
-
+    }
 
 
 /*  Main MENU landing
@@ -217,6 +233,10 @@ padding: 1% 4% !important; */
 
 /* footer
 ========================================== */
+
+
+
+
 
 /* ==========================================
 footer end */

@@ -24,16 +24,10 @@
         {% endif %}
         <div class="wrapper">
             <form id="form_cs" class="form-inline">{% csrf_token %}
-                <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-                <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
             </form>
         </div>
-
-
-<!-- calme -->
-{% include "includes/callme.html" %}
-
-
+        <!-- modal window for forms -->
+        {% include "_modal.html" %}
 <!-- header -->
     {% include "includes/header.html" %}
     {% if request.path != '/' %}
@@ -76,6 +70,21 @@
     </script>
 
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+
+
+    {% block extrascripts %}
+      <script type="text/javascript">
+        $(function () {
+          // Log in & Sign up buttons
+          $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
+          $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
+
+          // Create book button
+          $(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
+        });
+      </script>
+    {% endblock extrascripts %}
 
   </body>
 </html>

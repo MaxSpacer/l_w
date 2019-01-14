@@ -2,9 +2,9 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.db import models
 
 
-class Callmecontacts(models.Model):
-    contact_name = models.CharField(max_length=32, default=None)
-    contact_phone = PhoneNumberField()
+class Callmecontact(models.Model):
+    contact_name = models.CharField(verbose_name="Имя", max_length=32, default=None)
+    contact_phone = PhoneNumberField(verbose_name="Телефон")
     is_sended = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)

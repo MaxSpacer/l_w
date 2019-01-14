@@ -7,9 +7,9 @@
     {% endcomment %}
     {% if request.path != '/' %}
     <div class="container fixed-top">
-        <nav class="navbar navbar-expand-md navbar-dark">
+        <nav class="navbar navbar-expand-md navbar-dark flex-nowrap">
             <div class="text-center">
-                <a class="navbar-brand" href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid">
+                <a class="navbar-brand mr-0" href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid">
                     <p id="nowDate-main" class="text-monocase m-0">
                         <span class="p-1">
                             {{ nowDate|date:'d.m.Y H:i' }} MSK
@@ -18,28 +18,14 @@
                     <span></span>
                 </a>
             </div>
-
-<!--
-            <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-            <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-            <!------ Include the above in your HEAD tag ---------->
-
-            <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-            <div class="container">
-            	<div class="row">
-            		<!-- Button trigger modal -->
-            <button class="btn btn-primary btn-lg"  title="Share this content" data-toggle="modal" data-target="#myModal">
-              <i class="fa fa-share-alt"></i> Share
-            </button>
-
-
+              <!-- Button trigger modal -->
+            <i class="fas fa-phone-square fa-lg create-callme btn btn-dark order-md-3" type="button" name="button"></i>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
                 <nav id="main-nav" class="">
-                    <ul class="nav flex-column flex-md-row align-items-end">
+                    <ul class="nav flex-column flex-md-row">
                         <li class="nav-item">
                             <a class="nav-link text-uppercase active align-baseline" href="/about">О нас</a>
                         </li>
@@ -60,8 +46,8 @@
             </div>
         </nav>
         {% else %}
-        <nav class="navbar bg-transparent">
-            <div class="main-logo mx-auto py-2 text-center">
+        <nav class="navbar bg-transparent justify-content-center">
+            <div class="main-logo py-2 text-center">
                 <a href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid"></a>
                 <p id="nowDate" class="text-monocase m-0">
                     <span class="p-1">
@@ -69,6 +55,20 @@
                     </span>
                 </p>
                 <span></span>
+                <!-- Messages -->
+               <div class="message">
+                {% if messages %}
+                  {% for message in messages %}
+                    <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0 text-left" role="alert" {% endif %}>
+                      {{ message }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+               </div>
+               <!-- End Messages -->
             </div>
         </nav>
         {% endif %}
