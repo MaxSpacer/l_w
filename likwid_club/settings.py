@@ -180,7 +180,7 @@ TINYMCE_DEFAULT_CONFIG = {
 
 
 #uncomment
-# try:
-#     from .settings_prod import *
-# except:
-#     pass
+try:
+    from .settings_prod import *
+except:
+    pass
