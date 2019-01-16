@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
 from products.models import Product
-
+from deployutils.main import disable_for_loaddata
 
 class Status_order(models.Model):
     status_name = models.CharField(max_length=24, blank=True, null=True, default=None)
@@ -60,6 +60,7 @@ class ProductinOrder(models.Model):
         self.total_price = self.qty * self.price_per_item
         super(ProductinOrder, self).save(*args, **kwargs)
 
+@disable_for_loaddata
 def product_in_order_post_save(sender, instance, created, **kwargs):
     order = instance.order
     all_products_in_order = ProductinOrder.objects.filter(order=order, is_active=True)
