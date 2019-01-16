@@ -1,0 +1,249 @@
+
+body {
+    background: url("/static/img/bg2.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    /* max-height: 100%; */
+    /* height: 100vh; */
+
+    /* font-family: "Courier New"; */
+    /* font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; */
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Podkova', serif;
+}
+.main {
+    padding-top: 210px;
+}
+
+a {
+    color: white;
+}
+a:hover {
+   color: #848484;
+}
+
+#event-card{
+    min-width: 85%;
+}
+.education-card{
+    min-width: 30%;
+}
+#event-card .card-body {
+    padding: 0.7rem;
+}
+
+/*  BACKGROUND CARDS & TRANSPARENT
+========================================== */
+
+/* [19:39, 22.12.2018] Елена: #251E2F */
+/* .card { background-color: rgba(37, 30, 47, 0.5); } */
+
+
+/* [19:41, 22.12.2018] Елена: #081B3C */
+/* .card { background-color: rgba(8, 27, 60, 0.5); } */
+
+/* [19:44, 22.12.2018] Елена: #393939  .modal-content*/
+.card ,#nowDate span{ background-color: rgba(57, 57, 57, 0.7); }
+.modal-content{ background-color: rgba(57, 57, 57, 1); }
+
+.btn-dark {
+    /* color    : #fff; */
+    background-color: #151515;
+    /* border-color: #343a40; */
+}
+
+/* [19:46, 22.12.2018] Елена: #002222 */
+/* .card { background-color: rgba(0, 34, 34, 0.7); } */
+
+/*  BACKGROUND CARDS & TRANSPARENT END
+========================================== */
+
+
+
+/*  LOGO & CURRENT DATE
+========================================== */
+
+
+
+/* #nowDate {
+    font-size: 0.9rem;
+}
+#nowDate-main {
+    font-size: 0.9rem;
+} */
+/*      sidebar
+========================================== */
+
+        /*  BURGER MENU  height:150vh;
+        ========================================== */
+/* .menu {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 21;
+    right: 1%;
+}
+.menu span {
+    position: relative;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -1.5px;
+}
+.menu span, .menu span::before, .menu span::after {
+    display: block;
+    width: 26px;
+    right: 0;
+    height: 3px;
+    background-color: #211316;
+    outline: 1px solid transparent;
+    -webkit-transition-property: background-color, -webkit-transform;
+    -moz-transition-property: background-color, -moz-transform;
+    -o-transition-property: background-color, -o-transform;
+    transition-property: background-color, transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.menu span::before, .menu span::after {
+    position: absolute;
+    content: "";
+}
+.menu span::before {
+    top: -9px;
+     width:20px
+}
+.menu span::after {
+    top: 9px;width: 33px;
+}
+.menu.clicked span {
+    background-color: transparent;
+}
+.menu.clicked span::before {
+    -webkit-transform: translateY(9px) rotate(45deg);
+    -moz-transform: translateY(9px) rotate(45deg);
+    -ms-transform: translateY(9px) rotate(45deg);
+    -o-transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);    width: 33px;
+}
+.menu.clicked span::after {
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    -moz-transform: translateY(-9px) rotate(-45deg);
+    -ms-transform: translateY(-9px) rotate(-45deg);
+    -o-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
+}
+.menu.clicked span:before, .menu.clicked span:after {
+    background-color: #ffffff;
+}
+.menu:hover {
+    cursor: pointer;
+} */
+
+/*  NAV
+========================================== */
+    .message{
+        /* position: fixed;
+        width: 100%;
+        opacity: 0.5;
+        top: 0px;
+        margin: 0px;
+        min-height: 200px;
+        height: 100%;
+        background-color: #000;
+        z-index: 1000; */
+
+    }
+
+
+/*  Main MENU landing
+========================================== */
+
+#main-nav ul a:before {
+    display: inline-block;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4rem;
+    font-weight: 400;
+    content: "\f111";
+    padding: 5px;
+    padding-bottom: 8px;
+    vertical-align: middle;
+}
+
+/*
+==========================================
+font-style: normal;
+    Main MENU landing END
+ */
+
+
+
+.table td {
+    vertical-align: middle;
+    padding: .45rem;
+}
+
+.input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+.input[type=number]::-webkit-inner-spin-button,
+.input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+
+.card-img-small {
+	max-width: 20%;
+	max-height: 20%;
+}
+
+.card-img-medium {
+	max-width: 30%;
+    max-height: 128px;
+}
+.card-img-edu {
+	/* max-width: 30%; */
+    max-height: 35%;
+}
+
+/* .cards-container {
+padding: 1% 4% !important; */
+/* background-image: url('img/cardback.png');*/ /* Путь к фоновому изображению */
+/* } */
+
+/*
+.carousel.carousel-fade .carousel-item {
+	-webkit-transition: opacity 2s ease-in-out;
+	-moz-transition: opacity 2s ease-in-out;
+	-ms-transition: opacity 2s ease-in-out;
+	-o-transition: opacity 2s ease-in-out;
+	transition: opacity 2s ease-in-out;
+
+} */
+
+
+/* footer
+========================================== */
+
+
+
+
+
+/* ==========================================
+footer end */
