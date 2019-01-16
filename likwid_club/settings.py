@@ -177,3 +177,10 @@ TINYMCE_DEFAULT_CONFIG = {
     'menubar': True,
     'statusbar': True,
     }
+
+
+#uncomment
+# try:
+#     from .settings_prod import *
+# except:
+#     pass
