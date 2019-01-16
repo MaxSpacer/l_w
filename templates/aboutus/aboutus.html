@@ -1,0 +1,22 @@
+{% extends "wrapper.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="cards-container col-12  mx-auto">
+            {% for instance in object_list %}
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5 class="card-title border-bottom">
+                            {{instance.title}}
+                        </h5>
+    	                   {{ instance.content | safe }}
+                   </div>
+               </div>
+    		{% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -15,14 +15,7 @@ Including another URLconf
 """
 from django.urls import re_path, path
 from products import views
-# from django.contrib.staticfiles import views
-# from django.urls import path, re_path, include
-# from filebrowser.sites import site
-# from django.conf import settings
-# from django.conf.urls.static import static
-# app_name = 'products'
 
 urlpatterns = [
     path('<int:product_id>/', views.product, name='product_n'),
-    # re_path(r'(?P<product_id>[0-9])/$', views.product, name='product_n'),
 ]

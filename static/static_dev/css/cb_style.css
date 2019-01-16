@@ -25,10 +25,13 @@ a:hover {
    color: #848484;
 }
 
-#custom-card{
+#event-card{
     min-width: 85%;
 }
-#custom-card .card-body {
+.education-card{
+    min-width: 30%;
+}
+#event-card .card-body {
     padding: 0.7rem;
 }
 
@@ -213,6 +216,10 @@ font-style: normal;
 .card-img-medium {
 	max-width: 30%;
     max-height: 128px;
+}
+.card-img-edu {
+	/* max-width: 30%; */
+    max-height: 35%;
 }
 
 /* .cards-container {

@@ -34,12 +34,13 @@ urlpatterns = [
     # path('callme/', include('callmecontacts.urls')),
     path('product/', include('products.urls')),
     path('events/', include('events.urls')),
+    path('educations/', include('educations.urls')),
     path('basket_adding/', include('orders.urls')),
     path('checkout/', include('checkout.urls')),
-    path('about/', TemplateView.as_view(template_name="about/about.html")),
-    path('education/', TemplateView.as_view(template_name="education/education.html")),
+    path('aboutus/', include('aboutus.urls')),
+    path('contacts/', include('contacts.urls')),
+    # path('education/', TemplateView.as_view(template_name="education/education.html")),
     path('hall/', TemplateView.as_view(template_name="hall/hall.html")),
-    path('contacts/', TemplateView.as_view(template_name="contacts/contacts.html")),
     re_path(r'^tinymce/', include('tinymce.urls')),
     ]
 if settings.DEBUG:

@@ -1,42 +1,19 @@
 {% extends "wrapper.html" %}
 {% block content %}
-{% load static %}
 
 <div class="container">
     <div class="row">
-        <div class="cards-container col-12 mx-auto">
-            <!-- <h3>О нас</h3> -->
-            <!-- <p>
-                <img class="alignnone size-full wp-image-2457" src="" alt="line" width="53" height="3">
-            </p> -->
-            <!-- <div class="card-columns"> -->
+        <div class="cards-container col-12  mx-auto">
+            {% for instance in object_list %}
                 <div class="card border-0">
-                    <div class="card-body mw-100">
-                        <!-- <img class="card-img-top card-img-small float-left pr-3" src="{% static 'img/cardleaf.png' %}" alt="Card image cap"> -->
-                        <h5 class="card-title border-bottom">Контакты</h5>
-                        <div class="row justify-content-center pt-2">
-                            <div class="col-md-6">
-                                <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
-                                <!-- Rights-->
-                                <p><span>©&nbsp; </span><span class="copyright-year">2018</span><span>&nbsp;</span><span>Waves</span><span>.&nbsp;</span><span>All Rights Reserved.</span></p>
-                            </div>
-                            <div class="col-md-6">
-                                <address>
-                                    <span class="text-monospace">LIKWID  Club.</span><br>
-                                    1355 Market St, Suite 900<br>
-                                    San Francisco, CA 94103<br>
-                                    <abbr title="Phone">P:</abbr> (123) 456-7890
-                                </address>
-                                <address>
-                                    <span class="text-monospace">e-mail:</span><br>
-                                    <a href="mailto:#">first.last@example.com</a>
-                                </address>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            <!-- </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title border-bottom">
+                            {{instance.title}}
+                        </h5>
+    	                   {{ instance.content | safe }}
+                   </div>
+               </div>
+    		{% endfor %}
         </div>
     </div>
 </div>

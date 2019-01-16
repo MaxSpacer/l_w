@@ -1,0 +1,29 @@
+{% extends "wrapper.html" %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+   <div class="row">
+       <div id="custom-card" class="card mb-3">
+               <div class="card-header p-2">
+                   <h5 class="card-title mb-1">{{ education.name }}</h5>
+               </div>
+               <div class="card-body">
+                   <img class="img-fluid card-img-medium float-left mr-2 mb-1" src="{{ education.image.url }}" alt="Card image cap">
+                   <div class="content">
+                       {{ education.content | safe }}
+                   </div>
+               </div>
+               <div class="card-footer p-1 text-center">
+
+                     <h5>
+                         Стоимость данного обучения: {{ education.price }} RUB
+                     </h5>
+               </div>
+       </div>
+    </div>
+</div>
+
+
+{% endblock content %}

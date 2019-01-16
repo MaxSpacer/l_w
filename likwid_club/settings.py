@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # External apps
+    'phonenumber_field',
     'bootstrap_modal_forms',
     'widget_tweaks',
     # Project apps
@@ -50,7 +51,9 @@ INSTALLED_APPS = [
     'products',
     'checkout',
     'events',
-    'phonenumber_field',
+    'aboutus',
+    'contacts',
+    'educations',
     # 'callmecontacts',
 ]
 
@@ -145,13 +148,6 @@ STATICFILES_DIRS = (
 os.path.join(BASE_DIR, 'static', 'media'),
 os.path.join(BASE_DIR, 'static', 'static_dev'),
 )
-
-
-# # CSRF_COOKIE_DOMAIN = '..localhost'
-# # DOMAIN_NAME = ''
-#
-# CSRF_COOKIE_NAME = 'localhost_csrf'
-# CSRF_COOKIE_DOMAIN = '127.0.0.1:8000'
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
