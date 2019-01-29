@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'aboutus',
     'contacts',
     'educations',
+    'accounts',
+
     # 'callmecontacts',
 ]
 
@@ -124,7 +126,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LOGIN_REDIRECT_URL = '/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LANGUAGE_CODE = 'ru-RU'
 
@@ -181,6 +182,9 @@ TINYMCE_DEFAULT_CONFIG = {
     'statusbar': True,
     }
 
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
 
 #uncomment
 try:

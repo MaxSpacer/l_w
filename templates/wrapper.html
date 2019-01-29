@@ -78,11 +78,13 @@
         $(function () {
           // Log in & Sign up buttons
 
-     {#     // $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});     #}
-     {#     // $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});     #}
+     {#   #}
+        $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});    
+     {#   #}
+        $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
 
 
-          // Create book button
+          // Callme button
           $(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
         });
       </script>
