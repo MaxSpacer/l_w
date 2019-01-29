@@ -13,10 +13,6 @@ from bootstrap_modal_forms.mixins import PassRequestMixin, DeleteAjaxMixin
 
 def landing(request):
     nowDate = datetime.now()
-    # # Render Some Template with a parameter accesible as date
-    # return render(request, 'pages/index.html', {
-    #     'date': myDate or 'locals'
-    # })
     return render(request, 'landing/landing.html', locals())
 
 class CallmeCreateView(PassRequestMixin, SuccessMessageMixin,

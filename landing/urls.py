@@ -15,17 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
-# from django.contrib.staticfiles import views
-# from django.urls import path, re_path, include
-# from filebrowser.sites import site
-# from django.conf import settings
-# from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.landing, name='landing'),
-    # path('', views.Index.as_view(), name='index'),
     path('create/', views.CallmeCreateView.as_view(), name='create_callme'),
-    # path('update/<int:pk>', views.BookUpdateView.as_view(), name='update_book'),
-    # path('read/<int:pk>', views.BookReadView.as_view(), name='read_book'),
-    # path('delete/<int:pk>', views.BookDeleteView.as_view(), name='delete_book')
 ]

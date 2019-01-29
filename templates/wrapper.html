@@ -17,17 +17,17 @@
     <title>Likwid Club</title>
   </head>
   <!-- <body> -->
-        {% if request.path != '/' %}
-        <body class="d-flex flex-column h-100">
-        {% else %}
-        <body class="d-flex flex-column justify-content-center h-100">
-        {% endif %}
-        <div class="wrapper">
-            <form id="form_cs" class="form-inline">{% csrf_token %}
-            </form>
-        </div>
-        <!-- modal window for forms -->
-        {% include "_modal.html" %}
+    {% if request.path != '/' %}
+    <body class="d-flex flex-column h-100">
+    {% else %}
+    <body class="d-flex flex-column justify-content-center h-100">
+    {% endif %}
+    <!-- <div class="wrapper">
+        <form id="form_cs" class="form-inline">{# % csrf_token % #}
+        </form>
+    </div> -->
+    <!-- modal window for forms -->
+    {% include "_modal.html" %}
 <!-- header -->
     {% include "includes/header.html" %}
     {% if request.path != '/' %}
@@ -77,8 +77,10 @@
       <script type="text/javascript">
         $(function () {
           // Log in & Sign up buttons
-          $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
-          $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
+
+     {#     // $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});     #}
+     {#     // $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});     #}
+
 
           // Create book button
           $(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});

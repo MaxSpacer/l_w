@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'widget_tweaks',
     # Project apps
-    'accounts',
+    # 'accounts',
     'landing',
     'modposting',
     'orders',
@@ -122,6 +122,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LANGUAGE_CODE = 'ru-RU'
 

@@ -1,39 +1,39 @@
-{% load widget_tweaks %}
+{% extends "wrapper.html" %}
 
-<form method="post" action="">
-  {% csrf_token %}
+{% block content %}
 
-  <div class="modal-header">
-    <h3 class="modal-title">Log in</h3>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
 
-  <div class="modal-body">
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
 
-    <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
-      {% for error in form.non_field_errors %}
-        {{ error }}
-      {% endfor %}
-    </div>
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
 
-    {% for field in form %}
-      <div class="form-group">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {% render_field field class="form-control" placeholder=field.label autofocus="" %}
-        <div class="{% if field.errors %} invalid{% endif %}">
-          {% for error in field.errors %}
-            <p class="help-block">{{ error }}</p>
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-    <a href="/" class="forgot-password">Forgot your password?</a>
-  </div>
+<div>
+  <td>{{ form.username.label_tag }}</td>
+  <td>{{ form.username }}</td>
+</div>
+<div>
+  <td>{{ form.password.label_tag }}</td>
+  <td>{{ form.password }}</td>
+</div>
 
-  <div class="modal-footer">
-    <button type="submit" class="btn btn-primary" formnovalidate="formnovalidate">Log in</button>
-  </div>
-
+<div>
+  <input type="submit" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</div>
 </form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+{% endblock %}

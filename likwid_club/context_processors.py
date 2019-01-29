@@ -8,4 +8,5 @@ def getting_now_date(request):
     # return render(request, 'pages/index.html', {
     #     'date': myDate or 'locals'
     # })
+    print(request.session.session_key)
     return locals()

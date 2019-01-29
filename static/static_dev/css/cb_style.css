@@ -14,6 +14,101 @@ body {
     /* font-family: 'Poppins', sans-serif; */
     font-family: 'Podkova', serif;
 }
+
+
+
+/*
+<ul class="body_slides">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+
+.body_slides{
+    list-style:none;
+    margin:0;
+    padding:0;
+    z-index:-2;
+    background:#000;}
+.body_slides,
+.body_slides:after{
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;}
+.body_slides:after {
+    content: '';
+    background: transparent url(images/pattern.png) repeat top left;}
+
+
+.body_slides li{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-size:cover;
+    background-repeat:none;
+    opacity:0;
+    -webkit-animation: anim_slides 24s linear infinite 0s;
+    -moz-animation: anim_slides 24s linear infinite 0s;
+    -o-animation: anim_slides 24s linear infinite 0s;
+    -ms-animation: anim_slides 24s linear infinite 0s;
+    animation: anim_slides 24s linear infinite 0s;
+}
+.body_slides li:nth-child(1){
+background-image: url(https://3.bp.blogspot.com/-QWleZT7cwgs/W0NSeV3cdBI/AAAAAAAAAYk/m1NQ1_IbY2MWeYJXrSvKjYuZHFpUzvfigCLcBGAs/s1600/pexels-photo-399629.jpeg)
+}
+.body_slides li:nth-child(2){
+-webkit-animation-delay: 6.0s;
+-moz-animation-delay: 6.0s;
+background-image: url(http://3.bp.blogspot.com/-qVTGNxbqgXg/VYXcRD868NI/AAAAAAAAAH8/yuVildXOTcs/s1600/thief-garrett-eidos-montreal-5881.jpg)
+}
+.body_slides li:nth-child(3){
+-webkit-animation-delay: 12.0s;
+-moz-animation-delay: 12.0s;
+background-image: url(https://3.bp.blogspot.com/-UX645LLIJvo/W0NRhVD2rCI/AAAAAAAAAYQ/KDGWPte1qfkVLf-qR7cage7HA1xYBJfBgCLcBGAs/s1600/most-perila-pautina.jpg)
+}
+.body_slides li:nth-child(4){
+-webkit-animation-delay: 18.0s;
+-moz-animation-delay: 18.0s;
+background-image: url(https://3.bp.blogspot.com/-qjiTvYoQ75w/W0NSExiqwSI/AAAAAAAAAYg/WL5CmFm5e6QPemTMJH9enn8iK2B5tRPXwCEwYBhgL/s1600/pexels-photo-63943-large.jpeg)
+}
+@-webkit-keyframes anim_slides {
+0% {opacity:0;}
+6% {opacity:1;}
+24% {opacity:1;}
+30% {opacity:0;}
+100% {opacity:0;}
+}
+@-moz-keyframes anim_slides {
+0% {opacity:0;}
+6% {opacity:1;}
+24% {opacity:1;}
+30% {opacity:0;}
+100% {opacity:0;}
+}
+
+
+
+
+
+
+
+
+
+ */
+
+
+.alert-success {
+    color: #fff;
+    background-color: rgba(57, 57, 57, 1);
+}
+
+
 .main {
     padding-top: 210px;
 }
@@ -68,103 +163,8 @@ a:hover {
 
 
 
-/* #nowDate {
-    font-size: 0.9rem;
-}
-#nowDate-main {
-    font-size: 0.9rem;
-} */
-/*      sidebar
-========================================== */
-
-        /*  BURGER MENU  height:150vh;
-        ========================================== */
-/* .menu {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    z-index: 21;
-    right: 1%;
-}
-.menu span {
-    position: relative;
-    margin-top: 9px;
-    margin-bottom: 9px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -15px;
-    margin-top: -1.5px;
-}
-.menu span, .menu span::before, .menu span::after {
-    display: block;
-    width: 26px;
-    right: 0;
-    height: 3px;
-    background-color: #211316;
-    outline: 1px solid transparent;
-    -webkit-transition-property: background-color, -webkit-transform;
-    -moz-transition-property: background-color, -moz-transform;
-    -o-transition-property: background-color, -o-transform;
-    transition-property: background-color, transform;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-}
-.menu span::before, .menu span::after {
-    position: absolute;
-    content: "";
-}
-.menu span::before {
-    top: -9px;
-     width:20px
-}
-.menu span::after {
-    top: 9px;width: 33px;
-}
-.menu.clicked span {
-    background-color: transparent;
-}
-.menu.clicked span::before {
-    -webkit-transform: translateY(9px) rotate(45deg);
-    -moz-transform: translateY(9px) rotate(45deg);
-    -ms-transform: translateY(9px) rotate(45deg);
-    -o-transform: translateY(9px) rotate(45deg);
-    transform: translateY(9px) rotate(45deg);    width: 33px;
-}
-.menu.clicked span::after {
-    -webkit-transform: translateY(-9px) rotate(-45deg);
-    -moz-transform: translateY(-9px) rotate(-45deg);
-    -ms-transform: translateY(-9px) rotate(-45deg);
-    -o-transform: translateY(-9px) rotate(-45deg);
-    transform: translateY(-9px) rotate(-45deg);
-}
-.menu.clicked span:before, .menu.clicked span:after {
-    background-color: #ffffff;
-}
-.menu:hover {
-    cursor: pointer;
-} */
-
 /*  NAV
 ========================================== */
-    .message{
-        /* position: fixed;
-        width: 100%;
-        opacity: 0.5;
-        top: 0px;
-        margin: 0px;
-        min-height: 200px;
-        height: 100%;
-        background-color: #000;
-        z-index: 1000; */
-
-    }
 
 
 /*  Main MENU landing
