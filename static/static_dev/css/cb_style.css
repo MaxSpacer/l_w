@@ -16,93 +16,6 @@ body {
 }
 
 
-
-/*
-<ul class="body_slides">
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
-
-
-.body_slides{
-    list-style:none;
-    margin:0;
-    padding:0;
-    z-index:-2;
-    background:#000;}
-.body_slides,
-.body_slides:after{
-    position: fixed;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;}
-.body_slides:after {
-    content: '';
-    background: transparent url(images/pattern.png) repeat top left;}
-
-
-.body_slides li{
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    background-size:cover;
-    background-repeat:none;
-    opacity:0;
-    -webkit-animation: anim_slides 24s linear infinite 0s;
-    -moz-animation: anim_slides 24s linear infinite 0s;
-    -o-animation: anim_slides 24s linear infinite 0s;
-    -ms-animation: anim_slides 24s linear infinite 0s;
-    animation: anim_slides 24s linear infinite 0s;
-}
-.body_slides li:nth-child(1){
-background-image: url(https://3.bp.blogspot.com/-QWleZT7cwgs/W0NSeV3cdBI/AAAAAAAAAYk/m1NQ1_IbY2MWeYJXrSvKjYuZHFpUzvfigCLcBGAs/s1600/pexels-photo-399629.jpeg)
-}
-.body_slides li:nth-child(2){
--webkit-animation-delay: 6.0s;
--moz-animation-delay: 6.0s;
-background-image: url(http://3.bp.blogspot.com/-qVTGNxbqgXg/VYXcRD868NI/AAAAAAAAAH8/yuVildXOTcs/s1600/thief-garrett-eidos-montreal-5881.jpg)
-}
-.body_slides li:nth-child(3){
--webkit-animation-delay: 12.0s;
--moz-animation-delay: 12.0s;
-background-image: url(https://3.bp.blogspot.com/-UX645LLIJvo/W0NRhVD2rCI/AAAAAAAAAYQ/KDGWPte1qfkVLf-qR7cage7HA1xYBJfBgCLcBGAs/s1600/most-perila-pautina.jpg)
-}
-.body_slides li:nth-child(4){
--webkit-animation-delay: 18.0s;
--moz-animation-delay: 18.0s;
-background-image: url(https://3.bp.blogspot.com/-qjiTvYoQ75w/W0NSExiqwSI/AAAAAAAAAYg/WL5CmFm5e6QPemTMJH9enn8iK2B5tRPXwCEwYBhgL/s1600/pexels-photo-63943-large.jpeg)
-}
-@-webkit-keyframes anim_slides {
-0% {opacity:0;}
-6% {opacity:1;}
-24% {opacity:1;}
-30% {opacity:0;}
-100% {opacity:0;}
-}
-@-moz-keyframes anim_slides {
-0% {opacity:0;}
-6% {opacity:1;}
-24% {opacity:1;}
-30% {opacity:0;}
-100% {opacity:0;}
-}
-
-
-
-
-
-
-
-
-
- */
-
-
 .alert-success {
     color: #fff;
     background-color: rgba(57, 57, 57, 1);
@@ -122,9 +35,18 @@ a:hover {
 
 #event-card{
     min-width: 85%;
+    cursor: pointer;
+}
+#event-card:hover {
+  background: rgba(120, 118, 118, 0.7);
 }
 .education-card{
     min-width: 30%;
+    cursor: pointer;
+
+}
+.education-card:hover {
+  background: rgba(120, 118, 118, 0.7);
 }
 #event-card .card-body {
     padding: 0.7rem;
@@ -170,7 +92,7 @@ a:hover {
 /*  Main MENU landing
 ========================================== */
 
-#main-nav ul a:before {
+/* #main-nav ul a:before {
     display: inline-block;
     font-variant: normal;
     text-rendering: auto;
@@ -182,7 +104,7 @@ a:hover {
     padding: 5px;
     padding-bottom: 8px;
     vertical-align: middle;
-}
+} */
 
 /*
 ==========================================

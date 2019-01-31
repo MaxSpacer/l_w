@@ -35,8 +35,8 @@
         }
         nav.navbar.shrink .navbar-brand  img{
           height: 40px;
-          width: 60px;
-          transition: all 1s ease;
+          width: 40px;
+          transition: all 0.5s ease;
         }
 
         nav.navbar.shrink .navbar-brand  p{

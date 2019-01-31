@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'widget_tweaks',
     # Project apps
-    # 'accounts',
     'landing',
     'modposting',
     'orders',
@@ -55,8 +54,8 @@ INSTALLED_APPS = [
     'contacts',
     'educations',
     'accounts',
+    'referals',
 
-    # 'callmecontacts',
 ]
 
 MIDDLEWARE = [

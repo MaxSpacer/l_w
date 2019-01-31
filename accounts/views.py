@@ -11,7 +11,7 @@ from .forms import CustomUserCreationForm, CustomAuthenticationForm
 class SignUpView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):
     form_class = CustomUserCreationForm
     template_name = 'accounts/signup.html'
-    success_message = 'Success: Sign up succeeded. You can now Log in.'
+    success_message = 'Success: Sign up succeeded. You can now <i class="fas fa-info fa-lg login-btn btn btn-dark p-1" type="button" name="button">login</i>.'
     success_url = reverse_lazy('landing')
 
 

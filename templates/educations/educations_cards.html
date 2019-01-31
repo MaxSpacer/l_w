@@ -1,5 +1,5 @@
 {% block educations_cards %}
-    <a class="card text-center education-card mb-3" href="{% url 'education_n' education_item.id %}">
+<div class="card text-center education-card mb-3" onclick="location.href='{% url 'education_n' education_item.id %}';">
     <img class="img-fluid card-img-top card-img-edu" src="{{ education_item.image.url }}" alt="Card image cap">
     <div class="card-header">
         <h5 class="card-title">{{ education_item.name }}</h5>
@@ -10,21 +10,10 @@
 		</p>
 	</div>
 	<div class="card-footer">
-        <!-- <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-            </li>
-        </ul> -->
         {{ education_item.price }} Рублей.
-		<!-- <form class="formBuyProduct form-row form-inline justify-content-center" action="{% url 'basket_adding' %}">{% csrf_token %}
-			<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-			<input type="hidden" class="inBuyProduct form-control" name = "val" value="1" required>
-			<button type="submit" class="inBuyBtn btn btn-success" data-product_id="{{ education_item.id }}" data-product_name="{{ product_image.product.name }}"
-				data-product_price="{{ education_item.price }}">
-			Добавить в корзину.
-			</button>
-		</form> -->
-
 	</div>
-</a>
+</div>
 
 {% endblock educations_cards %}
+
+<div onclick="location.href='http://google.com';"></div>

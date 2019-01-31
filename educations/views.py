@@ -9,7 +9,7 @@ def education_list(request):
     if not session_key:
         request.session.cycle_key()
     # print(request.session.session_key)
-    educations = Education.objects.filter(is_active=True, publicated__lte=timezone.now()).order_by('-publicated')
+    educations = Education.objects.filter(is_active=True, publicated__lte=timezone.now()).order_by('publicated')
     # print(educations)
     return render(request, 'educations/educations.html', locals())
 

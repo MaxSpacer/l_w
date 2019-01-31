@@ -17,5 +17,5 @@ def getting_basket_info(request):
     total_price = 0
     for product_in_basket in products_in_basket:
         total_price += product_in_basket.pb_total_price
-    
+
     return locals()

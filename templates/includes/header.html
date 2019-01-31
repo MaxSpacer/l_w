@@ -27,6 +27,9 @@
                 <nav id="main-nav" class="">
                     <ul class="nav flex-column flex-md-row">
                         <li class="nav-item">
+                            <a class="nav-link text-uppercase active align-baseline" href="/">На главную</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-uppercase active align-baseline" href="/aboutus">О нас</a>
                         </li>
                         <li class="nav-item">
@@ -60,7 +63,7 @@
                 {% if messages %}
                   {% for message in messages %}
                     <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0 text-left" role="alert" {% endif %}>
-                      {{ message }}
+                      {{ message | safe }}
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
