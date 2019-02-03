@@ -1,5 +1,5 @@
 {% block educations_cards %}
-<div class="card text-center education-card mb-3" onclick="location.href='{% url 'education_n' education_item.id %}';">
+<div class="card text-center education-card mb-3" onclick="location.href='{% url 'educations:education_n' education_item.id %}';">
     <img class="img-fluid card-img-top card-img-edu" src="{{ education_item.image.url }}" alt="Card image cap">
     <div class="card-header">
         <h5 class="card-title">{{ education_item.name }}</h5>
@@ -10,7 +10,7 @@
 		</p>
 	</div>
 	<div class="card-footer">
-        {{ education_item.price }} Рублей.
+    <!-- {#   {{ education_item.price }} Рублей. #}   -->
 	</div>
 </div>
 

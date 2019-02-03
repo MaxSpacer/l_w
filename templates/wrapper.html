@@ -78,14 +78,12 @@
         $(function () {
           // Log in & Sign up buttons
 
-     {#   #}
-        $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});    
-     {#   #}
+
+        $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
+
         $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
-
-
-          // Callme button
-          $(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
+		$(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
+		$(".edu-btn").modalForm({formURL: "{% url 'educations:create_eduorder_n' %}"});
         });
       </script>
     {% endblock extrascripts %}

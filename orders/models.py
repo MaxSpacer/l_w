@@ -11,6 +11,7 @@ class Status_order(models.Model):
 
     def __str__(self):
         return "%s" % self.status_name
+        
     class Meta:
         verbose_name = 'Статус заказа'
         verbose_name_plural = 'Статусы заказа'
