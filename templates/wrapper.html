@@ -64,8 +64,8 @@
 
     <script>
     $('.menu, .overlay').click(function () {
-    $('.menu').toggleClass('clicked');
-    $('#nav').toggleClass('show');
+	    $('.menu').toggleClass('clicked');
+	    $('#nav').toggleClass('show');
     });
     </script>
 
@@ -76,14 +76,12 @@
     {% block extrascripts %}
       <script type="text/javascript">
         $(function () {
-          // Log in & Sign up buttons
-
-
         $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
-
         $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
 		$(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
-		$(".edu-btn").modalForm({formURL: "{% url 'educations:create_eduorder_n' %}"});
+		$(".edu-btn").each(function () {
+	 			$(this).modalForm({formURL: $(this).data('id')});
+   			});
         });
       </script>
     {% endblock extrascripts %}

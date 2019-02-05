@@ -8,4 +8,3 @@ class EducationOrderForm(PopRequestMixin, CreateUpdateAjaxMixin, forms.ModelForm
     class Meta:
         model = EducationOrder
         fields = ['customer_name', 'customer_email','customer_phone']
-        # widgets = {'education': HiddenInput()}
