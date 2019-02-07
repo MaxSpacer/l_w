@@ -20,8 +20,7 @@ from django.conf import settings
 from django.contrib.staticfiles import views
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
-# from django.views.generic import ListView
-# from events.models import Event
+
 
 urlpatterns = [
     path('admin/filebrowser/', site.urls),
@@ -38,7 +37,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('aboutus/', include('aboutus.urls')),
     path('contacts/', include('contacts.urls')),
-    # path('education/', TemplateView.as_view(template_name="education/education.html")),
     path('hall/', TemplateView.as_view(template_name="hall/hall.html")),
     re_path(r'^tinymce/', include('tinymce.urls')),
     ]

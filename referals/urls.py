@@ -1,5 +1,5 @@
 
-from django.urls import re_path, path
+from django.urls import re_path
 from referals import views
 
 urlpatterns = [

@@ -22,13 +22,12 @@
     {% else %}
     <body class="d-flex flex-column justify-content-center h-100">
     {% endif %}
-    <!-- <div class="wrapper">
-        <form id="form_cs" class="form-inline">{# % csrf_token % #}
-        </form>
-    </div> -->
+
     <!-- modal window for forms -->
     {% include "_modal.html" %}
-<!-- header -->
+	<!-- message_modal -->
+	{% include "includes/message_modal.html" %}
+	<!-- header -->
     {% include "includes/header.html" %}
     {% if request.path != '/' %}
         <main role="main" class="main">
@@ -36,13 +35,9 @@
         <main role="main" class="">
     {% endif %}
 
-
     {% block content %}
     {% endblock content %}
         </main>
-
-
-
 
 <!-- footer -->
     {% include "includes/footer.html" %}
@@ -72,7 +67,6 @@
     <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 
-
     {% block extrascripts %}
       <script type="text/javascript">
         $(function () {
@@ -84,6 +78,11 @@
    			});
         });
       </script>
+	  <script type="application/javascript">
+	      $(document).ready(function(){
+	          $('#modal_message').modal({show:true});
+	      });
+	  </script>
     {% endblock extrascripts %}
 
   </body>

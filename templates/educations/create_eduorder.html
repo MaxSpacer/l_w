@@ -18,16 +18,10 @@
               {% endfor %}
           </div>
 
-
-
           {% for field in form %}
-          <div class="col-md-6">
-              <label class="d-md-none invisible" for="{{ field.id_for_label }}">{{ field.label }}</label>
-			  {% if field.is_hidden %}
-			  {% render_field field class="form-control" placeholder=field.label %}
-			  {% endif %}
-
-              {% render_field field class="form-control" placeholder=field.label %}
+          <div class="col-md-12">
+              <label class="d-none invisible" for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {% render_field field class="form-control my-1" placeholder=field.label %}
               <div class="{% if field.errors %} invalid{% endif %}">
                   {% for error in field.errors %}
                   <p class="help-block text-warning">{{ error }}</p>

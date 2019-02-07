@@ -11,7 +11,7 @@ def events_list(request):
     print(request.session.session_key)
 
     # events = EventImage.objects.filter(is_active=True, event__publicated__lte=timezone.now()).order_by("publicated")  event__name = '134'
-    events = Event.objects.filter(is_active=True, publicated__lte=timezone.now()).order_by('-publicated')
+    events = Event.objects.filter(is_active=True, publicated__lte=timezone.now()).order_by('-event_date')
     # events = ListView.as_view(queryset=Event.objects.filter(is_active=True, publicated__lte=date.datetime.now() ).order_by("publicated"),template_name="events/events_cards.html")),
     # print(events)
     return render(request, 'events/events.html', locals())

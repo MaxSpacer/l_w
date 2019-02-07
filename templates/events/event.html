@@ -2,13 +2,15 @@
 {% block content %}
 {% load static %}
 
-
 <div class="container">
-   <div class="row">
+   <div class="">
        <div id="education-card" class="card mb-3">
-               <div class="card-header p-2">
-                   <h5 class="card-title mb-1">{{ event.name }}</h5>
-               </div>
+                <div class="card-header p-1">
+                    <h3 class="card-title mb-1">{{ event.name }}</h3>
+                </div>
+				<h5 class="text-right p-1">
+					Дата проведения: {{ event.event_date }}
+				</h5>
                <div class="card-body">
                    <img class="img-fluid card-img-medium float-left mr-2 mb-1" src="{{ event.image.url }}" alt="Card image cap">
                    <p class="card-text">
@@ -20,12 +22,11 @@
                </div>
                <div class="card-footer p-1 text-right">
                    <small class="text-muted">
-                       {{ event.publicated }}
+                       Опубликовано: {{ event.publicated }}
                    </small>
                </div>
        </div>
     </div>
 </div>
-
 
 {% endblock content %}

@@ -1,0 +1,23 @@
+{% block LOGIN_BAR %}
+        <div class="container">
+			<div class="d-flex flex-row d-none">
+				<div class="col-6">
+					<ul class="">
+						{% if user.is_authenticated %}
+						<li>User: {{ user.get_username }}</li>
+						<li><a href="{% url 'logout'%}">Logout</a></li>
+						{% else %}
+						<li>
+							<i class="fas fa-info fa-lg login-btn btn btn-dark p-1" type="button" name="button">login</i>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+				<div class="col-6">
+					<span>
+						<!-- Button trigger modal -->
+						<i class="fas fa-circle fa-lg signup-btn btn btn-dark p-1" type="button" name="button">signup</i>
+						</span
+					</div>
+			</div>
+{% endblock LOGIN_BAR %}

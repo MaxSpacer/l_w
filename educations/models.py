@@ -1,7 +1,11 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from django.utils import timezone
 from tinymce import HTMLField
-from phonenumber_field.modelfields import PhoneNumberField
+from accounts.models import Profile
+# from phonenumber_field.modelfields import PhoneNumberField
+from django.contrib.auth.models import User
 
 
 class EducationCategory(models.Model):
@@ -52,10 +56,12 @@ class StatusEducationOrder(models.Model):
 
 
 class EducationOrder(models.Model):
-    customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
-    customer_email = models.EmailField(max_length=64, blank=True, null=True, default=None)
-    customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
+    customer_name = models.CharField("имя", max_length=64, blank=True, null=True, default=None)
+    customer_email = models.EmailField("электронная почта", max_length=64, blank=True, null=True, default=None)
+    customer_phone = models.CharField("телефон +7XXXXXXXX", max_length=24, blank=True, null=True, default=None)
     education = models.ForeignKey(Education, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
+    referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=False, default=1)
+    # referal_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=False, null=True)
     status = models.ForeignKey(StatusEducationOrder, on_delete=models.SET_DEFAULT, default=1)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

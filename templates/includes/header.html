@@ -19,7 +19,17 @@
                 </a>
             </div>
               <!-- Button trigger modal -->
-            <i class="fas fa-phone-square fa-lg create-callme btn btn-dark order-md-3" type="button" name="button"></i>
+            <!-- <i class="fas fa-phone-square fa-lg create-callme btn btn-dark order-md-3" type="button" name="button"></i> -->
+
+
+						 <i class="fas fa-phone-square fa-lg create-callme btn btn-dark order-md-3" type="button" name="button">
+							 <span class="pulse">
+
+						 </span>
+						 </i>
+
+
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,20 +68,6 @@
                     </span>
                 </p>
                 <span></span>
-                <!-- Messages -->
-               <div class="message">
-                {% if messages %}
-                  {% for message in messages %}
-                    <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0 text-left" role="alert" {% endif %}>
-                      {{ message | safe }}
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                  {% endfor %}
-                {% endif %}
-               </div>
-               <!-- End Messages -->
             </div>
         </nav>
         {% endif %}

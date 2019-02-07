@@ -25,9 +25,11 @@ class Event(models.Model):
 	description = models.TextField(max_length=256,blank=True, null=True, default=None)
 	content = HTMLField('Content', null=True, default=None)
 	is_active = models.BooleanField(default=True)
+	publicated = models.DateTimeField(default=timezone.now, auto_now=False)
+	event_date = models.DateTimeField(default=timezone.now, blank=False, auto_now=False)
 	created = models.DateTimeField(auto_now_add=True , auto_now=False)
 	updated = models.DateTimeField(auto_now_add=False , auto_now=True)
-	publicated = models.DateTimeField(default=timezone.now, auto_now=False)
+
 
 	def __str__(self):
 		return "%s" % self.name

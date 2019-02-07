@@ -6,8 +6,8 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    reflink = models.CharField(max_length=16, blank=False)
-    referals_qty = models.IntegerField(default=0)
+    reflink = models.CharField("www.likwid.club/ref/", max_length=16, blank=False)
+    referals_qty = models.IntegerField("Кол-во рефералов", default=0)
 
     def __str__(self):
         return "%s" % self.user.username
@@ -24,6 +24,6 @@ def create_user_profile(sender, instance, created, **kwargs):
         reflink = get_random_string(4, chars) + str(instance.id)
         Profile.objects.create(user=instance,reflink=reflink)
 
-@receiver(post_save, sender=User)
+# @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
