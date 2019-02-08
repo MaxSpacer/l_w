@@ -4,8 +4,9 @@ from django.db import models
 from django.utils import timezone
 from tinymce import HTMLField
 from accounts.models import Profile
-# from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
+from phonenumber_field.modelfields import PhoneNumberField
+from django.db.models.signals import post_save
 
 
 class EducationCategory(models.Model):
@@ -58,11 +59,13 @@ class StatusEducationOrder(models.Model):
 class EducationOrder(models.Model):
     customer_name = models.CharField("имя", max_length=64, blank=True, null=True, default=None)
     customer_email = models.EmailField("электронная почта", max_length=64, blank=True, null=True, default=None)
-    customer_phone = models.CharField("телефон +7XXXXXXXX", max_length=24, blank=True, null=True, default=None)
+    customer_phone = PhoneNumberField("телефон +7XXXXXXXX", max_length=24, blank=True, null=True, default=None)
     education = models.ForeignKey(Education, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
-    referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=False, default=1)
+    referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
+    # referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=False, default=1)
     # referal_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=False, null=True)
     status = models.ForeignKey(StatusEducationOrder, on_delete=models.SET_DEFAULT, default=1)
+    is_emailed = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -72,6 +75,12 @@ class EducationOrder(models.Model):
     class Meta:
         verbose_name = 'Заказ курса'
         verbose_name_plural = 'Заказы курсов'
+        # app_label = 'Educations'
+
 
     def save(self, *args, **kwargs):
         super(EducationOrder, self).save(*args, **kwargs)
+
+from .signals import send_mail_on_create
+# connect them
+post_save.connect(send_mail_on_create,sender=EducationOrder,dispatch_uid="my_unique_identifier")

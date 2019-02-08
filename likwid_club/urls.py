@@ -34,10 +34,9 @@ urlpatterns = [
     path('events/', include('events.urls')),
     path('educations/', include('educations.urls')),
     path('basket_adding/', include('orders.urls')),
-    path('checkout/', include('checkout.urls')),
+    # path('checkout/', include('checkout.urls')),
     path('aboutus/', include('aboutus.urls')),
     path('contacts/', include('contacts.urls')),
-    path('hall/', TemplateView.as_view(template_name="hall/hall.html")),
     re_path(r'^tinymce/', include('tinymce.urls')),
     ]
 if settings.DEBUG:

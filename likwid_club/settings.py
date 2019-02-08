@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'tinymce',
+    'babel',
     'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,15 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # External apps
-    'phonenumber_field',
     'bootstrap_modal_forms',
+    'phonenumber_field',
     'widget_tweaks',
     # Project apps
     'landing',
     'modposting',
     'orders',
     'products',
-    'checkout',
+    # 'checkout',
     'events',
     'aboutus',
     'contacts',
@@ -181,12 +182,18 @@ TINYMCE_DEFAULT_CONFIG = {
     'statusbar': True,
     }
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = '1025'
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = '1025'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "info@likwid.club"
+EMAIL_HOST_PASSWORD = "Il123456!"
+EMAIL_USE_SSL = True
+# SERVER_EMAIL = EMAIL_HOST_USER
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 #uncomment
-try:
-    from .settings_prod import *
-except:
-    pass
+# try:
+#     from .settings_prod import *
+# except:
+#     pass
