@@ -1,5 +1,5 @@
 $(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
+    if ($(document).scrollTop() > 10) {
         $('nav').addClass('shrink');
     } else {
         $('nav').removeClass('shrink');
@@ -85,11 +85,7 @@ $(document).ready(function() {
 
         $('.dropdown-menu').addClass('show');
     };
-    //
-    
-
-
-    $(document).on('click', '.delete-item', function(e) {
+    	$(document).on('click', '.delete-item', function(e) {
         e.preventDefault();
         product_id = $(this).data("product_id")
         numb = 0;

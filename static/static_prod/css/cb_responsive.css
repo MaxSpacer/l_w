@@ -30,15 +30,13 @@
             box-shadow: 0 1px 0 0 #dadada;
             position: fixed;
             left: 0px;
-            transition: all 1.5s ease;
-
+            transition: all 0s ease;
         }
         nav.navbar.shrink .navbar-brand  img{
           height: 40px;
-          width: 60px;
-          transition: all 1s ease;
+          width: 40px;
+          transition: all 0s ease;
         }
-
         nav.navbar.shrink .navbar-brand  p{
             display: inline-block;
         }
@@ -46,20 +44,17 @@
           font-size: 14px;
           padding-bottom: 10px !important;
           padding-top: 10px !important;
-          transition: all 0.5s ease;
+          transition: all 0s ease;
         }
         nav.navbar.shrink .navbar-toggler {
           margin: 8px 15px 8px 0;
           padding: 4px 5px;
-          transition: all 0.5s ease;
+          transition: all 0s ease;
         }
         .collapse{
-
         	padding-right:30px;
         }
-
      }
-
  }
 
 /* // Large devices (desktops, 992px and up) */
