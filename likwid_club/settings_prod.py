@@ -5,7 +5,7 @@ ALLOWED_HOSTS = ['46.101.118.243']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'likwid_db',
+        'NAME': 'likwid_db1',
         'USER': 'django_likwid',
         'PASSWORD': 'Dl123456',
         'HOST': 'localhost',
