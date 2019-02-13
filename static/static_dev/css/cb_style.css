@@ -25,9 +25,9 @@ body {
 
     padding: 0.3rem;
 }
-.main {
+/* .main {
     padding-top: 105px;
-}
+} */
 
 a {
     color: black;
@@ -36,7 +36,9 @@ a:hover {
    color: #848484;
    /* color: #848484; */
 }
-
+.pt-10{
+    padding-top: 105px;
+}
 #event-card{
     min-width: 85%;
     cursor: pointer;
@@ -44,24 +46,19 @@ a:hover {
 #event-card:hover {
   background: rgba(120, 118, 118, 0.7);
 }
-.main-card{
-    /* min-width: 30%; */
-    /* max-width: 31%; */
 
-
-}
 .education-card{
-    /* min-width: 30%; */
+    /* min-width: 20%; */
     cursor: pointer;
 }
 .education-card img{
     /* background-color: white; */
     /* color: white; */
-    max-height: 150px;
+    max-height: 180px;
 }
 .education-card .format{
     right:7%;
-    top: 30%;
+    top: 35%;
     /* background-color: white; */
     /* color: white; */
     /* max-height: 150px; */
@@ -84,9 +81,15 @@ a:hover {
 /* .card { background-color: rgba(8, 27, 60, 0.5); } */
 
 /* [19:44, 22.12.2018] Елена: #393939  .modal-content*/
-.card ,
 /* #nowDate span{ background-color: rgba(255, 255, 230, 0.7); } */
-.modal-content{ background-color: rgba(255, 255, 230, 1); }
+.modal-content{ background-color: rgba(249, 217, 106, 1); }
+.modal-header p { font-size: 1.2em;}
+/* .modal-content .close{ padding: 5px; } */
+.modal-content .modal-header{
+    background-color: rgba(249, 217, 106, 1); }
+     /* background-color: rgba(234, 179, 163, 1); */
+     /* padding: 7px; */
+ }
 
 .btn-dark {
     /* color    : #fff; */
@@ -203,6 +206,8 @@ padding: 1% 4% !important; */
   top: -2px;
   bottom: -2px;
   cursor: pointer;
+  -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+  -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
   box-shadow: 0 0 0 rgba(255,255,255, 0);
   animation: pulse 1.9s infinite;
 }
@@ -213,24 +218,33 @@ padding: 1% 4% !important; */
 @-webkit-keyframes pulse {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0.9);
+    -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.9);
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0.9);
   }
   70% {
       -webkit-box-shadow: 0 0 0 10px rgba(255,255,255, 0);
+      -moz-box-shadow: 0 0 0 10px rgba(255,255,255, 0);
+      box-shadow: 0 0 0 10px rgba(255,255,255, 0);
   }
   100% {
+      -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+      box-shadow: 0 0 0 0 rgba(255,255,255, 0);
       -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
   }
 }
 @keyframes pulse {
   0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.7);
     -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.7);
     box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
   }
   70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255,255,255, 0.5);
       -moz-box-shadow: 0 0 0 10px rgba(255,255,255, 0.5);
       box-shadow: 0 0 0 10px rgba(204,169,44, 0);
   }
   100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0.3);
       -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.3);
       box-shadow: 0 0 0 0 rgba(255,255,255, 0);
   }

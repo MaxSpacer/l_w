@@ -14,30 +14,20 @@
     <link href='https://fonts.googleapis.com/css?family=Podkova&subset=cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'css/cb_style.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/cb_responsive.css' %}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'img/favicon-32x32.png' %}"/>
 
     <title>Likwid Club</title>
-    <style>
-    /* body {
-     background: #111118;
-     margin: 0;
-   } */
-   .contain {
-     position: absolute;
-     height: 100%;
-     width: 100%;
-     z-index:0;
-   }
-   </style>
+
   </head>
 
   <!-- <body> -->
-    {% if request.path != '/' %}
-    <!-- <div id="container" class="contain"> -->
-    <body class="d-flex flex-column h-100">
-    {% else %}
     <!-- <div id="container" class="contain"> -->
     <body class="d-flex flex-column h-100">
     <!-- <body class="d-flex flex-column justify-content-center h-100"> -->
+    {% if request.path != '/' %}
+    <!-- <div id="container" class="contain"> -->
+    <body class="d-flex flex-column h-100">
+        {% else %}
     {% endif %}
 
     <!-- modal window for forms -->
@@ -46,10 +36,11 @@
 	{% include "includes/message_modal.html" %}
 	<!-- header -->
     {% include "includes/header.html" %}
+
     {% if request.path != '/' %}
-        <main role="main" class="main">
+    <main role="main" class="main pad">
     {% else %}
-        <main role="main" class="main">
+    <main role="main" class="main">
     {% endif %}
 
     {% block content %}
@@ -93,6 +84,9 @@
 		$(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
 		$(".btn-main").modalForm({formURL: "{% url 'main_form' %}"});
 		$(".edu-btn").each(function () {
+	 			$(this).modalForm({formURL: $(this).data('id')});
+   			});
+		$(".btn-event").each(function () {
 	 			$(this).modalForm({formURL: $(this).data('id')});
    			});
         });

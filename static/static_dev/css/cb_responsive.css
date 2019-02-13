@@ -5,6 +5,12 @@
 
 // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+    .create-callme-morfing{
+        display: none;
+    }
+    .pad {
+        padding-top: 105px;
+    }
 
     .for-input-spinner {
         min-width: 130px;
@@ -31,14 +37,22 @@
             background-color: #111;
 
             box-shadow: 0 1px 0 0 #dadada;
+            -moz-box-shadow: 0 1px 0 0 #dadada;
+            -webkit-box-shadow: 0 1px 0 0 #dadada;
             position: fixed;
             left: 0px;
+            -webkit-transition: all 0s ease;
+            -moz-transition: all 0s ease;
+            -o-transition: all 0s ease;
             transition: all 0s ease;
         }
         nav.navbar.shrink .navbar-brand  img{
           height: 40px;
           width: 40px;
           transition: all 0s ease;
+          -webkit-transition: all 0s ease;
+          -moz-transition: all 0s ease;
+          -o-transition: all 0s ease;
         }
         nav.navbar.shrink .navbar-brand  p{
             display: inline-block;
@@ -48,7 +62,10 @@
           padding-bottom: 10px !important;
           padding-top: 10px !important;
           transition: all 0s ease;
-            color: white;
+          -webkit-transition: all 0s ease;
+          -moz-transition: all 0s ease;
+          transition: all 0s ease;
+          color: white;
         }
         nav.navbar.shrink a:hover {
 
@@ -58,6 +75,8 @@
           margin: 8px 15px 8px 0;
           padding: 4px 5px;
           transition: all 0s ease;
+          -webkit-transition: all 0s ease;
+          -moz-transition: all 0s ease;
         }
         .collapse{
         	padding-right:30px;
@@ -74,21 +93,28 @@
  }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    /* #nowDate-main {
-        font-size: 0.85rem;
-    } */
+
+    .pad {
+        padding-top: 60px;
+    }
+    .morfing {
+        display: none;
+    }
+
     #main-nav ul li {
     font-size: 1.7rem;
     }
     #navbarCollapse {
         position: fixed;
-        top: 70px;
+        top: 60px;
         right: 15px;
         left: auto;
         z-index: 1030;
         background-color: #111;
+        /* color: orange; */
     }
-    #main-nav a {
+    #navbarCollapse a{
+        font-size: 1.5em;
         color: white;
     }
 
@@ -96,9 +122,7 @@
 
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-    .main {
-        padding-top: 70px;
-    }
+
 
     .navbar-brand img {
         max-height: 40px;
@@ -146,9 +170,9 @@
         padding: 10px;
     }
 
-    .main {
+    /* .main {
         padding-top: 140px;
-    }
+    } */
 
  }
 

@@ -4,13 +4,9 @@ from django.db import models
 from django.utils import timezone
 from tinymce import HTMLField
 from accounts.models import Profile
-from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db.models.signals import post_save
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
-from django.template.loader import render_to_string
-from django.utils.html import strip_tags
+
 
 class EducationCategory(models.Model):
 	name = models.CharField(max_length=64, blank=True, null=True, default=None)

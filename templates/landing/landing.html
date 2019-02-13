@@ -3,23 +3,27 @@
 {% load static %}
 
 
-<div class="container">
+<div class="container d-none d-sm-block pt-10">
     {% for instance in object_list %}
     <div class="row justify-content-center mb-4">
         {{ instance.content | safe }}
-        <!-- <h3>{# {instance.title} #}</h3> -->
     </div>
         {% endfor %}
-    <!-- <div class="section-top"> -->
-        <!-- <div class="container">
-            <div class="row"> -->
-                <!-- </div>
-                </div> -->
-                <!-- </div> -->
 </div>
 
 <!-- MAIN NAV -->
-    <!-- <main class="container">
+    <div class="container d-sm-none pt-4">
+        <nav class="navbar bg-transparent justify-content-center">
+            <div class="main-logo py-2 text-center">
+                <a href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid"></a>
+                <p id="nowDate" class="text-monocase m-0">
+                    <span class="p-1">
+                        {{ nowDate|date:'d.m.Y H:i' }} MSK
+                    </span>
+                </p>
+                <span></span>
+            </div>
+        </nav>
         <div class="row">
             <div class="py-2 mx-auto">
                 <nav id="main-nav">
@@ -43,7 +47,7 @@
                 </nav>
             </div>
         </div>
-    </main> -->
+    </div>
 <!-- MAIN NAV END -->
 
 

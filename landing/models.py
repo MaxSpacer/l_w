@@ -52,9 +52,9 @@ class Mainformcontact(models.Model):
     def __str__(self):
         return "%s" % self.contact_name
 
-        class Meta:
-            verbose_name = 'Контакт с главной страницы'
-            verbose_name_plural = 'Контакты с главной страницы'
+    class Meta:
+        verbose_name = 'Контакт с главной страницы'
+        verbose_name_plural = 'Контакты с главной страницы'
 
 
 from .signals import send_mail_on_callback

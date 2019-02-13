@@ -1,7 +1,10 @@
 from django.db import models
 from django.utils import timezone
 from tinymce import HTMLField
-# Create your models here.
+from accounts.models import Profile
+from phonenumber_field.modelfields import PhoneNumberField
+from django.db.models.signals import post_save
+
 
 
 class EventCategory(models.Model):
@@ -37,3 +40,43 @@ class Event(models.Model):
 	class Meta:
 		verbose_name = 'Мероприятие'
 		verbose_name_plural = 'Мероприятия'
+
+
+class StatusEventJoiner(models.Model):
+    status_name = models.CharField(max_length=24, blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True , auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.status_name
+
+    class Meta:
+        verbose_name = 'Статус'
+        verbose_name_plural = 'Статусы'
+
+
+class EventJoiner(models.Model):
+    customer_name = models.CharField("имя", max_length=64, blank=True, null=True, default=None)
+    customer_email = models.EmailField("электронная почта", max_length=64, blank=True, null=True, default=None)
+    customer_phone = PhoneNumberField("телефон +7XXXXXXXX", max_length=24, blank=True, null=True, default=None)
+    event = models.ForeignKey(Event, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
+    referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
+    # referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=False, default=1)
+    # referal_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=False, null=True)
+    status = models.ForeignKey(StatusEventJoiner, on_delete=models.SET_DEFAULT, default=1)
+    is_emailed = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __str__(self):
+        return "Заказ № %s %s" % (self.id, self.status.status_name)
+
+    class Meta:
+        verbose_name = 'Подписавшийся на мероприятия'
+        verbose_name_plural = 'Подписавшиеся на мероприятия'
+
+
+from .signals import send_mail_join_event
+
+post_save.connect(send_mail_join_event,sender=EventJoiner,dispatch_uid="my_unique_identifier")
