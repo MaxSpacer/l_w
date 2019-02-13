@@ -3,8 +3,23 @@
 {% load static %}
 
 
+<div class="container">
+    {% for instance in object_list %}
+    <div class="row justify-content-center mb-4">
+        {{ instance.content | safe }}
+        <!-- <h3>{# {instance.title} #}</h3> -->
+    </div>
+        {% endfor %}
+    <!-- <div class="section-top"> -->
+        <!-- <div class="container">
+            <div class="row"> -->
+                <!-- </div>
+                </div> -->
+                <!-- </div> -->
+</div>
+
 <!-- MAIN NAV -->
-    <main class="container">
+    <!-- <main class="container">
         <div class="row">
             <div class="py-2 mx-auto">
                 <nav id="main-nav">
@@ -28,7 +43,7 @@
                 </nav>
             </div>
         </div>
-    </main>
+    </main> -->
 <!-- MAIN NAV END -->
 
 

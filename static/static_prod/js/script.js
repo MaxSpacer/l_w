@@ -6,9 +6,6 @@ $(window).scroll(function() {
     }
 });
 
-
-
-
 $(document).ready(function() {
 
     var form = $('.formBuyProduct');
@@ -96,6 +93,5 @@ $(document).ready(function() {
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
     })
-
 
 });

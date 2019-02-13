@@ -5,17 +5,17 @@
 <div class="header">
     {% comment %}
     {% endcomment %}
-    {% if request.path != '/' %}
+    {% if request.path != '/s' %}
     <div class="container fixed-top">
-        <nav class="navbar navbar-expand-md navbar-dark flex-nowrap">
+        <nav class="navbar navbar-expand-md navbar-dark flex-nowrap p-0">
             <div class="text-center">
                 <a class="navbar-brand mr-0" href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid">
-                    <p id="nowDate-main" class="text-monocase m-0">
+                    <!-- <p id="nowDate-main" class="text-monocase m-0">
                         <span class="p-1">
-                            {{ nowDate|date:'d.m.Y H:i' }} MSK
+                            {# { nowDate|date:'d.m.Y H:i' } #} MSK
                         </span>
                     </p>
-                    <span></span>
+                    <span></span> -->
                 </a>
             </div>
               <!-- Button trigger modal -->
@@ -35,7 +35,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
                 <nav id="main-nav" class="">
-                    <ul class="nav flex-column flex-md-row">
+                    <ul class="nav flex-column flex-md-row justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link text-uppercase active align-baseline" href="/">На главную</a>
                         </li>

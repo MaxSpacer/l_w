@@ -1,17 +1,26 @@
 {% block educations_cards %}
-<div class="card text-center education-card mb-3" onclick="location.href='{% url 'educations:education_n' education_item.id %}';">
-    <img class="img-fluid card-img-top card-img-edu" src="{{ education_item.image.url }}" alt="Card image cap">
-    <div class="card-header">
-        <h5 class="card-title">{{ education_item.name }}</h5>
+<div class="card text-center education-card mb-3"
+    {% if not education_item.is_disabled %}
+    onclick="location.href='{% url 'educations:education_n' education_item.id %}';"
+    {% endif %}
+    >
+    <img class="card-img card-img-edu" src="{{ education_item.image.url }}" alt="Card image cap">
+    <div class="card-img-overlay p-0">
+        <div class="card-header bg-white p-2">
+            <h5 class="card-title mb-1">{{ education_item.category }}</h5>
+        </div>
+        <div class="format position-absolute bg-warning px-2 py-1">
+            {{ education_item.format }}
+        </div>
     </div>
-	<div class="card-body">
-		<p class="card-text">
-		{{ education_item.description|truncatechars_html:250 }}
-		</p>
-	</div>
-	<div class="card-footer">
-    <!-- {#   {{ education_item.price }} Рублей. #}   -->
-	</div>
+    <div class="card-body px-1">
+        <p class="card-text font-weight-bold">
+            {{ education_item.description|truncatechars_html:250 }}
+        </p>
+    </div>
+        <div class="card-footer p-2">
+            {{ education_item.name }}
+        </div>
 </div>
 
 {% endblock educations_cards %}

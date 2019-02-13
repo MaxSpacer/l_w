@@ -7,6 +7,10 @@ class EducationCategoryAdmin(admin.ModelAdmin):
     list_display = [field.name for field in EducationCategory._meta.fields]
 admin.site.register(EducationCategory, EducationCategoryAdmin)
 
+class EducationFormatAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in EducationFormat._meta.fields]
+admin.site.register(EducationFormat, EducationFormatAdmin)
+
 class EducationAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Education._meta.fields]
     list_display_links = ('name','id')
@@ -14,7 +18,6 @@ admin.site.register(Education, EducationAdmin)
 
 class EducationOrderAdmin(admin.ModelAdmin):
 	list_display = [field.name for field in EducationOrder._meta.fields]
-
 admin.site.register(EducationOrder, EducationOrderAdmin)
 
 # class EducationOrderInline(admin.StackedInline):

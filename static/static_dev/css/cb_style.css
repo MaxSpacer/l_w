@@ -1,36 +1,40 @@
 
 body {
-    background: url("/static/img/bg4.png");
+    background: url("/static/img/bg5.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
+    color: black;
     /* max-height: 50%; */
     /* height: 100vh; */
 
     /* font-family: "Courier New"; */
     /* font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; */
     /* font-family: 'Poppins', sans-serif; */
-    font-family: 'Podkova', serif;
+    /* font-family: 'Podkova', serif; */
+    font-family: 'Roboto', sans-serif;
 }
 
-
+/* canvas{position: relative;} */
 .alert-success {
     color: #fff;
     background-color: rgba(57, 57, 57, 1);
 }
+.modal-body {
 
-
+    padding: 0.3rem;
+}
 .main {
-    padding-top: 210px;
+    padding-top: 105px;
 }
 
 a {
-    color: white;
+    color: black;
 }
 a:hover {
    color: #848484;
+   /* color: #848484; */
 }
 
 #event-card{
@@ -40,10 +44,27 @@ a:hover {
 #event-card:hover {
   background: rgba(120, 118, 118, 0.7);
 }
-.education-card{
-    min-width: 30%;
-    cursor: pointer;
+.main-card{
+    /* min-width: 30%; */
+    /* max-width: 31%; */
 
+
+}
+.education-card{
+    /* min-width: 30%; */
+    cursor: pointer;
+}
+.education-card img{
+    /* background-color: white; */
+    /* color: white; */
+    max-height: 150px;
+}
+.education-card .format{
+    right:7%;
+    top: 30%;
+    /* background-color: white; */
+    /* color: white; */
+    /* max-height: 150px; */
 }
 .education-card:hover {
   background: rgba(120, 118, 118, 0.7);
@@ -63,15 +84,21 @@ a:hover {
 /* .card { background-color: rgba(8, 27, 60, 0.5); } */
 
 /* [19:44, 22.12.2018] Елена: #393939  .modal-content*/
-.card ,#nowDate span{ background-color: rgba(57, 57, 57, 0.7); }
-.modal-content{ background-color: rgba(57, 57, 57, 1); }
+.card ,
+/* #nowDate span{ background-color: rgba(255, 255, 230, 0.7); } */
+.modal-content{ background-color: rgba(255, 255, 230, 1); }
 
 .btn-dark {
     /* color    : #fff; */
     background-color: #151515;
+    /* background-color: black; */
     /* border-color: #343a40; */
 }
 
+.btn-darkest{
+    /* background-color: black; */
+
+}
 /* [19:46, 22.12.2018] Елена: #002222 */
 /* .card { background-color: rgba(0, 34, 34, 0.7); } */
 
@@ -87,7 +114,6 @@ a:hover {
 
 /*  NAV
 ========================================== */
-
 
 /*  Main MENU landing
 ========================================== */
@@ -141,7 +167,7 @@ font-style: normal;
 }
 .card-img-edu {
 	/* max-width: 30%; */
-    max-height: 35%;
+    /* max-height: 35%; */
 }
 
 /* .cards-container {
