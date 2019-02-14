@@ -1,12 +1,15 @@
-$(window).scroll(function() {
-    if ($(document).scrollTop() > 10) {
-        $('nav').addClass('shrink');
-    } else {
-        $('nav').removeClass('shrink');
-    }
-});
+// $(window).scroll(function() {
+//     if ($(document).scrollTop() > 10) {
+//         $('nav').addClass('shrink');
+//     } else {
+//         $('nav').removeClass('shrink');
+//     }
+// });
 
-
+// $( ".nav li" ).click(function() {
+//         $('.nav li').removeClass('active');
+//         $(this).addClass('active');
+//     });
 
 
 $(document).ready(function() {

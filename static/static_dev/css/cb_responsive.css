@@ -8,8 +8,10 @@
     .create-callme-morfing{
         display: none;
     }
-    .pad {
-        padding-top: 105px;
+    .education-card{
+        min-width: 200px;
+        max-width: 243px;
+        /* cursor: pointer; */
     }
 
     .for-input-spinner {
@@ -24,9 +26,11 @@
         margin-right: -5px;
         margin-left: -5px;
     }
+    .fixed-top{position:inherit;}
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
     .navbar-brand img {
         max-height: 100px;
     }

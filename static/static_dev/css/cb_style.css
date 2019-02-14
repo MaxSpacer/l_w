@@ -40,7 +40,7 @@ a:hover {
     padding-top: 105px;
 }
 #event-card{
-    min-width: 85%;
+    min-width: 29%;
     cursor: pointer;
 }
 #event-card:hover {
@@ -48,7 +48,7 @@ a:hover {
 }
 
 .education-card{
-    /* min-width: 20%; */
+
     cursor: pointer;
 }
 .education-card img{
@@ -110,8 +110,259 @@ a:hover {
 
 
 
-/*  LOGO & CURRENT DATE
+/*  PHONE BUTTON
 ========================================== */
+aside {
+    position: absolute;
+    right: 60px;
+}
+.reqest-get{
+    position:fixed;
+    z-index:499;
+    width:89px;
+    height:89px;
+    border-radius:50%;
+    background-color: #FF5722;
+    cursor:pointer;
+}
+.reqest-get:before,.reqest-get:after{
+    position:absolute;
+    top:50%;
+    left:50%;
+    border-radius:50%;
+    display:block;
+    visibility:hidden;
+    -webkit-transform:translate3d(-50%, -50%, -1);
+    transform:translate3d(-50%, -50%, -1);
+    content:'';
+    background-color: #FF5722;
+    opacity:0;
+    cursor:default;
+}
+.reqest-get:before{
+     width:109px;
+     height:109px;
+}
+.reqest-get:after{
+    width:127px;
+    height:127px
+}
+@media screen and (min-width: 768px){
+    .reqest-get{
+        display:block
+    }
+}
+@media screen and (min-width: 1379px){
+    .reqest-get{
+        right:calc((100% - 1400px) / 2)
+    }
+}
+.reqest-get_title{
+    position:relative;
+    z-index:2;
+    margin:0;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    font-size:9px;
+    color:#ffffff;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    font-family:"Open Sans", sans-serif;
+    line-height:1
+}
+.reqest-get_title:hover{
+    background-color: #FF5722;
+}
+.reqest-get_title h3{
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.reqest-get_sub-title{
+    width:60px;
+    font-size:17px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.76px;
+    text-shadow:0 1px 1px rgba(141, 219, 21, 0.47);
+    text-align:center;
+}
+.above-mask{
+    z-index:501
+}
+.animation-active{
+    -webkit-animation:shakeCallbackWidget 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    animation:shakeCallbackWidget 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    -webkit-transform:translate(0, 0);
+    -ms-transform:translate(0, 0);
+    transform:translate(0, 0);
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    -webkit-perspective:1000px;
+    perspective:1000px;
+    -webkit-animation-delay:3s;
+    animation-delay:3s;
+}
+.animation-active:before,.animation-active:after{
+     -webkit-backface-visibility:hidden;
+     backface-visibility:hidden;
+     -webkit-perspective:1000px;
+     perspective:1000px
+}
+.animation-active:before{
+    -webkit-animation:pulsateInner 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    animation:pulsateInner 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    -webkit-animation-delay:3s;
+    animation-delay:3s
+}
+.animation-active:after{
+    -webkit-animation:pulsateOuter 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    animation:pulsateOuter 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    -webkit-animation-delay:3s;
+    animation-delay:3s
+}
+.animation-active.pause-animation{
+    -webkit-animation:none;
+    animation:none
+}
+.animation-active.pause-animation:before,.animation-active.pause-animation:after{
+    -webkit-animation:none;
+    animation:none
+}
+@-webkit-keyframes shakeCallbackWidget{
+    2%,18%{
+        -webkit-transform:translate(-1px, 0);
+        transform:translate(-1px, 0);
+    }
+    4%,16%{
+        -webkit-transform:translate(2px, 0);
+        transform:translate(2px, 0);
+    }
+    6%,10%,14%{
+        -webkit-transform:translate(-4px, 0);
+        transform:translate(-4px, 0);
+    }
+    8%,12%{
+        -webkit-transform:translate(4px, 0);
+        transform:translate(4px, 0);
+    }
+    20%{
+        -webkit-transform:translate(0, 0);
+        transform:translate(0, 0);
+    }
+}
+@keyframes shakeCallbackWidget{
+    2%,18%{
+        -webkit-transform:translate(-1px, 0);
+        transform:translate(-1px, 0);
+    }
+    4%,16%{
+        -webkit-transform:translate(2px, 0);
+        transform:translate(2px, 0);
+    }
+    6%,10%,14%{
+        -webkit-transform:translate(-4px, 0);
+        transform:translate(-4px, 0);
+    }
+    8%,12%{
+        -webkit-transform:translate(4px, 0);
+        transform:translate(4px, 0);
+    }
+    20%{
+        -webkit-transform:translate(0, 0);
+        transform:translate(0, 0);
+    }
+}
+@-webkit-keyframes pulsateInner{
+    0%{
+        visibility:visible;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        opacity:0;
+    }
+    20%{
+        opacity:.4;
+    }
+    40%,100%{
+        visibility:hidden;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        opacity:0;
+    }
+}
+@keyframes pulsateInner{
+    0%{
+        visibility:visible;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        opacity:0;
+    }
+    20%{
+        opacity:.4;
+    }
+    40%,100%{
+        visibility:hidden;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        opacity:0;
+    }
+}
+@-webkit-keyframes pulsateOuter{
+    0%{
+        visibility:visible;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        opacity:0;
+    }
+    20%{
+        opacity:.3;
+    }
+    40%,100%{
+        visibility:hidden;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        opacity:0;
+    }
+}
+@keyframes pulsateOuter{
+    0%{
+        visibility:visible;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        transform:translate3d(-50%, -50%, 0) scale(0.1, 0.1);
+        opacity:0;
+    }
+    20%{
+        opacity:.3;
+    }
+    40%,100%{
+        visibility:hidden;
+        -webkit-transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        transform:translate3d(-50%, -50%, 0) scale(1.1, 1.1);
+        opacity:0;
+    }
+}
+/*  PHONE BUTTON END
+========================================== */
+
+
+.active{
+    /* background-color: red; */
+
+}
 
 
 
@@ -193,13 +444,10 @@ padding: 1% 4% !important; */
 ========================================== */
 
 .create-callme {position: relative;}
-.pulse {
+/* .pulse {
   margin:1px;
   display: block;
-  /* width: 44px;
-  height: 44px; */
   border-radius: 9%;
-  /* background: #ffffff; */
   position: absolute;
   left: -2px;
   right: -2px;
@@ -248,6 +496,6 @@ padding: 1% 4% !important; */
       -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.3);
       box-shadow: 0 0 0 0 rgba(255,255,255, 0);
   }
-}
+} */
 /* ==========================================
 pulse_button end */
