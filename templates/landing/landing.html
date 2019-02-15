@@ -3,11 +3,12 @@
 {% load static %}
 
 
-<!-- carousel -->
-{% include "includes/carousel.html" %}
 <div class="container d-none d-sm-block">
+    <!-- carousel -->
+    {% include "includes/carousel.html" %}
+    
     {% for instance in object_list %}
-    <div class="row justify-content-center mb-4">
+    <div class="row p-0">
         {{ instance.content | safe }}
     </div>
         {% endfor %}

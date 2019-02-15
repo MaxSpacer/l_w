@@ -98,9 +98,9 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
-    /* .pad {
+    .pad {
         padding-top: 60px;
-    } */
+    }
     .morfing {
         display: none;
     }
