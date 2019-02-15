@@ -144,9 +144,7 @@
 
 /* // Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-    .footer .social {
-    font-size: 1.8rem;
-    }
+
     .for-input-spinner .input-group {
         max-width: 40px;
     }
