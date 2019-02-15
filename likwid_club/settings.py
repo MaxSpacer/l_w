@@ -190,7 +190,7 @@ EMAIL_HOST_USER = "info@likwid.club"
 EMAIL_HOST_PASSWORD = "Il123456!"
 EMAIL_USE_SSL = True
 #uncomment
-# try:
-#     from .settings_prod import *
-# except:
-#     pass
+try:
+    from .settings_prod import *
+except:
+    pass
