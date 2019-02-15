@@ -113,16 +113,16 @@ a:hover {
 /*  PHONE BUTTON
 ========================================== */
 aside {
-    position: absolute;
-    right: 60px;
+
+    /* right: 60px; */
 }
 .reqest-get{
-    position:fixed;
+    position:static;
     z-index:499;
-    width:89px;
-    height:89px;
+    width:40px;
+    height:40px;
     border-radius:50%;
-    background-color: #FF5722;
+    background-color: white;
     cursor:pointer;
 }
 .reqest-get:before,.reqest-get:after{
@@ -135,17 +135,17 @@ aside {
     -webkit-transform:translate3d(-50%, -50%, -1);
     transform:translate3d(-50%, -50%, -1);
     content:'';
-    background-color: #FF5722;
+    background-color: white;
     opacity:0;
     cursor:default;
 }
 .reqest-get:before{
-     width:109px;
-     height:109px;
+     width:65px;
+     height:65px;
 }
 .reqest-get:after{
-    width:127px;
-    height:127px
+    width:82px;
+    height:82px
 }
 @media screen and (min-width: 768px){
     .reqest-get{
@@ -186,11 +186,11 @@ aside {
     line-height:1
 }
 .reqest-get_title:hover{
-    background-color: #FF5722;
+    background-color: orange;
 }
 .reqest-get_title h3{
-    font-weight: 500;
-    letter-spacing: 2px;
+    /* font-weight: 500; */
+    /* letter-spacing: 2px; */
 }
 .reqest-get_sub-title{
     width:60px;
