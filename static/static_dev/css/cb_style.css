@@ -36,9 +36,12 @@ a:hover {
    color: #848484;
    /* color: #848484; */
 }
-.pt-10{
+/* .container {
+    padding-top: 30px;
+} */
+/* .pt-10{
     padding-top: 105px;
-}
+} */
 #event-card{
     min-width: 29%;
     cursor: pointer;
@@ -182,8 +185,8 @@ aside {
     -webkit-align-items:center;
     -ms-flex-align:center;
     align-items:center;
-    font-family:"Open Sans", sans-serif;
-    line-height:1
+    /* font-family:"Open Sans", sans-serif;
+    line-height:1 */
 }
 .reqest-get_title:hover{
     background-color: orange;
