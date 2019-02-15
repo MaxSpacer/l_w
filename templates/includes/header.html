@@ -7,7 +7,7 @@
     {% endcomment %}
     <div class="container fixed-top">
         {% if request.path != '/' %}
-        <nav class="navbar navbar-expand-md navbar-dark flex-nowrap p-0">
+        <nav class="navbar navbar-expand-md navbar-dark flex-nowrap">
         {% else %}
         <nav class="morfing navbar navbar-expand-md navbar-dark flex-nowrap p-0">
         {% endif %}
@@ -22,40 +22,36 @@
                 </a>
             </div>
 
-            <aside class="reqest-get animation-active">
-
+            <aside class="reqest-get animation-active order-md-3 ml-auto">
                 <h3 id="callbackWidget" class="reqest-get_title">
-                    Request a <span class="reqest-get_sub-title">Call Back</span>
+                  <img src="{% static 'img/phone_but.png' %}" alt="" class="create-callme" type="button" name="button">
+
+
+                    <!-- <span class="reqest-get_sub-title">Call Back</span> -->
                 </h3>
-
-
                 <section id="first_me" class="reqest-modul reqest-modul_request js-callback-request" style="display: none;">
                     <div id="close_me1" class="reqest-modul_close-button js-reqest-modul-close"></div>
-                    <form class="js-callback-form-root">
+                    <!-- <form class="js-callback-form-root">
                         <input type="text" name="phone_no" value="" maxlength="10" id="phone_no" class="phone_nmbr">
-
                         <a onclick="Validate()" class="reqest-modul_button reqest-modul_request-button ">
                             Call me back
                         </a>
-                    </form>
-
-                    <p class="reqest-modul_disclaimer">One of our Travel Agents will call you back within the next <b>59 seconds</b> to discuss your travel plans. By submitting your phone number, you agree to be contacted via phone and/or sms. No booking necessary. Your personal data is 100% safe.</p>
+                    </form> -->
+                    <!-- <p class="reqest-modul_disclaimer">One of our Travel Agents will call you back within the next <b>59 seconds</b> to discuss your travel plans. By submitting your phone number, you agree to be contacted via phone and/or sms. No booking necessary. Your personal data is 100% safe.</p> -->
                 </section>
-
-
             </aside>
 
-			 <i class="fas fa-phone-square fa-lg create-callme btn btn-dark order-md-3 ml-auto mr-1 " type="button" name="button">
+			 <!-- <i class="fas fa-phone-square fa-lg create-callme btn btn-dark order-md-3 ml-auto mr-1 " type="button" name="button">
                <span class="pulse">
                </span>
-			 </i>
+			 </i> -->
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
 
-            <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
+            <div class="collapse navbar-collapse justify-content-center " id="navbarCollapse">
                 <nav id="main_nav" class="">
                     <ul class="nav flex-column flex-md-row justify-content-center">
                         <li class="nav-item">
