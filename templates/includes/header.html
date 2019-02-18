@@ -5,11 +5,11 @@
 <div class="header">
     {% comment %}
     {% endcomment %}
-    <div class="container fixed-top">
+    <div class="container">
         {% if request.path != '/' %}
         <nav class="navbar navbar-expand-md navbar-dark flex-nowrap p-0">
         {% else %}
-        <nav class="morfing navbar navbar-expand-md navbar-dark flex-nowrap">
+        <nav class="d-none d-sm-flex  navbar navbar-expand-md navbar-dark flex-nowrap">
         {% endif %}
             <div class="text-center">
                 <a class="navbar-brand mr-0" href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid">
