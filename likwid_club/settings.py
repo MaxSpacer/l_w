@@ -182,7 +182,7 @@ TINYMCE_DEFAULT_CONFIG = {
     }
 
 
-uncomment
+# uncomment
 try:
     from .settings_prod import *
 except:
