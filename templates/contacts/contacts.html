@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row">
             {% for instance in object_list %}
-                <div class="card border-0 m-3">
-                    <div class="card-body p-2 w-100">
+                <div class="card m-3 w-100">
+                    <div class="card-body p-2">
     	                   {{ instance.content | safe }}
                    </div>
                </div>

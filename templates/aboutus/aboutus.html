@@ -3,16 +3,16 @@
 
 <div class="container">
     <div class="row">
-        <div class="cards-container">
+        <!-- <div class="cards-container"> -->
             {% for instance in object_list %}
-                <div class="card border-0 m-3">
+                <div class="card w-100 m-3">
                     <div class="card-body">
 
     	                   {{ instance.content | safe }}
                    </div>
                </div>
     		{% endfor %}
-        </div>
+        <!-- </div> -->
     </div>
 </div>
 
