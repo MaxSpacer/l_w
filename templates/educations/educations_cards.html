@@ -4,11 +4,11 @@
     onclick="location.href='{% url 'educations:education_n' education_item.id %}';"
     {% endif %}
     >
+    <div class="card-header bg-white p-2">
+        <h5 class="card-title mb-1">{{ education_item.category }}</h5>
+    </div>
     <img class="card-img card-img-edu" src="{{ education_item.image.url }}" alt="Card image cap">
     <div class="card-img-overlay p-0">
-        <div class="card-header bg-white p-2">
-            <h5 class="card-title mb-1">{{ education_item.category }}</h5>
-        </div>
         <div class="format position-absolute bg-warning px-2 py-1">
             {{ education_item.format }}
         </div>

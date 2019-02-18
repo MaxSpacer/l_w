@@ -78,6 +78,9 @@ a:hover {
 /* #nowDate span{ background-color: rgba(255, 255, 230, 0.7); } */
 .modal-content{ background-color: rgba(249, 217, 106, 1); }
 .modal-header p { font-size: 1.2em;}
+.modal-header .close:hover {
+    background-color: white;
+}
 /* .modal-content .close{ padding: 5px; } */
 .modal-content .modal-header{
     background-color: rgba(249, 217, 106, 1); }
@@ -436,7 +439,7 @@ padding: 1% 4% !important; */
 
 } */
 .carousel-item img{
-    
+
 }
 
 /* carousel end
