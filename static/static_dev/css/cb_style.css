@@ -430,7 +430,9 @@ font-style: normal;
 	max-width: 30%;
     max-height: 128px;
 }
-
+.container{
+    padding: 3px;
+}
 
 /* .cards-container {
 padding: 1% 4% !important; */
@@ -445,10 +447,13 @@ padding: 1% 4% !important; */
 	-moz-transition: opacity 2s ease-in-out;
 	-ms-transition: opacity 2s ease-in-out;
 	-o-transition: opacity 2s ease-in-out;
-	transition: opacity 2s ease-in-out;
+	transition: opacity 2s ease-in-out;*
 
-} */
-
+}*/
+.carousel-card {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
 /* carousel end
 ========================================== */
     /* .create-callme {position: relative;} */
