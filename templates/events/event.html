@@ -4,7 +4,7 @@
 
 <div class="container">
    <div class="">
-       <div id="education-card" class="card mb-3">
+       <div id="event-card" class="card mb-3">
                 <div class="card-header p-1">
                     <h3 class="card-title mb-1">{{ event.name }}</h3>
                 </div>
@@ -25,7 +25,7 @@
                        Опубликовано: {{ event.publicated }}
                    </small>
                </div>
-               <div class="btn btn-dark btn-lg btn-block btn-event" type="button" data-id="{% url 'events:join_event_n' event.pk %}"><span>Присоединиться к мероприятию</span></div>
+               <button class="btn btn-dark btn-lg btn-block btn-event" type="button" data-id="{% url 'events:join_event_n' event.pk %}"><span>Присоединиться к мероприятию</span></button>
        </div>
     </div>
 </div>

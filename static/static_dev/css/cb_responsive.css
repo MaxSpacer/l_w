@@ -10,7 +10,7 @@
     }
     .education-card{
         min-width: 200px;
-        max-width: 243px;
+        /* max-width: 243px; */
         /* cursor: pointer; */
     }
 
@@ -26,6 +26,7 @@
         margin-right: -5px;
         margin-left: -5px;
     }
+
 }
     /* .fixed-top{position:inherit;} */
 
