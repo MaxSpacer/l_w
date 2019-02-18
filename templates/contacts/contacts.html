@@ -6,10 +6,7 @@
             <div class="row">
             {% for instance in object_list %}
                 <div class="card border-0 m-3">
-                    <div class="card-body p-2">
-                        <h5 class="card-title border-bottom">
-                            {# {instance.title} #}
-                        </h5>
+                    <div class="card-body p-2 w-100">
     	                   {{ instance.content | safe }}
                    </div>
                </div>
