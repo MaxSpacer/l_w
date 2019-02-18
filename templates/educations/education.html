@@ -19,11 +19,11 @@
                        {{ education.content | safe }}
                    </div>
                </div>
-               <div class="card-footer p-1 text-center">
 
-
-				<i class="fas fa-warning fa-lg edu-btn btn btn-dark btn-lg btn-block" type="button" name="button" data-id="{% url 'educations:create_eduorder_n' education.pk %}"><p>Записаться на обучение!</p></i>
-               </div>
+               <!-- <div class="card-footer"> -->
+                   <div class="btn btn-dark btn-lg btn-block edu-btn" type="button" data-id="{% url 'educations:create_eduorder_n' education.pk %}">Присоединиться к мероприятию</div>
+				<!-- <i class="fas fa-warning fa-lg edu-btn btn btn-dark btn-lg btn-block" type="button" name="button" data-id="{% url 'educations:create_eduorder_n' education.pk %}"><span>Записаться на обучение!</span></i> -->
+               <!-- </div> -->
        </div>
     </div>
 </div>

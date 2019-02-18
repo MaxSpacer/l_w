@@ -58,8 +58,13 @@ a:hover {
 .education-card:hover {
     background: rgba(120, 118, 118, 0.7);
 }
-#event-card .card-body {
+.event-card .card-body {
     padding: 0.7rem;
+}
+.event-card img{
+    /* background-color: white; */
+    /* color: white; */
+    max-height: 180px;
 }
 .no-border{
         border: 0px;
@@ -417,10 +422,7 @@ font-style: normal;
 	max-width: 30%;
     max-height: 128px;
 }
-.card-img-edu {
-	/* max-width: 30%; */
-    /* max-height: 35%; */
-}
+
 
 /* .cards-container {
 padding: 1% 4% !important; */
@@ -438,9 +440,6 @@ padding: 1% 4% !important; */
 	transition: opacity 2s ease-in-out;
 
 } */
-.carousel-item img{
-
-}
 
 /* carousel end
 ========================================== */
