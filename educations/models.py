@@ -42,10 +42,9 @@ class Education(models.Model):
 	price = models.DecimalField(max_digits=10, decimal_places=0, default=0)
 	category = models.ForeignKey(EducationCategory, on_delete=models.SET_DEFAULT, max_length=64, blank=True, null=True, default=None)
 	format = models.ForeignKey(EducationFormat, on_delete=models.SET_DEFAULT, max_length=64, blank=True, null=True, default=None)
-
+	duration = models.IntegerField(default=0)
 	description = models.TextField(max_length=256,blank=True, null=True, default=None)
-	content = HTMLField('Content', null=True, default=None)
-
+	content = HTMLField('Content', blank=True, null=True, default=None)
 	is_disabled = models.BooleanField(default=False)
 	is_active = models.BooleanField(default=True)
 	created = models.DateTimeField(auto_now_add=True , auto_now=False)
@@ -92,12 +91,44 @@ class EducationOrder(models.Model):
     class Meta:
         verbose_name = 'Заказ курса'
         verbose_name_plural = 'Заказы курсов'
-        # app_label = 'Educations'
-
 
     def save(self, *args, **kwargs):
         super(EducationOrder, self).save(*args, **kwargs)
 
-from .signals import send_mail_on_create
 
+class EducationPlanPoint(models.Model):
+    title = models.CharField(max_length=64, blank=True, null=True, default=None)
+    education = models.ForeignKey(Education, on_delete=models.CASCADE, blank=True, null=True, default=None)
+    content = HTMLField('Content', null=True, default=None)
+    order = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True , auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.title
+
+    class Meta:
+        verbose_name = 'Пункт плана курса'
+        verbose_name_plural = 'Пункты плана курса'
+
+
+class EducationResultPoint(models.Model):
+    title = models.CharField(max_length=64, blank=True, null=True, default=None)
+    education = models.ForeignKey(Education, on_delete=models.CASCADE, blank=True, null=True, default=None)
+    content = HTMLField('Content', null=True, default=None)
+    order = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True , auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.title
+
+    class Meta:
+        verbose_name = 'Результат курса'
+        verbose_name_plural = 'Результаты курса'
+
+
+from .signals import send_mail_on_create
 post_save.connect(send_mail_on_create,sender=EducationOrder,dispatch_uid="my_unique_identifier")

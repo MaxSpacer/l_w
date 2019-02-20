@@ -2,12 +2,14 @@
 {% block content %}
 {% load static %}
 
-<div class="container mt-2">
+<div class="container-fluid">
+    <div class="row">
         <div class="card-deck">
             {% for event_item in events %}
             {% include 'events/events_cards.html' %}
             {% endfor %}
-    </div>
+        </div>
+    </div> 
 </div>
 
 {% endblock content %}

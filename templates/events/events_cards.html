@@ -4,11 +4,15 @@
         <div class="card-header p-2">
             <h5 class="card-title mb-1">{{ event_item.name }}</h5>
         </div>
-        <img class="card-img" src="{{ event_item.image.url }}" alt="Card image cap">
+        {% for image_item in event_item.eventimage_set.all %}
+            {% if image_item.is_main == True %}
+            <img class="card-img" src="{{ image_item.image.url }}" alt="Card image cap">
+            {% endif %}
+        {% endfor %}
         <div class="card-img-overlay p-0">
-            <!-- <div class="card-header bg-white p-2">
-                <h5 class="card-title mb-1">{{ education_item.category }}</h5>
-            </div> -->
+            <div class="format position-absolute bg-warning px-2 py-1">
+                {{ event_item.format }}
+            </div>
         </div>
         <div class="card-body">
             <!-- <img class="img-fluid card-img-medium float-left mr-2 mb-1" src="{{ event_item.image.url }}" alt="Card image cap"> -->

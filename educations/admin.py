@@ -11,9 +11,19 @@ class EducationFormatAdmin(admin.ModelAdmin):
     list_display = [field.name for field in EducationFormat._meta.fields]
 admin.site.register(EducationFormat, EducationFormatAdmin)
 
+
+class EducationResultPointInline(admin.TabularInline):
+    model = EducationResultPoint
+
+
+class EducationPlanPointInline(admin.TabularInline):
+    model = EducationPlanPoint
+
 class EducationAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Education._meta.fields]
     list_display_links = ('name','id')
+    inlines = [EducationPlanPointInline,EducationResultPointInline,]
+
 admin.site.register(Education, EducationAdmin)
 
 class EducationOrderAdmin(admin.ModelAdmin):

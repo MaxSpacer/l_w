@@ -5,6 +5,16 @@
 
 // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+
+    .result-card{
+        min-width: 15%;
+        max-width: 15%;
+    }
+    .plan-card{
+        min-width: 15%;
+        max-width: 15%;
+    }
+
     .create-callme-morfing{
         display: none;
     }
@@ -51,9 +61,9 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
-    .pad {
+    /* .pad {
         padding-top: 10px;
-    }
+    } */
 
 
     #main-nav ul li {
@@ -84,7 +94,7 @@
         display: inline-block;
 
     }
-    .header .container {
+    .header {
         background-color: #111;
     }
     /* #nowDate-main {

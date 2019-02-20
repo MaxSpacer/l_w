@@ -154,7 +154,7 @@ os.path.join(BASE_DIR, 'static', 'static_dev'),
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
-    'width': 1120,
+    'width': 500,
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
     'selector': 'textarea',

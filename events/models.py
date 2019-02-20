@@ -6,8 +6,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.db.models.signals import post_save
 
 
-
-class EventCategory(models.Model):
+class EventFormat(models.Model):
 	name = models.CharField(max_length=64, blank=True, null=True, default=None)
 	is_active = models.BooleanField(default=True)
 	created = models.DateTimeField(auto_now_add=True , auto_now=False)
@@ -17,29 +16,43 @@ class EventCategory(models.Model):
 		return "%s" % self.name
 
 	class Meta:
-		verbose_name = 'Категория мероприятия'
-		verbose_name_plural = 'Категории мероприятий'
+		verbose_name = 'Формат курсов'
+		verbose_name_plural = 'Форматы курсов'
+
+
+class EventCategory(models.Model):
+    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True , auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+
+    def __str__(self):
+        return "%s" % self.name
+
+    class Meta:
+        verbose_name = 'Категория мероприятия'
+        verbose_name_plural = 'Категории мероприятий'
 
 
 class Event(models.Model):
-	name = models.CharField(max_length=64, blank=True, null=True, default=None)
-	# image = models.ImageField(upload_to='event_images/', null=True, default=None)
-	category = models.ForeignKey(EventCategory, on_delete=models.SET_DEFAULT, max_length=64, blank=True, null=True, default=None)
-	description = models.TextField(max_length=256,blank=True, null=True, default=None)
-	content = HTMLField('Content', null=True, default=None)
-	is_active = models.BooleanField(default=True)
-	publicated = models.DateTimeField(default=timezone.now, auto_now=False)
-	event_date = models.DateTimeField(default=timezone.now, blank=False, auto_now=False)
-	created = models.DateTimeField(auto_now_add=True , auto_now=False)
-	updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    # image = models.ImageField(upload_to='event_images/', null=True, default=None)
+    category = models.ForeignKey(EventCategory, on_delete=models.SET_DEFAULT, max_length=64, blank=True, null=True, default=None)
+    format = models.ForeignKey(EventFormat, on_delete=models.SET_DEFAULT, max_length=64, blank=True, null=True, default=None)
+    description = models.TextField(max_length=256,blank=True, null=True, default=None)
+    content = HTMLField('Content', null=True, default=None)
+    is_active = models.BooleanField(default=True)
+    publicated = models.DateTimeField(default=timezone.now, auto_now=False)
+    event_date = models.DateTimeField(default=timezone.now, blank=False, auto_now=False)
+    created = models.DateTimeField(auto_now_add=True , auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False , auto_now=True)
 
+    def __str__(self):
+        return "%s" % self.name
 
-	def __str__(self):
-		return "%s" % self.name
-
-	class Meta:
-		verbose_name = 'Мероприятие'
-		verbose_name_plural = 'Мероприятия'
+    class Meta:
+        verbose_name = 'Мероприятие'
+        verbose_name_plural = 'Мероприятия'
 
 
 class StatusEventJoiner(models.Model):
@@ -78,23 +91,53 @@ class EventJoiner(models.Model):
 
 
 class EventImage(models.Model):
-	event = models.ForeignKey(Event, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
-	image = models.ImageField(upload_to='product_images/')
-	is_main = models.BooleanField(default=False)
-	is_active = models.BooleanField(default=True)
-	created = models.DateTimeField(auto_now_add=True , auto_now=False)
-	updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+    event = models.ForeignKey(Event, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
+    image = models.ImageField(upload_to='product_images/')
+    is_main = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True , auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False , auto_now=True)
 
-	def __str__(self):
-		return "%s" % self.image
+    def __str__(self):
+        return "%s" % self.image
 
-	class Meta:
-		verbose_name = 'Фотография продукции'
-		verbose_name_plural = 'Фотографии продукции'
-
-
+    class Meta:
+        verbose_name = 'Фотография мероприятия'
+        verbose_name_plural = 'Фотографии мероприятий'
 
 
+# class EventPlanPoint(models.Model):
+#     title = models.CharField(max_length=64, blank=True, null=True, default=None)
+#     event = models.ForeignKey(Event, on_delete=models.CASCADE, blank=True, null=True, default=None)
+#     content = HTMLField('Content', null=True, default=None)
+#     order = models.IntegerField(default=0)
+#     is_active = models.BooleanField(default=True)
+#     created = models.DateTimeField(auto_now_add=True , auto_now=False)
+#     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+#
+#     def __str__(self):
+#         return "%s" % self.image
+#
+#     class Meta:
+#         verbose_name = 'Пункт плана мероприятия'
+#         verbose_name_plural = 'Пункты плана мероприятий'
+#
+#
+# class EventResultPoint(models.Model):
+#     title = models.CharField(max_length=64, blank=True, null=True, default=None)
+#     event = models.ForeignKey(Event, on_delete=models.CASCADE, blank=True, null=True, default=None)
+#     content = HTMLField('Content', null=True, default=None)
+#     order = models.IntegerField(default=0)
+#     is_active = models.BooleanField(default=True)
+#     created = models.DateTimeField(auto_now_add=True , auto_now=False)
+#     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
+#
+#     def __str__(self):
+#         return "%s" % self.image
+#
+#     class Meta:
+#         verbose_name = 'Результат мероприятия'
+#         verbose_name_plural = 'Результаты мероприятия'
 
 from .signals import send_mail_join_event
 post_save.connect(send_mail_join_event,sender=EventJoiner,dispatch_uid="my_unique_identifier")
