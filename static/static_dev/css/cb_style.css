@@ -52,6 +52,10 @@ a:hover {
 .result-card .card-body, .plan-card .card-body{
     background-color: transparent;
 }
+.result-card p, .plan-card p{
+    padding: 0px;
+    margin: 1px;
+}
 .event-card img{
     /* background-color: white; */
     /* color: white; */
