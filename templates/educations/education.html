@@ -26,7 +26,7 @@
                 <h5>План занятий</h5>
                 <div class="card-group justify-content-around">
                         {% for item in education.educationplanpoint_set.all %}
-                        <div class="card plan-card my-2">
+                        <div class="card plan-card my-2 shadow">
                             <div class="card-header">
                                 {{ item.title }}
                             </div>
@@ -42,7 +42,7 @@
                 <h5>Результаты и цели обучения</h5>
                 <div class="card-group justify-content-around">
                     {% for item in education.educationresultpoint_set.all %}
-                    <div class="card result-card my-2">
+                    <div class="card result-card my-2 shadow">
                         <div class="card-header">
                             {{ item.title }}
                         </div>
