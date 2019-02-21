@@ -46,6 +46,9 @@ a:hover {
     margin-left: 5px;
     margin-right: 5px;
 } */
+/* .result-card .card-body, .plan-card .card-body{
+    background-color: #ffdb74;
+} */
 .result-card .card-body, .plan-card .card-body{
     background-color: transparent;
 }

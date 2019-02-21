@@ -27,7 +27,7 @@
                 <div class="card-group justify-content-around">
                         {% for item in education.educationplanpoint_set.all %}
                         <div class="card plan-card my-2 shadow">
-                            <div class="card-header text-center no-wrap">
+                            <div class="card-header text-center no-wrap p-2">
                                 {{ item.title }}
                             </div>
                             <div class="card-body p-2">
@@ -43,7 +43,7 @@
                 <div class="card-group justify-content-around">
                     {% for item in education.educationresultpoint_set.all %}
                     <div class="card result-card my-2 shadow">
-                        <div class="card-header text-center no-wrap">
+                        <div class="card-header text-center no-wrap p-2">
                             {{ item.title }}
                         </div>
                         <div class="card-body p-2">
