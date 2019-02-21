@@ -22,8 +22,8 @@
                    <h5 class="m-0">Купить</h5>
                </button>
             </div>
-            <div class="card-body p-2 bg-transparent">
-                <h5>План занятий</h5>
+            <div class="card-body p-0 bg-transparent">
+                <h5 class="p-1 text-center">План занятий</h5>
                 <div class="card-group justify-content-around">
                         {% for item in education.educationplanpoint_set.all %}
                         <div class="card plan-card my-2 shadow">
@@ -38,8 +38,8 @@
                 </div>
             </div>
 
-            <div class="card-footer bg-transparent p-2">
-                <h5>Результаты и цели обучения</h5>
+            <div class="card-footer bg-transparent p-0">
+                <h5 class="p-1 text-center">Результаты и цели обучения</h5>
                 <div class="card-group justify-content-around">
                     {% for item in education.educationresultpoint_set.all %}
                     <div class="card result-card my-2 shadow">
