@@ -52,31 +52,30 @@
 
 
             <div class="collapse navbar-collapse justify-content-center " id="navbarCollapse">
-                <nav id="main_nav" class="">
+                <nav id="main_nav">
                     <ul class="nav flex-column flex-md-row justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase  align-baseline" href="/">На главную</a>
+                            <a class="nav-link text-uppercase{% if request.path == '/' %} active{% endif %}" href="/">На главную</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase active align-baseline" href="/aboutus">О нас</a>
+                            <a class="nav-link text-uppercase {% if request.path == '/aboutus/' %} active{% endif %}" href="/aboutus">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase align-middle" href="/educations">Обучение</a>
+                            <a class="nav-link text-uppercase {% if request.path == '/educations/' %} active{% endif %}" href="/educations">Обучение</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="/events">Мероприятия</a>
+                            <a class="nav-link text-uppercase{% if request.path == '/events/' %} active{% endif %}" href="/events">Мероприятия</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase disabled" href="/hall">Закрытый клуб</a>
+                            <a class="nav-link text-uppercase disabled {% if request.path == '/hall/' %} active{% endif %}" href="/hall">Закрытый клуб</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="/contacts">Контакты</a>
+                            <a class="nav-link text-uppercase{% if request.path == '/contacts/' %} active{% endif %}" href="/contacts">Контакты</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </nav>
-
     </div>
 </div>
 

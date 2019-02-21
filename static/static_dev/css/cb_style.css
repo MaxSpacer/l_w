@@ -9,11 +9,15 @@ body {
     /* max-height: 50%; */
     /* height: 100vh; */
 
+
     /* font-family: "Courier New"; */
     /* font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; */
     /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Podkova', serif; */
     font-family: 'Roboto', sans-serif;
+}
+.card {
+    background-color: transparent;
 }
 /* canvas{position: relative;} */
 .alert-success {
@@ -388,6 +392,11 @@ a:hover {
 
 /*  NAV
 ========================================== */
+.nav-item .active{
+    /* background-color: red; */
+    border-bottom: 2px solid black;
+    /* background-color: rgba(0,0,0,.03); */
+}
 
 /*  Main MENU landing
 ========================================== */
@@ -484,7 +493,7 @@ padding: 1% 4% !important; */
 /* carousel end
 ========================================== */
     /* .create-callme {position: relative;} */
-    .footer aside{
+.footer aside{
         width: 38px;
         height: 38px;
     }
