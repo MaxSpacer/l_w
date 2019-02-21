@@ -7,8 +7,8 @@
 @media (min-width: 576px) {
 
     .result-card{
-        min-width: 15%;
-        max-width: 15%;
+        min-width: 21%;
+        /* max-width: 15%; */
     }
     .plan-card{
         min-width: 21%;
