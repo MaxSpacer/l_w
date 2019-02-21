@@ -6,3 +6,4 @@ myvenv
 /migrations
 db.sqlite3
 settings_prod.py
+settings.py
