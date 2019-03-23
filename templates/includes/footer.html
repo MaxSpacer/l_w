@@ -1,63 +1,66 @@
 {% load static %}
 {% block footer %}
-    <footer class="footer py-2">
-        <div class="container-fluid">
-            <!-- <div class="social mx-auto text-center"> -->
-            <div class="social d-flex flex-row justify-content-center align-content-center">
-                <span class="mx-md-2"> </span>
-                <span>
-                    <a href="https://vk.com/public177248775">
-                        <i class="fab fa-vk fa-lg"></i>
-                    </a>
-                </span>
-                <span class="mx-3 mx-md-1"> </span>
-                <span>
-                    <a href="https://instagram.com/likwidclub">
-                        <i class="fab fa-instagram fa-lg"></i>
-                    </a>
-                </span>
-                <span class="mx-3 mx-md-1"> </span>
-                <span>
-                    <a href="https://m.facebook.com/Likwid-Club">
-                        <i class="fab fa-facebook-square fa-lg"></i>
-                    </a>
-                </span>
-
-                <!-- Button trigger modal -->
-                {% if request.path == '/' %}
-                <span class="mx-3 mx-md-1"> </span>
-                <span class="">
-                    <aside class="reqest-get animation-active d-md-none">
-                        <!-- <h3 id="callbackWidget" class="reqest-get_title"> -->
-                            <img src="{% static 'img/phone_but.png' %}" alt="" class="reqest-get_title create-callme img-fluid">
-
-                            <!-- <span class="reqest-get_sub-title">Call Back</span> -->
-                            <!-- </h3> -->
-                            <section id="first_me" class="reqest-modul reqest-modul_request js-callback-request" style="display: none;">
-                                <div id="close_me1" class="reqest-modul_close-button js-reqest-modul-close"></div>
-                                <!-- <form class="js-callback-form-root">
-                                    <input type="text" name="phone_no" value="" maxlength="10" id="phone_no" class="phone_nmbr">
-                                    <a onclick="Validate()" class="reqest-modul_button reqest-modul_request-button ">
-                                        Call me back
-                                    </a>
-                                </form> -->
-                                <!-- <p class="reqest-modul_disclaimer">One of our Travel Agents will call you back within the next <b>59 seconds</b> to discuss your travel plans. By submitting your phone number, you agree to be contacted via phone and/or sms. No booking necessary. Your personal data is 100% safe.</p> -->
-                            </section>
-                        </aside>
-
-                </span>
-                {# % else % #}
-                <!-- <i class="fas fa-phone-square fa-lg create-callme btn btn-dark p-1 d-none" type="button" name="button">
-                    <span class="pulse">
-                    </span>
-                </i> -->
-
-
-				{% endif %}
-
-                <!-- <span class="mx-3 mx-md-1"> </span> -->
+<footer class="footer pb-2 text-muted position-relative">
+    <div class="row p-0">
+        {% include "includes/footer-form.html" %}
+    </div>
+    <div class="position-relative">
+    <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
+    <div class="container pb-4 pt-5">
+        <div class="row p-0 px-5">
+            <div class="col-md-4 col-sm-12 px-0">
+                <h4 class="text-light text-nowrap">L I K W I D</h4>
+                <p class="text-white-50">Финансово-консалтинговая компания, реализующая эффективную работу и обучение на финансовых рынках.</p>
             </div>
-		{#	{% include "includes/login_bar.html" %}  #}
+            <div class="col-md-4 nav-footer d-none d-sm-inline-flex">
+                <div class="col-6 p-0">
+                <!-- <ul class="nav flex-column"> -->
+                        <a class="nav-link {% if request.path == '/' %} active{% endif %}" href="/">Likwid</a>
+                        <a class="nav-link text-nowrap{% if request.path == '/aboutus/' %} active{% endif %}" href="/aboutus">О нас</a>
+                        <a class="nav-link {% if '/educations/' in request.path %} active{% endif %}" href="/educations">Обучение</a>
+                        <a class="nav-link {% if '/events/' in request.path %} active{% endif %}" href="/events">Инвестиции</a>
+                <!-- </ul> -->
+                </div>
+                <div class="col-6 p-0">
+                    <!-- <ul class="nav flex-column"> -->
+                        <a class="nav-link{% if '/events/' in request.path %} active{% endif %}" href="/events">Мероприятия</a>
+                        <a class="nav-link {% if request.path == '/contacts/' %} active{% endif %}" href="/contacts">Контакты</a>
+                        <a class="nav-link text-nowrap disabled{% if request.path == '/hall/' %} active{% endif %}" href="/hall">Закрытый клуб</a>
+                    <!-- </ul> -->
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 pt-3 pt-md-0">
+                <table class="mx-md-auto">
+                   <tr>
+                     <td><i class="fas fa-envelope"></i></td>
+                     <td class="pl-3 text-light text-nowrap">info@likwid.ru</td>
+                   </tr>
+                   <tr>
+                     <td><i class="fas fa-phone fa-flip-horizontal"></i></td>
+                     <td class="pl-3 text-light text-nowrap">+7 (499) 110-0230</td>
+                   </tr>
+                </table>
+            </div>
         </div>
-    </footer>
+        <div class="row flex-column p-0 pt-5">
+            <p class="text-center">Следите за нами в соц.сетях</p>
+            <div class="social d-flex flex-row justify-content-center align-content-center">
+                <a href="https://vk.com/public177248775">
+                    <img src="{% static 'img/vk-icon.png' %}" alt="" class="">
+                </a>
+                <span class="mx-3 mx-md-1"> </span>
+                <a href="https://instagram.com/likwidclub">
+                    <img src="{% static 'img/insta_icon.png' %}" alt="" class="">
+                </a>
+                <span class="mx-3 mx-md-1"> </span>
+                <a href="https://m.facebook.com/Likwid-Club">
+                    <img src="{% static 'img/facebook-icon.png' %}" alt="" class="">
+                </a>
+            </div>
+
+        </div>
+        <!-- <div class="social mx-auto text-center"> -->
+	{#	{% include "includes/login_bar.html" %}  #}
+    </div>    </div>
+</footer>
 {% endblock footer %}

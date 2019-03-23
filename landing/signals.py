@@ -44,7 +44,7 @@ def send_mail_on_callback(sender, instance, created, **kwargs):
 
     	        return HttpResponse('Make sure all fields are entered and valid %s' % instance.id)
 
-@receiver(post_save, sender=Mainformcontact)
+# @receiver(post_save, sender=Mainformcontact)
 def send_mail_main_form(sender, instance, created, **kwargs):
     if created:
         context = {

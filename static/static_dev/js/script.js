@@ -85,10 +85,9 @@ $(document).ready(function() {
     });
 
     function reshowBasket(){
-
         $('.dropdown-menu').addClass('show');
     };
-    	$(document).on('click', '.delete-item', function(e) {
+    $(document).on('click', '.delete-item', function(e) {
         e.preventDefault();
         product_id = $(this).data("product_id")
         numb = 0;
@@ -101,4 +100,62 @@ $(document).ready(function() {
     })
 
 
+    $(document).on('click', '.navbar-toggler', function() {
+        var elements = this.getElementsByTagName('span');
+          for (var i = 0; i < elements.length; i++) {
+                elements[i].classList.toggle("show")
+               console.log();
+               console.log(elements[i].classList);
+               // console.log(elements.classList);
+               // console.log(elements.classList[i]);
+          }
+      });
+//modal window for modal forms
+        $(function() {
+        $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
+        $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
+        $(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
+        // $(".btn-main").modalForm({formURL: "{% url 'main_form' %}"});
+        $(".edu-btn").each(function () {
+                $(this).modalForm({formURL: $(this).data('id')});
+            });
+        $(".btn-event").each(function () {
+                $(this).modalForm({formURL: $(this).data('id')});
+            });
+        });
+//modal error window
+        $('#modal_message').modal({show:true});
+//placeholders for callback's form
+        document.getElementById('id_contact_name').placeholder = 'Александр';
+        document.getElementById('id_contact_phone').placeholder = '+7 (765)256-12-15';
+        document.getElementById('id_contact_email').placeholder = 'info@likwid.ru';
+//minicarousel buttons
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            loop:true,
+            margin:60,
+            nav:false,
+            dots:false,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+        // Go to the next item
+        $('.customNextBtn').click(function() {
+            owl.trigger('next.owl.carousel');
+        });
+        // Go to the previous item
+        $('.customPrevBtn').click(function() {
+            // With optional speed parameter
+            // Parameters has to be in square bracket '[]'
+            owl.trigger('prev.owl.carousel');
+        });
 });

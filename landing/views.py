@@ -34,7 +34,7 @@ class CallmeCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView
 
 
 class MainFormView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):
-    template_name = 'landing/main_form.html'
+    template_name = 'landing/landing.html'
     form_class = MainForm
     success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
     success_url = reverse_lazy('main')

@@ -1,0 +1,53 @@
+{% load widget_tweaks %}
+{% load static %}
+
+{% block footer_form %}
+
+
+<!-- <div class="row p-0"> -->
+    <div class="d-none d-sm-flex col-sm-6 col-12 p-0 bg-white align-items-end">
+        <img src="{% static 'img/noteman.png' %}" alt="" class="img-fluid">
+    </div>
+    <div class="col-sm-6 col-12 bg-likwid d-flex align-items-center" id="id_form_footer">
+        <form method="post" action="{% url 'main_form' %}" class="px-5">
+            {% csrf_token %}
+
+            <div class="mainformheader">
+                <h1 class="mainformtitle">Нужна помощь специалиста?</h1>
+                <p class="text-white">Оставте заявку, и мы свяжемся с вами для проведения бесплатной консультации</p>
+            </div>
+
+            <div class="mainformbody">
+                <div class="form"">
+                    <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
+                        {% for error in form.non_field_errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+
+                    {% for field in form %}
+                    <div class="col-12 col-md-8 border-bottom border-light px-0 mt-3">
+                        <label class="" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {% render_field field class="form-control bg-likwid pl-0" placeholder='' %}
+                        <div class="{% if field.errors %} invalid{% endif %}">
+                            {% for error in field.errors %}
+                            <p class="help-block text-warning">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- <div class="justify-content-center"> -->
+                <button type="submit" class="btn btn-form px-5 my-2 ">Отправить</button>
+            <!-- </div> -->
+
+        </form>
+
+
+    </div>
+<!-- </div> -->
+
+
+{% endblock footer_form %}

@@ -3,25 +3,109 @@
 {% load static %}
 
 
-<div class="container-fluid d-none d-sm-block">
+<div class="container-fluid p-0">
+
+    <div class="row p-0 bg-color-main">
+
+        <div class="w-100 position-relative">
+        <!-- <div class="m-0 main-promo w-100"> -->
+            <!-- <img class="img-fluid" src="{% static 'img/main.png' %}" alt="Second slide"> -->
+            <!-- <img src="{% static 'img/promo-logo.png' %}" alt="" class="img-fluid logo-promo"> -->
+            <img src="{% static 'img/main.png' %}" alt="" class="img-fluid women-promo w-100">
+        <!-- </div> -->
+        <!-- <div class="img-inner d-flex flex-column justify-content-center align-items-center my-auto"> -->
+                <div class="main-promo">
+                    <div class="col-12 col-md-5">
+                        <h4>Likwid сообщество
+                        профессиональных трейдеров
+                        </h4>
+                        <ul>
+                            <li>Обучение торговли на валютных, срочных и фондовых рынках</li>
+                            <li>Закрытый клуб профессиональных трейдеров</li>
+                            <li>Мастер-классы и живые мероприятия</li>
+                        </ul>
+                        <div class="row mx-auto justify-content-between flex-nowrap">
+                            <a class="btn btn-outline-light btn-lg d-inline-flex" href="#" role="button">Начать обучение</a>
+                            <a class="btn btn-light btn-lg d-inline-flex" href="#" role="button">Вступить в клуб</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<section class="about-main">
+<!-- <div class="container mr-sm-0 mr-md-0"> -->
+    <div class="row justify-content-center ">
+        <!-- <div class="col-12"> -->
+
+            <div class="col-md-5 col-12 about-main-text d-flex pb-0">
+                <div class="ml-auto col-md-8 col-sm-11 py-4 px-5 pr-md-0">
+                    <h3>О компании</h3>
+                    <p class="font-weight-light">
+                        Likwid club - это современная инвестиционно-финансовая компания,
+                        ядром которой является команда профессиональных трейдеров и программистов,
+                        разрабатывающих уникальное программное обеспечение для осуществления торгов на фондовой бирже.
+                    </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>12</h3>
+                            <p>
+                                Человек в штате компании
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <h3>5 лет</h3>
+                            <p>Опыта работы в
+                                трейдинге</p>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>+300</h3>
+                            <p>Выпускников
+                            нашего клуба</p>
+                        </div>
+                        <div class="col-6">
+                            <h3>+10000</h3>
+                            <p>
+                                Успешых сделок
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+        <div class="col-12 col-md-7">
+            <img class="img-f" src="{% static 'img/img38.png' %}" alt="Second slide">
+        </div>
+    </div>
+<!-- </div> -->
+</section>
+
     <!-- carousel -->
-    {% include "includes/carousel.html" %}
+    {#% include "includes/carousel.html" %#}
     {% for instance in object_list %}
     <div class="row p-0 mt-3">
         {{ instance.content | safe }}
     </div>
         {% endfor %}
+
+<!-- minicarousel -->
+<div class="p-4 minicarousel text-center">
+      <h3 class="p-3">Наши партнеры</h3>
+    {% include "includes/minicarousel.html" %}
 </div>
 
-
 <!-- MAIN NAV -->
-    <div class="container-fluid d-sm-none pt-4 mt-4">
+    <!-- <div class="container-fluid d-sm-none pt-4 mt-4">
         <nav class="navbar bg-transparent justify-content-center">
             <div class="main-logo py-2 text-center">
                 <a href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid"></a>
                 <p id="nowDate" class="text-monocase m-0">
-                    <span class="p-1">
-                        {{ nowDate|date:'d.m.Y H:i' }} MSK
+
+                        LIKWID
+                    <span class="p-1 d-none">
+                        {#{ nowDate|date:'d.m.Y H:i' }#} MSK
                     </span>
                 </p>
                 <span></span>
@@ -50,7 +134,7 @@
                 </nav>
             </div>
         </div>
-    </div>
+    </div> -->
 <!-- MAIN NAV END -->
 
 

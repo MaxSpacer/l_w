@@ -10,12 +10,15 @@
 <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Podkova&subset=cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" href="{% static 'css/font_style.css' %}" type="text/css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic-ext" rel="stylesheet"> -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Podkova&subset=cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="{% static 'css/cb_style.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/cb_responsive.css' %}" type="text/css">
     <link rel="shortcut icon" href="{% static 'img/favicon-32x32.png' %}"/>
-
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/GothamPro/stylesheet.css' %}" type="text/css">
+    <!-- <link rel="stylesheet" href="{% static 'distowl/assets/owl.theme.default.min.css' %}"> -->
     <title>Likwid Club</title>
 
   </head>
@@ -64,7 +67,8 @@
       <script src="{% static 'js/bootstrap-input-spinner.js' %}"></script>
       <script src="{% static 'js/script.js' %}"></script>
       <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
-      <!-- <script src="{% static 'js/fss.js' %}"></script> -->
+      <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
 
     <script>
     $("input[type='number']").inputSpinner();
@@ -79,60 +83,8 @@
 
 
     {% block extrascripts %}
-      <script type="text/javascript">
-        $(function () {
-        $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
-        $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
-		$(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
-		$(".btn-main").modalForm({formURL: "{% url 'main_form' %}"});
-		$(".edu-btn").each(function () {
-	 			$(this).modalForm({formURL: $(this).data('id')});
-   			});
-		$(".btn-event").each(function () {
-	 			$(this).modalForm({formURL: $(this).data('id')});
-   			});
-        });
-      </script>
-	  <script type="application/javascript">
-	      $(document).ready(function(){
-	          $('#modal_message').modal({show:true});
-	      });
-	  </script>
-	  <!-- <script type="application/javascript">
-      var container = document.getElementById('container');
-         var renderer = new FSS.CanvasRenderer();
-         var scene = new FSS.Scene();
-         var light = new FSS.Light('#111122', '#FF0022');
-         var geometry = new FSS.Plane(1000, 1000, 6, 4);
-         var material = new FSS.Material('#FFFFFF', '#FFFFFF');
-         var mesh = new FSS.Mesh(geometry, material);
-         var now, start = Date.now();
-         function initialise() {
-           scene.add(mesh);
-           scene.add(light);
-           container.appendChild(renderer.element);
-           window.addEventListener('resize', resize);
-         }
-         function resize() {
-           renderer.setSize(container.offsetWidth, container.offsetHeight);
-         }
-         function animate() {
-           now = Date.now() - start;
-           light.setPosition(150*Math.sin(now*0.001), 150*Math.cos(now*0.0006), 60);
-           renderer.render(scene);
-           requestAnimationFrame(animate);
-         }
-         initialise();
-         resize();
-         animate();
-	  </script> -->
-
-
-
 
 
     {% endblock extrascripts %}
-
-<!-- </div> -->
   </body>
 </html>

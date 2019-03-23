@@ -1,0 +1,21 @@
+{% block minicarousel %}
+{% load static %}
+
+<div class="container d-flex flex-row align-items-center px-5">
+    <img class="customPrevBtn" src="{% static 'img/leftbtn.png'%}" alt="">
+    <!-- <button type="button" name="button" class="customNextBtn"><</button> -->
+    <div class=" w-75 mx-auto py-5">
+        <!-- <div> -->
+            <div class="owl-carousel owl-theme">
+                <img class="d-block img-fluid" src="{% static 'img/icmarkets-logo.png'%}" alt="">
+                <img class="d-block img-fluid" src="{% static 'img/alfaforex.png' %}" alt="">
+                <img class="d-block img-fluid" src="{% static 'img/bks-forex.png' %}" alt="">
+                <img class="d-block img-fluid" src="{% static 'img/logo-bz.png' %}" alt="">
+            </div>
+        <!-- </div> -->
+    </div>
+    <!-- <button type="button" name="button" class="customPrevBtn">></button> -->
+    <img class="customNextBtn" src="{% static 'img/rightbtn.png'%}" alt="">
+
+</div>
+{% endblock minicarousel %}

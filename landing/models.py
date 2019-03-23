@@ -41,9 +41,9 @@ class Callmecontact(models.Model):
 
 
 class Mainformcontact(models.Model):
-    contact_name = models.CharField(verbose_name="имя", max_length=32, default=None)
-    contact_phone = PhoneNumberField(verbose_name="телефон +7XXXXXXXXX")
-    contact_email = models.EmailField("электронная почта", max_length=64, blank=True, null=True, default=None)
+    contact_name = models.CharField(verbose_name="ваше имя", max_length=32, default=None)
+    contact_phone = PhoneNumberField(verbose_name="ваш телефон")
+    contact_email = models.EmailField(verbose_name="ваш e-mail", max_length=64, blank=True, null=True, default=None)
     referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
     is_emailed = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
@@ -60,5 +60,5 @@ class Mainformcontact(models.Model):
 from .signals import send_mail_on_callback
 from .signals import send_mail_main_form
 # connect them
-post_save.connect(send_mail_on_callback,sender=Callmecontact,dispatch_uid="my_unique_identifier")
-post_save.connect(send_mail_main_form,sender=Mainformcontact,dispatch_uid="my_unique_identifier")
+# post_save.connect(send_mail_on_callback,sender=Callmecontact,dispatch_uid="my_unique_identifier")
+# post_save.connect(send_mail_main_form,sender=Mainformcontact,dispatch_uid="my_unique_identifier")
