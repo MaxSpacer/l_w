@@ -5,10 +5,10 @@
 
 
 <!-- <div class="row p-0"> -->
-    <div class="d-none d-sm-flex col-sm-6 col-12 p-0 bg-white align-items-end">
-        <img src="{% static 'img/noteman.png' %}" alt="" class="img-fluid">
+    <div class="d-none d-sm-flex col-sm-6 col-12 bg-white man-form">
+        <!-- <img src="{% static 'img/noteman.png' %}" alt="" class="img-fluid"> -->
     </div>
-    <div class="col-sm-6 col-12 bg-likwid d-flex align-items-center" id="id_form_footer">
+    <div class="col-12 col-sm-5 col-md-5 d-flex align-items-center py-5" id="id_form_footer">
         <form method="post" action="{% url 'main_form' %}" class="px-5">
             {% csrf_token %}
 

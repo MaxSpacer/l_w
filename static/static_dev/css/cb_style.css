@@ -39,6 +39,24 @@ a:hover {
     color: #848484;
    /* color: #848484; */
 }
+
+/* pink button */
+.btn-pink{
+    color: white;
+    background-color: #f28356;
+
+}
+.btn-pink:hover {
+    /* color: white; */
+    /* background-color: #f28356; */
+    /* border-color: #f8f9fa; */
+}
+
+
+
+
+
+
 .btn-form{
     color: #f28356;
     background-color: white;
@@ -167,15 +185,18 @@ form{
 /*  main promo section
 ==========================================*/
 .main-promo {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-       /* background-image: url("/static/img/main.png"); */
-       /* width: 100%; */
+       background: url(/static/img/main.png) no-repeat;
+       background-position: center;
+       -moz-background-size: 100%;
+        -webkit-background-size: 100%;
+        -o-background-size: 100%;
+         background-size: cover;
     }
-.main-promo .logo-promo{
+.dot-size{
+    font-size: 0.4rem;
+    vertical-align: middle;
 
-    }
+}
 .main-promo .women-promo{
 
         /* width: 100%; */
@@ -192,15 +213,7 @@ form{
 
 /*  main promo section END
 ========================================== */
-/* [19:39, 22.12.2018] Елена: #251E2F */
-/* .card { background-color: rgba(37, 30, 47, 0.5); } */
 
-
-/* [19:41, 22.12.2018] Елена: #081B3C */
-/* .card { background-color: rgba(8, 27, 60, 0.5); } */
-
-/* [19:44, 22.12.2018] Елена: #393939  .modal-content*/
-/* #nowDate span{ background-color: rgba(255, 255, 230, 0.7); } */
 .modal-content{ background-color: rgba(249, 217, 106, 1); }
 /* .modal-header p { font-size: 1.2em;} */
 .modal-header .close:hover {
@@ -222,8 +235,6 @@ form{
     /* background-color: black; */
 }
 
-/* [19:46, 22.12.2018] Елена: #002222 */
-/* .card { background-color: rgba(0, 34, 34, 0.7); } */
 
 /*  BACKGROUND CARDS & TRANSPARENT END
 ========================================== */
@@ -598,12 +609,13 @@ font-style: normal;
     max-height: 450px;
     /* min-height: 100%; */
 }
-
-
-/* .cards-container {
-padding: 1% 4% !important; */
-/* background-image: url('img/cardback.png');*/ /* Путь к фоновому изображению */
-/* } */
+.img-fl{
+    position: absolute;
+    left: 0%;
+    /* bottom: 0px; */
+    width: 100%;
+}
+.img-container{ overflow: hidden;}
 
 /* carousel
 ========================================== */
@@ -619,6 +631,8 @@ padding: 1% 4% !important; */
 #carousel-event img{
     max-height: 17rem;
 }
+/* carousel end
+========================================== */
 .ya-share2__icon {
     height: 32px !important;
     width: 32px !important;
@@ -631,8 +645,7 @@ padding: 1% 4% !important; */
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
-/* carousel end
-========================================== */
+
 
 /* minicarousel
 ========================================== */
@@ -686,3 +699,17 @@ padding: 1% 4% !important; */
        transform: translate(-50%, -50%);
        opacity: 0.03;
     }
+.footer .man-form{
+    background: url(/static/img/noteman.png) no-repeat;
+    background-position: center;
+    -moz-background-size: 100%;
+     -webkit-background-size: 100%;
+     -o-background-size: 100%;
+      background-size: cover;
+}
+.footer #id_form_footer label{
+    margin-bottom: 0px;
+}
+.footer #id_form_footer input{
+    padding-top: 0px;
+}

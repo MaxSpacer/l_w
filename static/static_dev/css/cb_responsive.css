@@ -62,10 +62,31 @@
  }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-
-    /* .pad {
-        padding-top: 10px;
-    } */
+    .img-fl{
+        position: static;
+        /* left: 0%; */
+        /* bottom: 0px; */
+        margin: 0px !important;
+        max-width: 100%;
+    }
+    .main-promo {
+        /* position: absolute;
+        top: 10%;
+        left: 10%; */
+           /* background-image: url(""); */
+           background: url(/static/img/main-mobi.png) no-repeat;
+           background-position: center;
+           /* -moz-background-size: 100%; /* Firefox 3.6+ */
+            /* -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+            /* -o-background-size: 100%; /* Opera 9.6+ */
+            /* background-size: 100%; /* Современные браузеры */       /* width: 100%; */
+             background-size: cover; /* Фон занимает всю доступную площадь */
+             /* max-width: 100%; */
+        }
+    .main-promo a{font-size: 0.8rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
     .img-inner a{
         /* position: relative; */
         font-size: 0.8rem;
