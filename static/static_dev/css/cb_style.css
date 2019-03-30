@@ -23,10 +23,7 @@ body {
 .bg-color-main{
     background-color: #4a4a54;
 }
-.card {
-    /* background-color: transparent; */
-}
-/* canvas{position: relative;} */
+
 .alert-success {
     color: #fff;
     background-color: rgba(57, 57, 57, 1);
@@ -602,9 +599,7 @@ font-style: normal;
 .about-main{
     background-color:#f7f7f7;
 }
-.about-main-text{
 
-}
 .img-f{
     max-height: 450px;
     /* min-height: 100%; */
@@ -615,7 +610,12 @@ font-style: normal;
     /* bottom: 0px; */
     width: 100%;
 }
-.img-container{ overflow: hidden;}
+.img-container{
+  overflow: hidden;
+}
+.map{
+    min-height: 300px;
+}
 
 /* carousel
 ========================================== */

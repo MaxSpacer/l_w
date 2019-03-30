@@ -189,4 +189,13 @@ $(document).ready(function() {
             // Parameters has to be in square bracket '[]'
             owl.trigger('prev.owl.carousel');
         });
+
+        $(function(){
+          $("#id_contact_phone").mask("+7(999) 999-9999");
+        });
+        $(function(){
+          $("input[type='number']").inputSpinner();
+        });
+
+
 });

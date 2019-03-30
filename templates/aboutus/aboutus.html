@@ -1,19 +1,64 @@
 {% extends "wrapper.html" %}
+{% load static %}
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        <!-- <div class="cards-container-fluid"> -->
-            {% for instance in object_list %}
-                <div class="card w-100">
-                    <div class="card-body">
-
-    	                   {{ instance.content | safe }}
-                   </div>
-               </div>
-    		{% endfor %}
-        <!-- </div> -->
+<section class="container-fluid">
+  <div class="col-12 text-center p-5">
+    <h3>Клуб трейдинга Likwid</h3>
+  </div>
+    <div class="row justify-content-center ">
+        <div class="col-12 col-md-5 col-lg-5 px-5 pt-sm-5 pb-5 pb-sm-0">
+                <h4 class="mb-4">О компании</h4>
+                <p class="font-weight-light">
+                    Likwid club - это современная инвестиционно-финансовая компания,
+                    ядром которой является команда профессиональных трейдеров и программистов,
+                    разрабатывающих уникальное программное обеспечение для осуществления торгов на фондовой бирже.
+                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mb-0">12</h3>
+                        <p>
+                            Человек в штате компании
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="mb-0">5 лет</h3>
+                        <p>Опыта работы в
+                            трейдинге</p>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mb-0">+300</h3>
+                        <p>Выпускников
+                        нашего клуба</p>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="mb-0">+10000</h3>
+                        <p>
+                            Успешых сделок
+                        </p>
+                    </div>
+                </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-7 col-xl-5 p-0 ">
+            <img class="img-f" src="{% static 'img/img38.png' %}" alt="Second slide">
+        </div>
     </div>
+</section>
+
+<div class="container-fluid py-5 mt-md-5 px-lg-5 about-main">
+<h3 class="mb-0 text-center">Наша команда</h3>
+  <div class="row px-5 mx-lg-5">
+    {% for instance in object_list %}
+              <div class="col-12 col-sm-4 col-lg-3  px-0">
+                <div class="team-img pb-0 pt-5">
+                  <img class="img-fluid" src="{{ instance.image.url }}" alt="Card image cap">
+                  <p class="mt-2 mb-1">{{ instance.name }}</p>
+                  <p class="">{{ instance.service }}</p>
+                </div>
+              </div>
+    {% endfor %}
 </div>
 
 {% endblock content %}

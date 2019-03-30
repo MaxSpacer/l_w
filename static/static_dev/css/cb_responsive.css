@@ -14,7 +14,6 @@
         min-width: 21%;
         max-width: 24%;
     }
-
     .create-callme-morfing{
         display: none;
     }
@@ -23,7 +22,6 @@
         /* max-width: 243px; */
         /* cursor: pointer; */
     }
-
     .for-input-spinner {
         min-width: 130px;
         max-width: 131px;
@@ -36,32 +34,33 @@
         margin-right: -5px;
         margin-left: -5px;
     }
-
 }
-    /* .fixed-top{position:inherit;} */
-
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    /* #main-nav ul li {
-    font-size: 1.7rem;
-    } */
+  .team-img img {
+      max-height: 140px;
+  }
     .navbar-brand img {
         max-height: 35px;
     }
-        /* .collapse{
-        	padding-right:30px;
-        } */
-     }
 
+}
 /* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
-
+@media (min-width: 992px) {
+    .img-f {
+    width: inherit;
+    }
+}
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
  }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .team-img > p{
+        text-align: center !important;
+
+    }
     .img-fl{
         position: static;
         /* left: 0%; */

@@ -1,14 +1,12 @@
 {% load static %}
 {% block footer %}
-<footer class="footer pb-2 text-muted">
-{% if request.path != '/contacts/' %}
+<footer class="footer pb-2 text-muted position-relative">
     <div class="row p-0 bg-likwid">
-    {% include "includes/footer-form.html" %}
+        {% include "includes/footer-form.html" %}
     </div>
-{% endif %}
     <!-- <div class="position-relative"> -->
-    <div class="position-relative">
-    <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
+    <div class="">
+    <!-- <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo"> -->
     <div class="container pb-4 pt-5">
         <div class="row p-0 px-5">
             <div class="col-md-4 col-sm-12 px-0">
