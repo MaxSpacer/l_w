@@ -1,32 +1,33 @@
-{% block events_cards %}
-<div onclick="location.href='{% url 'events:event_n' event_item.id %}';" id="event-card" class="card event-card mb-3">
 
-        <div class="card-header p-2">
-            <h5 class="card-title mb-1">{{ event_item.name }}</h5>
-        </div>
-        {% for image_item in event_item.eventimage_set.all %}
-            {% if image_item.is_main == True %}
-            <img class="card-img" src="{{ image_item.image.url }}" alt="Card image cap">
-            {% endif %}
-        {% endfor %}
-        <div class="card-img-overlay p-0">
-            <div class="format position-absolute bg-warning px-2 py-1">
-                {{ event_item.format }}
+{% load static %}
+{% block events_cards %}
+
+<section class="container-fluid">
+    <div class="row justify-content-center pt-md-5">
+        <div class="col-12 col-md-7 col-lg-8 col-xl-5 pb-0 pt-5 px-5 p-md-0 position-relative img-container">
+            {% for image_item in event_item.eventimage_set.all %}
+                {% if image_item.is_main == True %}
+                <img class="img-fl" src="{{ image_item.image.url }}" alt="Card image cap">
+                {% endif %}
+            {% endfor %}
+            <div class="in-event-date px-3 py-1">
+                {{ event_item.event_date|date:'j F' }}
             </div>
         </div>
-        <div class="card-body">
-            <!-- <img class="img-fluid card-img-medium float-left mr-2 mb-1" src="{{ event_item.image.url }}" alt="Card image cap"> -->
-
-
-            <p class="card-text">
-                {{ event_item.description|truncatechars_html:500 }}
-            </p>
+        <div class="col-12 col-md-5 col-lg-4 px-5 pb-0 pt-4 py-sm-5 text-left">
+            <h3>{{ event_item.name }}</h3>
+            <table class="py-1">
+               <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2  text-nowrap">{{ event_item.format }}</td>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2  text-nowrap">{{ event_item.event_date|date:'j F' }}</td>
+               </tr>
+            </table>
+            <p class="py-3"> {{ event_item.description|truncatechars_html:500 }}</p>
+            <a class="btn btn-outline-light btn-lg text-nowrap btn-pink" href="#" role="button">Записаться</a>
         </div>
-        <div class="card-footer p-1">
-				<p class="text-right p-1 mb-0">
-					Дата проведения: {{ event_item.event_date }}
-				</p>
-        </div>
-</div>
+    </div>
+</section>
 
 {% endblock events_cards %}

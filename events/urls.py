@@ -20,6 +20,5 @@ app_name = 'events'
 urlpatterns = [
     path('', views.events_list, name='eventslist_n'),
     path('<pk>/', views.event, name='event_n'),
-	path('join_event/<pk>/', views.EventJoinView.as_view(), name='join_event_n'),
-
+    path('join_event/<pk>/', views.EventJoinView.as_view(), name='join_event_n'),
 ]

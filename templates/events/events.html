@@ -2,14 +2,44 @@
 {% block content %}
 {% load static %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="card-deck">
-            {% for event_item in events %}
-            {% include 'events/events_cards.html' %}
-            {% endfor %}
+
+
+
+<section class="container-fluid mb-5">
+    <div class="row flex-column text-center">
+        <h3 class="pt-5 pb-4 my-0">Мероприятия</h3>
+        <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-events-clothest-tab" data-toggle="pill" href="#pills-events-clothest" role="tab" aria-controls="pills-events-clothest" aria-selected="true">Ближайшие</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-events-live-tab" data-toggle="pill" href="#pills-events-live" role="tab" aria-controls="pills-events-live" aria-selected="false">Очные</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-events-online-tab" data-toggle="pill" href="#pills-events-online" role="tab" aria-controls="pills-events-online" aria-selected="false">Онлайн</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-events-clothest" role="tabpanel" aria-labelledby="pills-events-clothest-tab">
+                {% for event_item in events %}
+                {% include 'events/events_cards.html' %}
+                {% endfor %}
+          </div>
+          <div class="tab-pane fade" id="pills-events-live" role="tabpanel" aria-labelledby="pills-events-live-tab">
+            <!-- <div class="card-deck"> -->
+                {% for event_item in events_live %}
+                {% include 'events/events_cards.html' %}
+                {% endfor %}
+            <!-- </div> -->
+          </div>
+          <div class="tab-pane fade" id="pills-events-online" role="tabpanel" aria-labelledby="pills-events-online-tab">
+                {% for event_item in events_online %}
+                {% include 'events/events_cards.html' %}
+                {% endfor %}
+          </div>
         </div>
-    </div> 
-</div>
+    </div>
+</section>
+
 
 {% endblock content %}

@@ -36,7 +36,15 @@ a:hover {
     color: #848484;
    /* color: #848484; */
 }
-
+.in-event-date{
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    background-color: white;
+    border: 1px;
+    border-color: white;
+    border-radius: 1.5rem;
+}
 /* pink button */
 .btn-pink{
     color: white;
@@ -50,6 +58,24 @@ a:hover {
 }
 
 
+
+
+.nav-pills .nav-link{
+    color: #f28356;
+    background-color: white;
+    border-bottom: 2px solid #d4d4d4;
+    border-radius: 0rem;
+}
+.nav-pills .nav-link.active{
+    color: #f28356;
+    background-color: white;
+    border-bottom: 5px solid #f28356;
+    border-radius: 0rem;
+}
+.nav-pills .nav-link:focus, .nav-pills .nav-link:hover {
+    border-bottom: 5px solid #f28356;
+    border-radius: 0rem;
+}
 
 
 
@@ -190,7 +216,7 @@ form{
          background-size: cover;
     }
 .dot-size{
-    font-size: 0.4rem;
+    font-size: 0.3rem;
     vertical-align: middle;
 
 }
@@ -711,5 +737,5 @@ font-style: normal;
     margin-bottom: 0px;
 }
 .footer #id_form_footer input{
-    padding-top: 0px;
+    padding: 3px;
 }

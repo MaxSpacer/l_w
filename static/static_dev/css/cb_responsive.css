@@ -57,17 +57,12 @@
  }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+
     .team-img > p{
         text-align: center !important;
 
     }
-    .img-fl{
-        position: static;
-        /* left: 0%; */
-        /* bottom: 0px; */
-        margin: 0px !important;
-        max-width: 100%;
-    }
+
     .main-promo {
         /* position: absolute;
         top: 10%;
@@ -117,6 +112,17 @@
 }
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+    .in-event-date{
+        top: 30%;
+    }
+
+    .img-fl{
+        position: static;
+        /* left: 0%; */
+        /* bottom: 0px; */
+        margin: 0px !important;
+        max-width: 100%;
+    }
     #main_nav li a{
         margin-left: 3rem;
         margin-right: 3rem;

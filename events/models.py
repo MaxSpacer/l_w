@@ -16,8 +16,8 @@ class EventFormat(models.Model):
 		return "%s" % self.name
 
 	class Meta:
-		verbose_name = 'Формат курсов'
-		verbose_name_plural = 'Форматы курсов'
+		verbose_name = 'Формат мероприятия'
+		verbose_name_plural = 'Форматы мероприятия'
 
 
 class EventCategory(models.Model):
@@ -40,7 +40,7 @@ class Event(models.Model):
     category = models.ForeignKey(EventCategory, on_delete=models.SET_DEFAULT, max_length=64, blank=True, null=True, default=None)
     format = models.ForeignKey(EventFormat, on_delete=models.SET_DEFAULT, max_length=64, blank=True, null=True, default=None)
     description = models.TextField(max_length=256,blank=True, null=True, default=None)
-    content = HTMLField('Content', null=True, default=None)
+    # content = HTMLField('Content', null=True, default=None)
     is_active = models.BooleanField(default=True)
     publicated = models.DateTimeField(default=timezone.now, auto_now=False)
     event_date = models.DateTimeField(default=timezone.now, blank=False, auto_now=False)
