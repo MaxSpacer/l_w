@@ -15,7 +15,13 @@ def education_list(request):
     session_key = request.session.session_key
     if not session_key:
         request.session.cycle_key()
-    educations = Education.objects.filter(is_active=True, publicated__lte=timezone.now()).order_by('category')
+    # educations = Education.objects.filter(is_active=True, publicated__lte=timezone.now()).order_by('-publicated')
+    educations_live = Education.objects.filter(is_active=True, format__name='Очно', publicated__lte=timezone.now()).order_by('-publicated')
+    educations_online = Education.objects.filter(is_active=True, format__name='Онлайн', publicated__lte=timezone.now()).order_by('-publicated')
+    educations_forex = Education.objects.filter(is_active=True, category__name='Forex', publicated__lte=timezone.now()).order_by('-publicated')
+    educations_future = Education.objects.filter(is_active=True, category__name='Срочный', publicated__lte=timezone.now()).order_by('-publicated')
+    educations_fond = Education.objects.filter(is_active=True, category__name='Фондовый', publicated__lte=timezone.now()).order_by('-publicated')
+
     return render(request, 'educations/educations.html', locals())
 
 def education(request, pk):

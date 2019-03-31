@@ -21,6 +21,7 @@ class EducationCategory(models.Model):
 		verbose_name = 'Категория курсов'
 		verbose_name_plural = 'Категории курсов'
 
+
 class EducationFormat(models.Model):
 	name = models.CharField(max_length=64, blank=True, null=True, default=None)
 	is_active = models.BooleanField(default=True)
@@ -33,7 +34,6 @@ class EducationFormat(models.Model):
 	class Meta:
 		verbose_name = 'Формат курсов'
 		verbose_name_plural = 'Форматы курсов'
-
 
 
 class Education(models.Model):
@@ -57,6 +57,7 @@ class Education(models.Model):
 	class Meta:
 		verbose_name = 'Курс'
 		verbose_name_plural = 'Курсы'
+
 
 class StatusEducationOrder(models.Model):
     status_name = models.CharField(max_length=24, blank=True, null=True, default=None)

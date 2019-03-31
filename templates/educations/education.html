@@ -2,6 +2,45 @@
 {% block content %}
 {% load static %}
 
+<section class="container-fluid">
+    <div class="row flex-column flex-md-row justify-content-center pt-md-5">
+        <div class="col-12 col-sm-4 col-md-2 py-4 px-5 px-md-0 py-md-0 align-top">
+            <a id="back-link" class="text-nowrap text-muted" href="{% url 'educations:educationlist_n' %}"> < Вернуться назад</a>
+        </div>
+        <div class="col-12 col-md-5">
+            <h3 class="text-center m-0 text-muted">{{ education.category }}</h3>
+            <h3 class="text-center m-0">{{ education.name }}</h3>
+        </div>
+        <div class="col-12 col-md-2">
+
+        </div>
+    </div>
+    <div class="row justify-content-center pt-md-5">
+        <div class="col-12 col-md-7 col-lg-8 col-xl-5 px-5 pt-5 pb-3 p-md-0 position-relative img-container">
+                <img class="img-fl" src="{{ education.image.url }}" alt="Card image cap">
+            <div class="in-event-date px-3 py-1">
+                {{ education.format }}
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 py-0 px-5 py-md-5 text-left">
+
+            <p class="py-1"> {{ education.description|truncatechars_html:500 }}</p>
+            <table class="py-1">
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Длительность - {{ education.duration }} часов</td>
+                </tr>
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Стоимость - {{ education.price }} рублей</td>
+               </tr>
+            </table>
+            <div class="row mx-auto justify-content-left flex-xl-nowrap pt-3">
+            <a class="btn btn-outline-light btn-lg text-nowrap btn-pink my-1" href="#" role="button">Начать обучение</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <div class="container-fluid">
     <div class="row">

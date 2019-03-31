@@ -60,6 +60,12 @@ a:hover {
 
 
 
+/* #back-link{
+    color: #f28356;
+    background-color: white;
+    border-bottom: 2px solid #d4d4d4;
+    border-radius: 0rem;
+} */
 .nav-pills .nav-link{
     color: #f28356;
     background-color: white;
@@ -83,6 +89,7 @@ a:hover {
 .btn-form{
     color: #f28356;
     background-color: white;
+    border: 1px solid #f28356;
 
 }
 .btn-form:hover {

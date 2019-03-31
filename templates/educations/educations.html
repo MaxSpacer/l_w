@@ -2,14 +2,60 @@
 {% block content %}
 {% load static %}
 
-<div class="container-fluid">
+
+<section class="container-fluid mb-5">
     <div class="row">
-        <div class="card-deck justify-content-around">
-            {% for education_item in educations %}
-            {% include 'educations/educations_cards.html' %}
-            {% endfor %}
+        <h3 class=" col-12 pt-5 pb-4 my-0 text-center">Обучение</h3>
+        <div class="col-12">
+            <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-edu-live-tab" data-toggle="pill" href="#pills-edu-live" role="tab" aria-controls="pills-edu-live" aria-selected="true">Очно</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-edu-online-tab" data-toggle="pill" href="#pills-edu-online" role="tab" aria-controls="pills-edu-online" aria-selected="false">Онлайн</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-edu-forex-tab" data-toggle="pill" href="#pills-edu-forex" role="tab" aria-controls="pills-edu-forex" aria-selected="false">Forex</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-edu-fond-tab" data-toggle="pill" href="#pills-edu-fond" role="tab" aria-controls="pills-edu-fond" aria-selected="false">Фондовый</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-edu-future-tab" data-toggle="pill" href="#pills-edu-future" role="tab" aria-controls="pills-edu-future" aria-selected="false">Срочный</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content col-12 p-0" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-edu-live" role="tabpanel" aria-labelledby="pills-edu-live-tab">
+                {% for education_item in educations_live %}
+                {% include 'educations/educations_cards.html' %}
+                {% endfor %}
+          </div>
+          <div class="tab-pane fade" id="pills-edu-forex" role="tabpanel" aria-labelledby="pills-edu-forex-tab">
+            <div class="card-deck">
+                {% for education_item in educations_forex %}
+                {% include 'educations/educations_cards.html' %}
+                {% endfor %}
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-edu-online" role="tabpanel" aria-labelledby="pills-edu-online-tab">
+                {% for education_item in educations_online %}
+                {% include 'educations/educations_cards.html' %}
+                {% endfor %}
+          </div>
+          <div class="tab-pane fade" id="pills-edu-fond" role="tabpanel" aria-labelledby="pills-edu-fond-tab">
+                {% for education_item in educations_fond %}
+                {% include 'educations/educations_cards.html' %}
+                {% endfor %}
+          </div>
+          <div class="tab-pane fade" id="pills-edu-future" role="tabpanel" aria-labelledby="pills-edu-future-tab">
+                {% for education_item in educations_future %}
+                {% include 'educations/educations_cards.html' %}
+                {% endfor %}
+          </div>
         </div>
     </div>
-</div>
+</section>
 
 {% endblock content %}

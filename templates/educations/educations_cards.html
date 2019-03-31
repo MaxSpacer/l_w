@@ -1,27 +1,36 @@
 {% block educations_cards %}
-<div class="card text-center education-card mb-3"
-    {% if not education_item.is_disabled %}
-    onclick="location.href='{% url 'educations:education_n' education_item.id %}';"
-    {% endif %}
-    >
-    <div class="card-header bg-white p-2">
-        <h5 class="card-title mb-1">{{ education_item.category }}</h5>
-    </div>
-    <img class="card-img" src="{{ education_item.image.url }}" alt="Card image cap">
-    <div class="card-img-overlay p-0">
-        <div class="format position-absolute bg-warning px-2 py-1">
-            {{ education_item.format }}
+
+
+<section class="container-fluid">
+    <div class="row justify-content-center pt-md-5">
+        <div class="col-12 col-md-7 col-lg-8 col-xl-5 px-5 pt-5 pb-3 p-md-0 position-relative img-container">
+                <img class="img-fl" src="{{ education_item.image.url }}" alt="Card image cap">
+            <div class="in-event-date px-3 py-1">
+                {{ education_item.format }}
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 py-0 px-5 py-md-5 text-left">
+            <h3>{{ education_item.category }}</h3>
+            <h5>{{ education_item.name }}</h5>
+            <p class="py-1"> {{ education_item.description|truncatechars_html:500 }}</p>
+            <table class="py-1">
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Длительность - {{ education_item.duration }} часов</td>
+                </tr>
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Стоимость - {{ education_item.price }} рублей</td>
+               </tr>
+            </table>
+            <div class="row mx-auto justify-content-left flex-xl-nowrap pt-3">
+            <a class="btn btn-outline-light btn-lg text-nowrap flex-grow-1 btn-pink my-1" href="#" role="button">Начать обучение</a>
+            <a type=""  href="{% url 'educations:education_n' education_item.id %}" class="btn btn-form  text-nowrap flex-grow-1 ml-0 ml-sm-3 ml-md-0 ml-xl-3 my-1">План занятий</a>
+            </div>
         </div>
     </div>
-    <div class="card-body px-1">
-        <p class="card-text font-weight-bold">
-            {{ education_item.description|truncatechars_html:250 }}
-        </p>
-    </div>
-        <div class="card-footer p-2">
-            {{ education_item.name }}
-        </div>
-</div>
+</section>
+
 
 {% endblock educations_cards %}
 
