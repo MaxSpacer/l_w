@@ -5,10 +5,10 @@
 <section class="container-fluid">
     <div class="row flex-column flex-md-row justify-content-center pt-md-5">
         <div class="col-12 col-sm-4 col-md-2 py-4 px-5 px-md-0 py-md-0 align-top">
-            <a id="back-link" class="text-nowrap text-muted" href="{% url 'educations:educationlist_n' %}"> < Вернуться назад</a>
+            <a id="back-link" class="text-nowrap text-muted" href="{% url 'educations:educationlist_n' %}"><i class="fas fa-chevron-left text-muted pr-2"></i>Вернуться назад</a>
         </div>
         <div class="col-12 col-md-5">
-            <h3 class="text-center m-0 text-muted">{{ education.category }}</h3>
+            <h3 class="text-center m-0 text-muted">{{ education.category }} рынок</h3>
             <h3 class="text-center m-0">{{ education.name }}</h3>
         </div>
         <div class="col-12 col-md-2">
@@ -32,7 +32,11 @@
                 </tr>
                 <tr>
                  <td><i class="fas fa-circle dot-size align-middle"></i></td>
-                 <td class="px-2 text-nowrap">Стоимость - {{ education.price }} рублей</td>
+                 <td class="px-2 text-nowrap">Стоимость - {{ education.price }} руб</td>
+               </tr>
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Доступно мест - {{ education.invites }}</td>
                </tr>
             </table>
             <div class="row mx-auto justify-content-left flex-xl-nowrap pt-3">
@@ -42,58 +46,27 @@
     </div>
 </section>
 
+<section>
+    <h3 class="p-5 m-0 text-center">План занятий</h3>
+</section>
+
 <div class="container-fluid">
-    <div class="row">
-        <div class="card w-100 bg-transparent">
-            <div class="card-header d-flex flex-column flex-md-row  justify-content-around p-1">
-               <div class="col-md-5 mb-1">
-                  <h4>{{ education.name }}</h4>
-                  <div class="">
-                      <span class="bg-warning p-1">{{ education.format }}</span>
-                      <div class="d-inline">{{ education.price }} <i class="fas fa-ruble-sign"></i><span class="ml-3">{{ education.duration }} часов.</span></div>
-                  </div>
-               </div>
-               <div class="col-md-2 text-center order-md-3 px-0 py-1">
-                   <div class="ya-share2" data-services="vkontakte,facebook,twitter,whatsapp,telegram"></div>
-                   <h5 class="d-none d-md-block m-0">Поделиться</h5>
-               </div>
-               <button class="btn btn-dark d-none d-md-block edu-btn col-md-3 ml-auto p-3 p-md-2" type="button" data-id="{% url 'educations:create_eduorder_n' education.pk %}">
-                   <h5 class="m-0">Купить</h5>
-               </button>
-            </div>
-            <div class="card-body p-0 bg-transparent">
-                <h5 class="p-1 text-center">План занятий</h5>
-                <div class="card-group justify-content-between">
-                        {% for item in education.educationplanpoint_set.all %}
-                        <div class="card plan-card my-2 shadow">
-                            <div class="card-header text-center no-wrap p-2">
-                                {{ item.title }}
-                            </div>
-                            <div class="card-body p-2">
-                                {{ item.content | safe }}
-                            </div>
-                        </div>
-                        {% endfor %}
+    <div class="row flex-column align-content-center justify-content-center p-5 p-md-0">
+        {% for item in education.educationplanpoint_set.all %}
+        <!-- <div class=""> -->
+            <div class="col-12 col-md-9">
+                <div class="row my-4">
+                    <div class="circle-number text-center pt-1 mr-3">{{ item.order }}</div><h3 class="p-0 m-0">{{ item.title }}</h3>
                 </div>
+            </div>
+            <div class="col-12 col-md-9">
+                {{ item.content | safe }}
+
             </div>
 
-            <div class="card-footer bg-transparent p-0">
-                <h5 class="p-1 text-center">Результаты и цели обучения</h5>
-                <div class="card-group justify-content-between">
-                    {% for item in education.educationresultpoint_set.all %}
-                    <div class="card result-card my-2 shadow">
-                        <div class="card-header text-center no-wrap p-2">
-                            {{ item.title }}
-                        </div>
-                        <div class="card-body p-2">
-                            {{ item.content | safe }}
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <button class="btn btn-dark btn-lg btn-block edu-btn d-md-none" type="button" data-id="{% url 'educations:create_eduorder_n' education.pk %}">Купить</button>
-        </div>
+
+        <!-- </div> -->
+        {% endfor %}
     </div>
 </div>
 

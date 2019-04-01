@@ -140,8 +140,18 @@ form{
     color: white;
 }
 
-.row{
-    /* padding: 10px; */
+.circle-number{
+    width: 2.2rem;
+    height: 2.2rem;
+    min-width: 2.2rem;
+    color: white;
+    background-color: #f28356;
+    border-bottom: 1px solid #f28356;
+    border-radius: 3rem;
+    /* padding-left: 0.5rem; */
+    font-weight: 800;
+    font-size: 1.2rem;
+
 
 }
 .img-inner{
