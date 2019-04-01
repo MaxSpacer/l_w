@@ -50,22 +50,22 @@
     <h3 class="p-5 m-0 text-center">План занятий</h3>
 </section>
 
-<div class="container-fluid">
-    <div class="row flex-column align-content-center justify-content-center p-5 p-md-0">
+<div class="container-fluid about-main">
+    <div class="row flex-column align-content-center justify-content-center">
         {% for item in education.educationplanpoint_set.all %}
-        <!-- <div class=""> -->
-            <div class="col-12 col-md-9">
-                <div class="row my-4">
+        <div class="col-12 col-md-9 py-5 px-5 px-md-0">
+            <div class="col">
+                <div class="row flex-column flex-md-row mb-4">
                     <div class="circle-number text-center pt-1 mr-3">{{ item.order }}</div><h3 class="p-0 m-0">{{ item.title }}</h3>
                 </div>
             </div>
-            <div class="col-12 col-md-9">
+            <div class="col">
                 {{ item.content | safe }}
 
             </div>
 
 
-        <!-- </div> -->
+        </div>
         {% endfor %}
     </div>
 </div>
