@@ -33,6 +33,7 @@ urlpatterns = [
     path('product/', include('products.urls')),
     path('events/', include('events.urls')),
     path('educations/', include('educations.urls')),
+    path('investions/', include('investions.urls')),
     path('basket_adding/', include('orders.urls')),
     # path('checkout/', include('checkout.urls')),
     path('aboutus/', include('aboutus.urls')),

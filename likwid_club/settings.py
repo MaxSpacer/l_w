@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'aboutus',
     'contacts',
     'educations',
+    'investions',
     'accounts',
     'referals',
 ]

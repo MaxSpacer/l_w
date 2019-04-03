@@ -26,11 +26,9 @@
                 {% endfor %}
           </div>
           <div class="tab-pane fade" id="pills-events-live" role="tabpanel" aria-labelledby="pills-events-live-tab">
-            <!-- <div class="card-deck"> -->
                 {% for event_item in events_live %}
                 {% include 'events/events_cards.html' %}
                 {% endfor %}
-            <!-- </div> -->
           </div>
           <div class="tab-pane fade" id="pills-events-online" role="tabpanel" aria-labelledby="pills-events-online-tab">
                 {% for event_item in events_online %}

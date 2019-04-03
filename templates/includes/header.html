@@ -13,12 +13,7 @@
         <nav class="navbar navbar-expand-md navbar-dark flex-md-column py-3 py-md-0 px-0 ">
             <div class="text-center ml-5 ml-md-0 py-2 d-flex flex-row flex-md-column align-items-center justify-content-center">
                 <a class="navbar-brand m-0" href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid">
-                    <!-- <p id="nowDate-main" class="text-monocase m-0">
-                        <span class="p-1">
-                            {# { nowDate|date:'d.m.Y H:i' } #} MSK
-                        </span>
-                    </p>
-                    <span></span> -->
+
                 </a>
                 <div class="font-logo ml-3 ml-md-0">L I K W I D</div>
             </div>
@@ -66,8 +61,8 @@
                         <li class="nav-item {% if '/educations/' in request.path %} active{% endif %}">
                             <a class="nav-link" href="/educations">Обучение</a>
                         </li>
-                        <li class="nav-item {% if '/invest/' in request.path %} active{% endif %}">
-                            <a class="nav-link" href="/invest">Инвестиции</a>
+                        <li class="nav-item {% if '/investions/' in request.path %} active{% endif %}">
+                            <a class="nav-link" href="/investions">Инвестиции</a>
                         </li>
                         <li class="nav-item {% if request.path == '/hall/' %} active{% endif %}">
                             <a class="nav-link text-nowrap disabled" href="/hall">Закрытый клуб</a>

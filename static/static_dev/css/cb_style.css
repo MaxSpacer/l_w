@@ -54,18 +54,8 @@ a:hover {
 .btn-pink:hover {
     color: white;
     background-color: #d4744d;
-    /* border-color: #f8f9fa; */
 }
 
-
-
-
-/* #back-link{
-    color: #f28356;
-    background-color: white;
-    border-bottom: 2px solid #d4d4d4;
-    border-radius: 0rem;
-} */
 .nav-pills .nav-link{
     color: #f28356;
     background-color: white;

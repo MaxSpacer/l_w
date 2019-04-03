@@ -1,0 +1,79 @@
+{% extends "wrapper.html" %}
+{% block content %}
+{% load static %}
+
+<section class="container-fluid">
+    <div class="row flex-column flex-md-row justify-content-center pt-md-5">
+        <div class="col-12 col-sm-4 col-md-2 py-4 px-5 px-md-0 py-md-0 align-top">
+            <a id="back-link" class="text-nowrap text-muted" href="{% url 'investions:investionlist_n' %}"><i class="fas fa-chevron-left text-muted pr-2"></i>Вернуться назад</a>
+        </div>
+        <div class="col-12 col-md-5">
+            <h3 class="text-center m-0 px-5">{{ investion.name }}</h3>
+        </div>
+        <div class="col-12 col-md-2">
+
+        </div>
+    </div>
+    <div class="row justify-content-center pt-md-5">
+        <div class="col-12 col-md-7 col-lg-8 col-xl-5 px-5 pt-5 pb-3 p-md-0 position-relative img-container">
+                <img class="img-fl" src="{{ investion.image.url }}" alt="Card image cap">
+            <div class="in-event-date px-3 py-1">
+                {{ investion.format }}
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 py-0 px-5 py-md-5 text-left">
+
+            <p class="py-1"> {{ investion.description|truncatechars_html:500 }}</p>
+            <table class="py-1 d-none">
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Длительность - {{ investion.duration }} часов</td>
+                </tr>
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Стоимость - {{ investion.price }} руб</td>
+               </tr>
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Доступно мест - {{ investion.invites }}</td>
+               </tr>
+            </table>
+            <div class="row mx-auto justify-content-left flex-xl-nowrap pt-3">
+            <a class="btn btn-outline-light btn-lg text-nowrap btn-pink my-1" href="#" role="button">Приобрести</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-end bg-likwid">
+                <div class="col-12 col-lg-5 p-5 d-md-flex flex-wrap d-lg-block text-light">
+                    <h4 class="mb-3 col-12 pl-0 pl-lg-2">Характеристики</h4>
+                    {% for item in investion.investionplanpoint_set.all %}
+                    <div class="col-12 col-md-4 col-lg-12 pl-0 pl-lg-2">
+                            <div class="d-lg-flex">
+                                <div class="mr-3">0{{ item.order }}</div>
+                                <p class="text-light">{{ item.title }}</p>
+                            </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-12 col-lg-6 p-5 d-md-flex flex-wrap d-lg-block bg-light">
+                    <h4 class="mb-3 col-12 pl-0">Преимущества</h4>
+                    {% for item in investion.investionresultpoint_set.all %}
+                    <div class="col-12 col-md-4 col-lg-12 pl-0">
+                            <div class="d-lg-flex">
+                                <div class="text-muted mr-3">0{{ item.order }}</div>
+                                <p class="">{{ item.title }}</p>
+                            </div>
+                    </div>
+                    {% endfor %}
+                    <a class="btn btn-outline-light btn-lg text-nowrap btn-pink my-1" href="#" role="button">Записаться</a>
+                </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}
