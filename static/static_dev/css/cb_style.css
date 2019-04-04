@@ -45,6 +45,13 @@ a:hover {
     border-color: white;
     border-radius: 1.5rem;
 }
+
+.small-text{
+    font-size: 0.8rem;
+
+}
+
+
 /* pink button */
 .btn-pink{
     color: white;
@@ -738,7 +745,7 @@ font-style: normal;
     -moz-background-size: 100%;
      -webkit-background-size: 100%;
      -o-background-size: 100%;
-      background-size: cover;
+    background-size: cover;
 }
 .footer #id_form_footer label{
     margin-bottom: 0px;

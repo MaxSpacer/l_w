@@ -1,38 +1,33 @@
 {% load static %}
 {% block footer %}
-<footer class="footer pb-2 text-muted">
+<footer class="footer pb-2 text-muted container-fluid">
 {% if request.path != '/contacts/' %}
-    <div class="row p-0 bg-likwid">
+    <div class="row p-0 bg-white  justify-content-end">
     {% include "includes/footer-form.html" %}
     </div>
 {% endif %}
-    <!-- <div class="position-relative"> -->
     <div class="position-relative">
     <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
-    <div class="container pb-4 pt-5">
-        <div class="row px-5 ">
-            <div class="col-md-4 col-sm-12 px-0">
+    <div class="container-fluid">
+        <div class="row justify-content-center px-5 py-5 px-lg-0">
+            <div class="col-md-4 col-lg-3 col-sm-12 px-0">
                 <h4 class="text-light text-nowrap">L I K W I D</h4>
                 <p class="text-white-50">Финансово-консалтинговая компания, реализующая эффективную работу и обучение на финансовых рынках.</p>
             </div>
-            <div class="col-md-4 nav-footer d-none d-sm-inline-flex">
+            <div class="col-md-4 col-lg-3 nav-footer d-none d-sm-inline-flex px-0">
                 <div class="col-6 p-0">
-                <!-- <ul class="nav flex-column"> -->
                         <a class="nav-link {% if request.path == '/' %} active{% endif %}" href="/">Likwid</a>
                         <a class="nav-link text-nowrap{% if request.path == '/aboutus/' %} active{% endif %}" href="/aboutus">О нас</a>
                         <a class="nav-link {% if '/educations/' in request.path %} active{% endif %}" href="/educations">Обучение</a>
                         <a class="nav-link {% if '/events/' in request.path %} active{% endif %}" href="/events">Инвестиции</a>
-                <!-- </ul> -->
                 </div>
                 <div class="col-6 p-0">
-                    <!-- <ul class="nav flex-column"> -->
                         <a class="nav-link{% if '/events/' in request.path %} active{% endif %}" href="/events">Мероприятия</a>
                         <a class="nav-link {% if request.path == '/contacts/' %} active{% endif %}" href="/contacts">Контакты</a>
                         <a class="nav-link text-nowrap disabled{% if request.path == '/hall/' %} active{% endif %}" href="/hall">Закрытый клуб</a>
-                    <!-- </ul> -->
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12 pl-0 pl-md-3 pt-3 pt-md-0">
+            <div class="col-md-4 col-lg-3 col-sm-12 px-0">
                 <table class="mx-md-auto">
                    <tr>
                      <td><i class="fas fa-envelope"></i></td>
@@ -45,7 +40,7 @@
                 </table>
             </div>
         </div>
-        <div class="row flex-column p-0 pt-5">
+        <div class="row flex-column pb-5">
             <p class="text-center">Следите за нами в соц.сетях</p>
             <div class="social d-flex flex-row justify-content-center align-content-center">
                 <a href="https://vk.com/public177248775">
@@ -62,7 +57,6 @@
             </div>
 
         </div>
-        <!-- <div class="social mx-auto text-center"> -->
 	{#	{% include "includes/login_bar.html" %}  #}
     </div>    </div>
 </footer>

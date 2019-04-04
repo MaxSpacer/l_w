@@ -21,7 +21,7 @@
                 {{ investion.format }}
             </div>
         </div>
-        <div class="col-12 col-md-5 col-lg-4 py-0 px-5 py-md-5 text-left">
+        <div class="col-12 col-md-4 col-lg-4 py-0 px-5 py-md-5 text-left">
 
             <p class="py-1"> {{ investion.description|truncatechars_html:500 }}</p>
             <table class="py-1 d-none">
@@ -47,7 +47,7 @@
 <section>
     <div class="container-fluid mt-5">
         <div class="row justify-content-end bg-likwid">
-                <div class="col-12 col-lg-5 p-5 d-md-flex flex-wrap d-lg-block text-light">
+                <div class="col-12 col-lg-6 p-5 d-md-flex flex-wrap d-lg-block text-light">
                     <h4 class="mb-3 col-12 pl-0 pl-lg-2">Характеристики</h4>
                     {% for item in investion.investionplanpoint_set.all %}
                     <div class="col-12 col-md-4 col-lg-12 pl-0 pl-lg-2">
@@ -58,7 +58,7 @@
                     </div>
                     {% endfor %}
                 </div>
-                <div class="col-12 col-lg-6 p-5 d-md-flex flex-wrap d-lg-block bg-light">
+                <div class="col-12 col-lg-5 p-5 d-md-flex flex-wrap d-lg-block bg-light">
                     <h4 class="mb-3 col-12 pl-0">Преимущества</h4>
                     {% for item in investion.investionresultpoint_set.all %}
                     <div class="col-12 col-md-4 col-lg-12 pl-0">

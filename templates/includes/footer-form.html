@@ -1,22 +1,17 @@
 {% load widget_tweaks %}
 {% load static %}
-
 {% block footer_form %}
 
 
-<!-- <div class="row p-0"> -->
-    <div class="d-none d-sm-flex col-sm-6 col-12 bg-white man-form">
-        <!-- <img src="{% static 'img/noteman.png' %}" alt="" class="img-fluid"> -->
+    <div class="d-none d-sm-flex col-md-6 col-lg-7 col-12 man-form p-0">
     </div>
-    <div class="col-12 col-sm-5 col-md-5 d-flex align-items-center py-5" id="id_form_footer">
-        <form method="post" action="{% url 'main_form' %}" class="px-5">
+    <div class="col-12 col-md-6 col-lg-5 p-5 bg-likwid" id="id_form_footer">
+        <form method="post" action="{% url 'main_form' %}">
             {% csrf_token %}
-
             <div class="mainformheader">
                 <h1 class="mainformtitle">Нужна помощь специалиста?</h1>
                 <p class="text-white">Оставте заявку, и мы свяжемся с вами для проведения бесплатной консультации</p>
             </div>
-
             <div class="mainformbody">
                 <div class="form"">
                     <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
@@ -24,7 +19,6 @@
                         {{ error }}
                         {% endfor %}
                     </div>
-
                     {% for field in form %}
                     <div class="col-12 col-md-8 border-bottom border-light px-0 mt-3">
                         <label class="" for="{{ field.id_for_label }}">{{ field.label }}</label>
@@ -38,16 +32,8 @@
                     {% endfor %}
                 </div>
             </div>
-
-            <!-- <div class="justify-content-center"> -->
                 <button type="submit" class="btn btn-form px-5 my-2 ">Отправить</button>
-            <!-- </div> -->
-
         </form>
-
-
     </div>
-<!-- </div> -->
-
 
 {% endblock footer_form %}

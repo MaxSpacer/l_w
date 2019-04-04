@@ -36,6 +36,8 @@ urlpatterns = [
     path('investions/', include('investions.urls')),
     path('basket_adding/', include('orders.urls')),
     # path('checkout/', include('checkout.urls')),
+    # path('checkout/', include('checkout.urls')),
+    path('hall/', include('hall.urls')),
     path('aboutus/', include('aboutus.urls')),
     path('contacts/', include('contacts.urls')),
     re_path(r'^tinymce/', include('tinymce.urls')),

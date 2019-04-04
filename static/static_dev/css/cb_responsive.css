@@ -37,6 +37,7 @@
 }
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
   .team-img img {
       max-height: 140px;
   }
@@ -47,6 +48,12 @@
 }
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    .footer .man-form{
+
+        background-position: bottom right;
+
+        background-size: contain;
+    }
     .img-f {
     width: inherit;
     }
@@ -112,6 +119,7 @@
 }
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+
     .in-event-date{
         top: 30%;
     }

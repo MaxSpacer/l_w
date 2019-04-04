@@ -1,0 +1,36 @@
+{% block investions_cards %}
+
+
+<section class="container-fluid">
+    <div class="row justify-content-center pt-md-5">
+        <div class="col-12 col-md-7 col-lg-8 col-xl-5 px-5 pt-5 pb-3 p-md-0 position-relative img-container">
+                <img class="img-fl" src="{{ investion_item.image.url }}" alt="Card image cap">
+            <div class="in-event-date px-3 py-1">
+                {{ investion_item.format }}
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 py-0 px-5 py-md-5 text-left">
+            <h5>{{ investion_item.name }}</h5>
+            <p class="py-1"> {{ investion_item.description|truncatechars_html:500 }}</p>
+            <table class="py-1 d-none">
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Длительность - {{ investion_item.duration }} часов</td>
+                </tr>
+                <tr>
+                 <td><i class="fas fa-circle dot-size align-middle"></i></td>
+                 <td class="px-2 text-nowrap">Стоимость - {{ investion_item.price }} рублей</td>
+               </tr>
+            </table>
+            <div class="row mx-auto justify-content-left flex-xl-nowrap pt-3">
+            <a class="btn btn-outline-light btn-lg text-nowrap btn-pink" href="{% url 'investions:investion_n' investion_item.id %}" role="button">Подробнее</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock investions_cards %}
+
+<!-- <div onclick="location.href='http://google.com';"></div> -->
