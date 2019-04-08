@@ -6,7 +6,7 @@ from educations.forms import EducationOrderForm
 def getting_now_date(request):
     # form_class_page = {
     # '/educations/': EducationOrderForm,
-    # '/landing/': MainForm
+    # '/landing/x': MainForm
     # }
     # # form_class = MainForm
     # for key in form_class_page:
