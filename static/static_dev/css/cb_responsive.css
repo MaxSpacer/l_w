@@ -64,7 +64,12 @@
  }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    #id_form_footer{
 
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+
+    }
     .team-img > p{
         text-align: center !important;
 

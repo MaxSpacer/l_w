@@ -37,7 +37,11 @@ class MainFormView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):
     template_name = 'landing/landing.html'
     form_class = MainForm
     success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
-    success_url = reverse_lazy('main')
+    success_url = reverse_lazy('main_form')
+    # success_url = reverse_lazy('main' + '#id_form_footer')
+    # def get_success_url(self):
+        # educations_pk=self.kwargs['pk']
+    #     return reverse_lazy('main' + '#id_form_footer')
 
     def form_valid(self, form):
         if 'referer' in self.request.session:

@@ -10,7 +10,6 @@
                 <h4 class="px-0 px-md-3 pb-0 mt-5 mb-0">Likwid сообщество<br>
                 профессиональных трейдеров
                 </h4>
-                
                 <ul class="py-3 px-0 px-md-3">
                     <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Обучение торговли на валютных, срочных и фондовых рынках</ol>
                     <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Закрытый клуб профессиональных трейдеров</ol>
@@ -18,7 +17,7 @@
                 </ul>
                 <div class="row mx-auto justify-content-left flex-nowrap px-0 px-md-3 mb-3">
                     <a class="btn btn-outline-light btn-lg text-nowrap" href="#" role="button">Начать обучение</a>
-                    <a class="btn btn-light btn-lg ml-4 text-nowrap" href="#" role="button">Вступить в клуб</a>
+                    <a class="btn btn-outline-muted btn-lg ml-4 text-nowrap" href="#" role="button">Вступить в клуб</a>
                 </div>
             </div>
         </div>
@@ -73,113 +72,64 @@
     </div>
 </section>
 
-
-
-
-<section class="">
-<div class="container-fluid pt-5">
-    <div class="row justify-content-center about-main">
-        <!-- <div class="col-12"> -->
-                <div class="col-12 col-md-6 col-lg-5 px-5 pt-5 pb-5 pb-sm-0">
-                    <div class="">
-                        <h3>О компании</h3>
-                        <p class="font-weight-light">
-                            Likwid club - это современная инвестиционно-финансовая компания,
-                            ядром которой является команда профессиональных трейдеров и программистов,
-                            разрабатывающих уникальное программное обеспечение для осуществления торгов на фондовой бирже.
-                        </p>
-                        <div class="row">
-                            <div class="col-6">
-                                <h3 class="mb-0">12</h3>
-                                <p>
-                                    Человек в штате компании
-                                </p>
-                            </div>
-                            <div class="col-6">
-                                <h3 class="mb-0">5 лет</h3>
-                                <p>Опыта работы в
-                                    трейдинге</p>
-                                </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <h3 class="mb-0">+300</h3>
-                                <p>Выпускников
-                                нашего клуба</p>
-                            </div>
-                            <div class="col-6">
-                                <h3 class="mb-0">+10000</h3>
-                                <p>
-                                    Успешых сделок
-                                </p>
-                            </div>
-                        </div>
+<section class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center p-5">
+          <h3>Клуб трейдинга Likwid</h3>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4 py-0 px-5 pl-xl-0 py-md-5 text-left">
+            <h4 class="mb-4">О компании</h4>
+            <p class="font-weight-light">
+                Likwid club - это современная инвестиционно-финансовая компания,
+                ядром которой является команда профессиональных трейдеров и программистов,
+                разрабатывающих уникальное программное обеспечение для осуществления торгов на фондовой бирже.
+            </p>
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="mb-0">12</h3>
+                    <p>
+                        Человек в штате компании
+                    </p>
+                </div>
+                <div class="col-6">
+                    <h3 class="mb-0">5 лет</h3>
+                    <p>Опыта работы в
+                        трейдинге</p>
                     </div>
-                </div>
-                <div class="col-12 col-md-5 col-lg-7 col-xl-5 p-0 ">
-                    <img class="img-f" src="{% static 'img/img38.png' %}" alt="Second slide">
-                </div>
-
-    </div>
-</div>
-</section>
-
-    <!-- carousel -->
-    {#% include "includes/carousel.html" %#}
-    {%comment%}
-    {% for instance in object_list %}
-    <div class="row p-0 mt-3">
-        {{ instance.content | safe }}
-    </div>
-        {% endfor %}
-    {%endcomment%}
-
-<!-- minicarousel -->
-<div class="p-4 minicarousel text-center">
-      <h3 class="p-3">Наши партнеры</h3>
-    {% include "includes/minicarousel.html" %}
-</div>
-
-<!-- MAIN NAV -->
-    <!-- <div class="container-fluid d-sm-none pt-4 mt-4">
-        <nav class="navbar bg-transparent justify-content-center">
-            <div class="main-logo py-2 text-center">
-                <a href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid"></a>
-                <p id="nowDate" class="text-monocase m-0">
-
-                        LIKWID
-                    <span class="p-1 d-none">
-                        {#{ nowDate|date:'d.m.Y H:i' }#} MSK
-                    </span>
-                </p>
-                <span></span>
             </div>
-        </nav>
-        <div class="row">
-            <div class="py-2 mx-auto">
-                <nav id="main-nav">
-                    <ul class="nav flex-column ml-5">
-                        <li class="nav-item">
-                        <a class="nav-link text-uppercase active" href="/aboutus">О нас</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="/educations">Обучение</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="/events">Мероприятия</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-uppercase disabled" href="/hall">Закрытый клуб</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="/contacts">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="mb-0">+300</h3>
+                    <p>Выпускников
+                    нашего клуба</p>
+                </div>
+                <div class="col-6">
+                    <h3 class="mb-0">+10000</h3>
+                    <p>
+                        Успешых сделок
+                    </p>
+                </div>
             </div>
         </div>
-    </div> -->
-<!-- MAIN NAV END -->
+        <div class="col-12 col-md-7 col-lg-8 col-xl-5 px-5 pt-5 pb-3 p-md-0 position-relative img-container">
+                <img class="img-fl" src="{% static 'img/img38.png' %}" alt="">
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9 p-0">
+                <h3 class="py-5 m-0 text-center">Наши партнеры</h3>
+                {% include "includes/minicarousel.html" %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- minicarousel -->
+<div class="p-4 minicarousel text-center">
+</div>
 
 
 {% endblock content %}

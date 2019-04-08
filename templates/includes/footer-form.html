@@ -2,11 +2,10 @@
 {% load static %}
 {% block footer_form %}
 
-
     <div class="d-none d-sm-flex col-md-6 col-lg-7 col-12 man-form p-0">
     </div>
-    <div class="col-12 col-md-6 col-lg-5 p-5 bg-likwid" id="id_form_footer">
-        <form method="post" action="{% url 'main_form' %}">
+    <div class="col-12 col-md-6 col-lg-5 py-5 px-5 bg-likwid" id="id_form_footer">
+        <form method="post"">
             {% csrf_token %}
             <div class="mainformheader">
                 <h1 class="mainformtitle">Нужна помощь специалиста?</h1>
@@ -32,7 +31,17 @@
                     {% endfor %}
                 </div>
             </div>
-                <button type="submit" class="btn btn-form px-5 my-2 ">Отправить</button>
+            <button type="submit" class="btn btn-form px-5 my-2 ">
+            Отправить
+            </button>
+            {% comment %}
+                <button type="" href="{% if '/educations/detail/' in request.path %}
+                                        {% url 'educations:create_eduorder_n' education.id %}
+                                        {% endif %}"
+                                            class="btn btn-form px-5 my-2 ">
+                Отправить
+                </button>
+            {% endcomment %}
         </form>
     </div>
 

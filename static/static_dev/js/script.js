@@ -103,9 +103,9 @@ $(document).ready(function() {
         $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
         $(".create-callme").modalForm({formURL: "{% url 'create_callme' %}"});
         // $(".btn-main").modalForm({formURL: "{% url 'main_form' %}"});
-        $(".edu-btn").each(function () {
-                $(this).modalForm({formURL: $(this).data('id')});
-            });
+        // $(".edu-btn").each(function () {
+        //         $(this).modalForm({formURL: $(this).data('id')});
+        //     });
         $(".btn-event").each(function () {
                 $(this).modalForm({formURL: $(this).data('id')});
             });
@@ -125,7 +125,8 @@ $(document).ready(function() {
             dots:false,
             responsive:{
                 0:{
-                    items:1
+                    items:2,
+                    margin:30
                 },
                 600:{
                     items:3
@@ -147,7 +148,7 @@ $(document).ready(function() {
         });
 
         $(function(){
-          $("#id_contact_phone").mask("+7(999) 999-9999");
+          $("#id_contact_phone").mask("+7 999 999-9999");
         });
         $(function(){
           $("input[type='number']").inputSpinner();

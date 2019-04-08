@@ -25,7 +25,7 @@ def basket_adding(request):
     return_dict["products_total_nmb"] = products_total_nmb
     return_dict["products"] = list()
 
-    for item in  products_in_basket:
+    for item in products_in_basket:
         product_dict = dict()
         product_dict["id"] = item.id
         product_dict["product_name"] = item.pb_product.name

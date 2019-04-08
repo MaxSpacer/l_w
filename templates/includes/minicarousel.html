@@ -1,21 +1,37 @@
 {% block minicarousel %}
 {% load static %}
 
-<div class="container d-flex flex-row align-items-center px-5">
-    <img class="customPrevBtn" src="{% static 'img/leftbtn.png'%}" alt="">
-    <!-- <button type="button" name="button" class="customNextBtn"><</button> -->
-    <div class=" w-75 mx-auto py-5">
-        <!-- <div> -->
+
+<div class="container d-none d-sm-flex flex-row align-items-center px-0">
+    <img class="customPrevBtn mr-3" src="{% static 'img/leftbtn.png'%}" alt="">
+    <div class="w-75 mx-auto flex-fill">
             <div class="owl-carousel owl-theme">
                 <img class="d-block img-fluid" src="{% static 'img/icmarkets-logo.png'%}" alt="">
                 <img class="d-block img-fluid" src="{% static 'img/alfaforex.png' %}" alt="">
                 <img class="d-block img-fluid" src="{% static 'img/bks-forex.png' %}" alt="">
                 <img class="d-block img-fluid" src="{% static 'img/logo-bz.png' %}" alt="">
             </div>
-        <!-- </div> -->
     </div>
-    <!-- <button type="button" name="button" class="customPrevBtn">></button> -->
-    <img class="customNextBtn" src="{% static 'img/rightbtn.png'%}" alt="">
+    <img class="customNextBtn ml-3" src="{% static 'img/rightbtn.png'%}" alt="">
+</div>
+
+<div class="d-sm-none px-5 text-center">
+    <div class="owl-carousel owl-theme">
+        <img class="d-block img-fluid" src="{% static 'img/icmarkets-logo.png'%}" alt="">
+        <img class="d-block img-fluid" src="{% static 'img/alfaforex.png' %}" alt="">
+        <img class="d-block img-fluid" src="{% static 'img/bks-forex.png' %}" alt="">
+        <img class="d-block img-fluid" src="{% static 'img/logo-bz.png' %}" alt="">
+    </div>
+    <div class="owl-carousel owl-theme pt-5">
+        <img class="d-block img-fluid" src="{% static 'img/bks-forex.png' %}" alt="">
+        <img class="d-block img-fluid" src="{% static 'img/logo-bz.png' %}" alt="">
+        <img class="d-block img-fluid" src="{% static 'img/icmarkets-logo.png'%}" alt="">
+        <img class="d-block img-fluid" src="{% static 'img/alfaforex.png' %}" alt="">
+    </div>
+    <a class="btn btn-lg btn btn-outline-muted text-nowrap mt-5" href="#" role="button">Показать больше</a>
 
 </div>
+
+
+
 {% endblock minicarousel %}

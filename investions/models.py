@@ -23,7 +23,7 @@ class InvestionCategory(models.Model):
 
 
 class InvestionFormat(models.Model):
-	name = models.CharField(max_length=64, blank=True, null=True, default=None)
+	name = models.CharField(max_length=32, blank=True, null=True, default=None)
 	is_active = models.BooleanField(default=True)
 	created = models.DateTimeField(auto_now_add=True , auto_now=False)
 	updated = models.DateTimeField(auto_now_add=False , auto_now=True)

@@ -52,7 +52,19 @@ a:hover {
 }
 
 
-/* pink button */
+/* outline-muted button */
+.btn-outline-muted{
+    color: #6c757d;
+    background-color: white;
+    border-color: #cbcbcb;
+
+}
+.btn-outline-muted:hover {
+    color: black;
+    border-color: black;
+
+}
+
 .btn-pink{
     color: white;
     background-color: #f28356;
